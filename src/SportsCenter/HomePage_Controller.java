@@ -16,7 +16,7 @@ public class HomePage_Controller {
     @FXML
     private Button btnHome, btnSchedule, btnSports, btnJoinUs;
     @FXML
-    private Label lblSportsCenterName;
+    private Label lblTitle;
     @FXML
     private AnchorPane bgHomePage, bgHeader, bgBody;
     @FXML
