@@ -41,6 +41,7 @@ public class HomePage_Controller {
     private void pressJoinUs(javafx.event.ActionEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Login_Register.fxml"));
         Stage window = (Stage) btnJoinUs.getScene().getWindow(); 
-        window.setScene(new Scene(root));
+        window.setScene(new Scene(root, 900, 700));
+        window.setTitle("Login Page");
     }
 }
