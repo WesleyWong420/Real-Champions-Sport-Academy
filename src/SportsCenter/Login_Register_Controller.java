@@ -18,9 +18,11 @@ public class Login_Register_Controller {
     @FXML
     private Button btnHome, btnSchedule, btnSports, btnJoinUs, btnLogin;
     @FXML
-    private Label lblSportsCenterName, lblTitle;
+    private Label lblTitle;
     @FXML
     private AnchorPane bgHomePage, bgHeader, bgBody;
+    @FXML
+    private ImageView imgLogo;
     @FXML
     private TextField txtUsername;
     @FXML
