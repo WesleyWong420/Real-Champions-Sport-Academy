@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,28 +12,52 @@
 
 <AnchorPane fx:id="bgHomePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SportsCenter.Login_Register_Controller">
    <children>
-      <AnchorPane fx:id="bgLeft" prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: transparent;">
+      <AnchorPane fx:id="bgLeft" prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: #60AFFE;">
          <children>
-            <ImageView fx:id="imgLogo" fitHeight="103.0" fitWidth="119.0" layoutX="163.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgHome" fitHeight="42.0" fitWidth="50.0" layoutX="77.0" layoutY="266.0" onMouseClicked="#pressHome" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Desktop/logo.png" />
+                  <Image url="@images/home.png" />
                </image>
             </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="bgRight" layoutX="441.0" prefHeight="700.0" prefWidth="450.0">
-         <children>
-            <Label fx:id="lblTitle" alignment="CENTER" layoutX="88.0" layoutY="81.0" prefHeight="75.0" prefWidth="274.0" text="Sign In">
+            <ImageView fx:id="imgSchedule" fitHeight="42.0" fitWidth="50.0" layoutX="184.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/calender.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgSports" fitHeight="42.0" fitWidth="50.0" layoutX="296.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/category.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblTitle" alignment="CENTER" layoutX="70.0" layoutY="90.0" prefHeight="75.0" prefWidth="274.0" text="Sign In" textFill="#f7f7f7">
                <font>
-                  <Font name="Gill Sans Ultra Bold" size="36.0" />
+                  <Font name="Arial Black" size="36.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUsername" alignment="CENTER" layoutX="150.0" layoutY="214.0" promptText="Username" />
-            <PasswordField fx:id="txtPassword" alignment="CENTER" layoutX="150.0" layoutY="273.0" promptText="Password" />
-            <Button fx:id="btnLogin" layoutX="182.0" layoutY="330.0" mnemonicParsing="false" onAction="#pressLogin" prefHeight="26.0" prefWidth="85.0" text="Login">
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="bgRight" layoutX="450.0" prefHeight="700.0" prefWidth="450.0" style="-fx-background-color: #b3cde0;">
+         <children>
+            <TextField fx:id="txtUsername" alignment="CENTER" layoutX="113.0" layoutY="214.0" prefHeight="40.0" prefWidth="224.0" promptText="Username">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></TextField>
+            <PasswordField fx:id="txtPassword" alignment="CENTER" layoutX="113.0" layoutY="270.0" prefHeight="40.0" prefWidth="224.0" promptText="Password">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></PasswordField>
+            <Button fx:id="btnLogin" graphicTextGap="5.0" layoutX="113.0" layoutY="359.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="224.0" style="-fx-background-color: #0D4F8B;" text="LOGIN" textAlignment="CENTER" textFill="#f4f4f4">
                <font>
                   <Font name="System Bold" size="18.0" />
-               </font></Button>
+               </font>
+               <effect>
+                  <Bloom />
+               </effect></Button>
+            <ImageView fx:id="imgLogo" fitHeight="147.0" fitWidth="179.0" layoutX="145.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
