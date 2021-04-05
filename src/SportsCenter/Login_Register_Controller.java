@@ -1,6 +1,7 @@
 package SportsCenter;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class Login_Register_Controller {
 
@@ -22,7 +24,7 @@ public class Login_Register_Controller {
     @FXML
     private AnchorPane bgHomePage, bgLeft, bgRight;
     @FXML
-    private ImageView imgLogo;
+    private ImageView imgLogo, imgHome, imgSchedule, imgSports;
     @FXML
     private TextField txtUsername;
     @FXML
@@ -32,10 +34,10 @@ public class Login_Register_Controller {
     }
 
     @FXML
-    private void pressLogin(javafx.event.ActionEvent event) throws Exception {
+    private void pressHome() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        Stage window = (Stage) btnLogin.getScene().getWindow(); 
-        window.setScene(new Scene(root, 900, 700));
+        Stage window = (Stage) imgHome.getScene().getWindow(); 
+        window.setScene(new Scene(root, 900, 700)); 
         window.setTitle("Home Page");
     }
 }
