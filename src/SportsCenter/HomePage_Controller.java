@@ -28,6 +28,7 @@ public class HomePage_Controller {
     @FXML
     private void pressHome(javafx.event.ActionEvent event) {
         lblTitle.setText("Sports Center");
+        lblTitle.setText("Git Test");
     }
 
     @FXML
