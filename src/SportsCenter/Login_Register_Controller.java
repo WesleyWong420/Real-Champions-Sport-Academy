@@ -33,7 +33,7 @@ public class Login_Register_Controller {
     private void pressHome(javafx.event.ActionEvent event) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Stage window = (Stage) btnJoinUs.getScene().getWindow(); 
-        window.setScene(new Scene(root));
+        window.setScene(new Scene(root, 750, 500));
     }
 
     @FXML
