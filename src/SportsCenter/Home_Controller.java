@@ -11,7 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.image.ImageView;
 
-public class HomePage_Controller {
+public class Home_Controller {
 
     @FXML
     private Button btnHome, btnSchedule, btnSports, btnJoinUs;
@@ -39,7 +39,7 @@ public class HomePage_Controller {
     
     @FXML
     private void pressJoinUs(javafx.event.ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login_Register.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         Stage window = (Stage) btnJoinUs.getScene().getWindow(); 
         window.setScene(new Scene(root, 900, 700));
         window.setTitle("Login Page");
