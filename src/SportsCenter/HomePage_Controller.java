@@ -16,28 +16,25 @@ public class HomePage_Controller {
     @FXML
     private Button btnHome, btnSchedule, btnSports, btnJoinUs;
     @FXML
-    private Label lblSportsCenterName, lblTitle;
+    private Label lblSportsCenterName;
     @FXML
     private AnchorPane bgHomePage, bgHeader, bgBody;
     @FXML
-    private ImageView imgBodyBackground;
+    private ImageView imgLogo, imgBodyBackground;
 
     public void initialize() {
     }
 
     @FXML
     private void pressHome(javafx.event.ActionEvent event) {
-        lblTitle.setText("Sports Center");
     }
 
     @FXML
     private void pressSchedule(javafx.event.ActionEvent event) {
-        lblTitle.setText("Timetable:");
     }
     
     @FXML
     private void pressSports(javafx.event.ActionEvent event) {
-        lblTitle.setText("Available Sports");
     }
     
     @FXML
