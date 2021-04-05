@@ -4,18 +4,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="bgHomePage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SportsCenter.Login_Register_Controller">
    <children>
-      <AnchorPane fx:id="bgHeader" layoutX="14.0" layoutY="6.0">
+      <AnchorPane fx:id="bgHeader" layoutX="-4.0" prefHeight="114.0" prefWidth="606.0">
          <children>
-            <Label fx:id="lblSportsCenterName" layoutY="2.0" text="ABC Sports " textFill="#fffdfd">
-               <font>
-                  <Font name="Jokerman" size="24.0" />
-               </font>
-            </Label>
+            <ImageView fx:id="imgLogo" fitHeight="51.0" fitWidth="57.0" layoutX="24.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="btnHome" alignment="CENTER" layoutX="233.0" layoutY="10.0" mnemonicParsing="false" onAction="#pressHome" style="-fx-background-color: transparent;" text="Home" textAlignment="CENTER" textFill="#f4f4f4">
                <font>
                   <Font name="Impact" size="18.0" />
