@@ -15,12 +15,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class Login_Register_Controller {
+public class Login_Controller {
 
     @FXML
-    private Button btnLogin;
+    private Button btnLogin, btnForgotPassword, btnRegister;
     @FXML
-    private Label lblTitle;
+    private Label lblTitle, lblNoAccount;
     @FXML
     private AnchorPane bgHomePage, bgLeft, bgRight;
     @FXML
@@ -35,9 +35,29 @@ public class Login_Register_Controller {
 
     @FXML
     private void pressHome() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
         Stage window = (Stage) imgHome.getScene().getWindow(); 
         window.setScene(new Scene(root, 900, 700)); 
         window.setTitle("Home Page");
+    }
+    
+    @FXML
+    private void pressSchedule(javafx.event.ActionEvent event) {
+    }
+    
+    @FXML
+    private void pressSports(javafx.event.ActionEvent event) {
+    }
+    
+    @FXML
+    private void pressRegister(javafx.event.ActionEvent event) {
+    }
+    
+    @FXML
+    private void pressLogin(javafx.event.ActionEvent event) {
+    }
+    
+    @FXML
+    private void pressForgotPassword(javafx.event.ActionEvent event) {
     }
 }
