@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 6, 2021, 1:30:23 AM
+    Author     : Hamdhan
+*/
+.button{
+    -fx-font-family:"Tahoma";
+    -fx-background-color: null;
+    -fx-border-color: #e84545;
+    -fx-border-radius:10 10 10 10;
+    -fx-border-width: 3;
+    -fx-border-style: solid outside line-cap round ;
+    -fx-text-fill: white ;
+}
+
+.button:hover {
+    -fx-background-color: #e84545;
+}
+
+.tab-pane{
+    -fx-background-color: #2b2e4a;
+    -fx-font-family:"Tahoma";
+}
+
+.tab-pane *.tab-header-background {
+     -fx-background-color: #2b2e4a;
+}
+
+/*.tab-pane *.tab {
+     -fx-background-color: #e84545;
+     -fx-background-radius: 0 10 10 0;
+}*/
+#guestbtn{
+    -fx-font-family:"Tahoma";
+    -fx-background-color: null;
+    -fx-border-color:#2b2e4a;
+    -fx-border-radius:10 10 10 10;
+    -fx-text-fill: white ;
+}
+#guestbtn.button:hover {
+    -fx-text-fill: red;
+}
+#tab1{
+     -fx-background-color: #e84545;
+     -fx-background-radius: 0 10 10 0;
+}
+#tab2{
+     -fx-background-color: #e84545;
+     -fx-background-radius: 10 0 0 10;
+}
+
+.welcome{
+    -fx-background-color: #e84545;
+}
+
+.split-pane *.split-pane-divider{
+    -fx-background-color: #53354a;
+}
