@@ -10,9 +10,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        primaryStage.setTitle("Home Page");
-        primaryStage.setScene(new Scene(root, 900, 700));
+        Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
+        primaryStage.setTitle("Welcome to Real Champion Sports Academy");
+        primaryStage.setScene(new Scene(root, 800, 480));
         primaryStage.show();
     }
 
