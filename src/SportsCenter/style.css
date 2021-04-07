@@ -7,56 +7,111 @@ and open the template in the editor.
     Created on : Apr 6, 2021, 1:30:23 AM
     Author     : Hamdhan
 */
-.button{
-    -fx-font-family:"Tahoma";
-    -fx-background-color: null;
-    -fx-border-color: #e84545;
-    -fx-border-radius:10 10 10 10;
-    -fx-border-width: 3;
-    -fx-border-style: solid outside line-cap round ;
-    -fx-text-fill: white ;
-}
-
-.button:hover {
-    -fx-background-color: #e84545;
+@font-face {
+    font-family: Poppins;
+    src: url('fonts/Poppins-SemiBold.ttf');
 }
 
 .tab-pane{
-    -fx-background-color: #2b2e4a;
-    -fx-font-family:"Tahoma";
+    -fx-background-color: #464246;
+    -fx-font-family: "Poppins";
 }
 
 .tab-pane *.tab-header-background {
-     -fx-background-color: #2b2e4a;
+     -fx-background-color: #464246;
+}
+.tab-pane *.tab {
+     -fx-background-color: null;
+     -fx-border-width: 2;
+     -fx-border-color:#cabcb0;
 }
 
-/*.tab-pane *.tab {
-     -fx-background-color: #e84545;
-     -fx-background-radius: 0 10 10 0;
-}*/
-#guestbtn{
-    -fx-font-family:"Tahoma";
-    -fx-background-color: null;
-    -fx-border-color:#2b2e4a;
-    -fx-border-radius:10 10 10 10;
-    -fx-text-fill: white ;
+.tab-pane *.tab:selected {
+    -fx-background-color: #cabcb0;
 }
+
+.tab-pane *.tab-label {
+    -fx-text-fill: white;
+}
+
+#firsttab{
+     -fx-border-radius:10 0 0 10;
+     -fx-border-width: 2;
+}
+
+#firsttab:selected{
+    -fx-background-color: #cabcb0;
+    -fx-background-radius: 10 0 0 10;
+}
+
+#lasttab{
+     -fx-border-radius:0 10 10 0;
+     -fx-border-width: 2;
+}
+
+#lasttab:selected{
+     -fx-background-color: #cabcb0;
+     -fx-background-radius: 0 10 10 0;
+}
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {-fx-border-color: null}
+
+
+/***********Buttons**************/
+.button{
+    -fx-font-family: "Poppins";
+    -fx-background-color: null;
+    -fx-border-color: #cabcb0;
+    -fx-border-radius:5;
+    -fx-border-width: 2;
+    -fx-border-style: solid outside line-cap round ;
+    -fx-text-fill: #cabcb0 ;
+    -fx-font-weight: normal;
+}
+
+.button:hover {
+    -fx-background-color: #cabcb0;
+    -fx-text-fill: #464246 ;
+}
+
+#guestbtn{
+    -fx-font-family: "Poppins";
+    -fx-background-color: null;
+    -fx-font-size: 12;
+    -fx-border-color:#464246;
+    -fx-text-fill: #a5b9b9 ;
+}
+
 #guestbtn.button:hover {
     -fx-text-fill: red;
 }
-#tab1{
-     -fx-background-color: #e84545;
-     -fx-background-radius: 0 10 10 0;
+
+#passreset{
+    -fx-font-family: "Poppins";
+    -fx-font-size: 10;
+    -fx-background-color: null;
+    -fx-border-color:#464246;
+    -fx-border-radius:10 10 10 10;
+    -fx-text-fill: #a5b9b9 ;
 }
-#tab2{
-     -fx-background-color: #e84545;
-     -fx-background-radius: 10 0 0 10;
+#passreset.button:hover {
+    -fx-text-fill: red;
 }
+
+/*******Labels********/
+
+.label{
+    -fx-text-fill: #cabcb0;
+}
+
+#reglabel{
+    -fx-font-size: 20;
+}
+
+#loginstatus{
+    -fx-text-fill: red;
+}
+
 
 .welcome{
-    -fx-background-color: #e84545;
-}
-
-.split-pane *.split-pane-divider{
-    -fx-background-color: #53354a;
+    -fx-background-color: #f8f8f8;
 }
