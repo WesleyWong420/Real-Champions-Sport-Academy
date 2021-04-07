@@ -1,49 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<SplitPane dividerPositions="0.408049040511727" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="752.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-  <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="welcome">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="77.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/logo.png" />
-               </image>
-            </ImageView>
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="490.0">
-         <children>
-            <TabPane layoutX="45.0" layoutY="65.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="456.8" prefWidth="490.4" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <tabs>
-                <Tab id="tab2" text="Login">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="441.0">
+            <HBox alignment="CENTER" prefHeight="400.0" prefWidth="183.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <TabPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="358.0" prefWidth="420.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+               <tabs>
+                  <Tab id="firsttab" text="Login">
+                     <content>
+                        <HBox alignment="CENTER">
                            <children>
-                              <PasswordField alignment="CENTER" layoutX="106.0" layoutY="205.0" prefHeight="26.0" prefWidth="214.0" promptText="Password" />
-                              <Button layoutX="192.0" layoutY="250.0" mnemonicParsing="false" text="Login" />
-                              <TextField alignment="CENTER" layoutX="106.0" layoutY="159.0" prefHeight="26.0" prefWidth="213.0" promptText="Username" />
-                              <Button id="guestbtn" layoutX="158.0" layoutY="352.0" mnemonicParsing="false" prefWidth="117.0" text="Continue as Guest!" />
+                              <VBox alignment="CENTER" spacing="2.0">
+                                 <children>
+                                    <ImageView fitHeight="112.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/login.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="loginstatus" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" />
+                                    <VBox alignment="CENTER" spacing="15.0">
+                                       <children>
+                                          <TextField alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="213.0" promptText="Username" />
+                                          <PasswordField alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="214.0" promptText="Password" />
+                                          <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="210.0" text="Login" />
+                                          <Button id="passreset" mnemonicParsing="false" text="Forgot your password?" />
+                                          <Button id="guestbtn" mnemonicParsing="false" prefHeight="5.0" prefWidth="133.0" text="Continue as Guest!" underline="true" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
                            </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab id="tab1" text="Register">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
+                        </HBox>
+                     </content>
+                  </Tab>
+                  <Tab id="lasttab" text="Register">
+                     <content>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" spacing="20.0">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <Label id="reglabel" alignment="TOP_LEFT" text="Student Registration" underline="true" />
+                                       </children>
+                                    </HBox>
+                                    <GridPane alignment="CENTER" hgap="10.0" prefHeight="410.0" prefWidth="273.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="133.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="67.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="69.0" minHeight="4.0" prefHeight="39.60000762939453" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="69.0" minHeight="0.0" prefHeight="44.399986267089844" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="179.0" minHeight="0.0" prefHeight="39.40001831054688" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="301.0" minHeight="0.0" prefHeight="39.999999999999986" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="340.0" minHeight="0.0" prefHeight="43.19999999999999" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField editable="false" nodeOrientation="LEFT_TO_RIGHT" />
+                                          <TextField nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="2" />
+                                          <TextField nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="3" />
+                                          <TextField nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="4" />
+                                          <Label text="Student ID" GridPane.columnIndex="1" />
+                                          <Label text="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Contact No" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextArea nodeOrientation="LEFT_TO_RIGHT" prefHeight="199.0" prefWidth="142.0" wrapText="true" GridPane.rowIndex="5" />
+                                          <ChoiceBox nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" GridPane.rowIndex="1" />
+                                          <Label text="Enroll Sport" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                       </children>
+                                    </GridPane>
+                                    <Button mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+               </tabs>
             </TabPane>
-         </children></AnchorPane>
-  </items>
-</SplitPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
