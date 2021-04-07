@@ -12,6 +12,8 @@ and open the template in the editor.
     src: url('fonts/Poppins-SemiBold.ttf');
 }
 
+/***********Tab Panes***********/
+
 .tab-pane{
     -fx-background-color: #464246;
     -fx-font-family: "Poppins";
@@ -55,8 +57,7 @@ and open the template in the editor.
 }
 .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {-fx-border-color: null}
 
-
-/***********Buttons**************/
+/***********Buttons***********/
 .button{
     -fx-font-family: "Poppins";
     -fx-background-color: null;
@@ -74,7 +75,6 @@ and open the template in the editor.
 }
 
 #guestbtn{
-    -fx-font-family: "Poppins";
     -fx-background-color: null;
     -fx-font-size: 12;
     -fx-border-color:#464246;
@@ -86,7 +86,6 @@ and open the template in the editor.
 }
 
 #passreset{
-    -fx-font-family: "Poppins";
     -fx-font-size: 10;
     -fx-background-color: null;
     -fx-border-color:#464246;
@@ -97,7 +96,7 @@ and open the template in the editor.
     -fx-text-fill: red;
 }
 
-/*******Labels********/
+/***********Labels***********/
 
 .label{
     -fx-text-fill: #cabcb0;
@@ -111,7 +110,20 @@ and open the template in the editor.
     -fx-text-fill: red;
 }
 
+/***********Empty Class***********/
 
 .welcome{
     -fx-background-color: #f8f8f8;
+}
+
+#hbox1{
+    -fx-background-color: #cabcb0;
+}
+
+#hbox2{
+    -fx-background-color: #a5b9b9;
+}
+
+#emptypane{
+    -fx-background-color: #464246;
 }
