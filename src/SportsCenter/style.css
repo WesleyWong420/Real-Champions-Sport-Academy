@@ -124,6 +124,26 @@ and open the template in the editor.
     -fx-background-color: #a5b9b9;
 }
 
-#emptypane{
-    -fx-background-color: #464246;
+#vbox_grey{
+    -fx-background-color: #dadada;
+}
+
+#pane1{
+    -fx-background-color: purple;
+}
+
+#pane2{
+    -fx-background-color: violet;
+}
+
+#pane3{
+    -fx-background-color: yellow;
+}
+
+#pane4{
+    -fx-background-color: greenyellow;
+}
+
+#pane5{
+    -fx-background-color: blue;
 }
