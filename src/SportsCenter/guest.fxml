@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
@@ -9,20 +10,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SportsCenter.welcomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SportsCenter.guestController">
    <children>
-      <HBox prefHeight="500.0" prefWidth="800.0">
+      <HBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0">
          <children>
-            <VBox id="vbox_grey" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <VBox id="vbox_grey" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Pane prefHeight="20.0" prefWidth="200.0" />
-                  <ImageView fx:id="imgLogout" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#pressLogout" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgLogout" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#pressLogout" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
                         <Image url="@images/logout.png" />
                      </image>
+                     <VBox.margin>
+                        <Insets bottom="300.0" top="10.0" />
+                     </VBox.margin>
                   </ImageView>
-                  <Pane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                  <ImageView fitHeight="100.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
                         <Image url="@images/logo.png" />
                      </image>
@@ -35,42 +37,51 @@
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox1" alignment="CENTER" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane1" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox2" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane2" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox1" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane3" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox2" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane4" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox1" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane5" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                            </children>
                         </VBox>
                      </content>
@@ -79,42 +90,51 @@
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox1" alignment="CENTER" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane1" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox2" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane2" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox1" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane3" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox2" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane4" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <HBox id="hbox1" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
                                     <Pane id="pane5" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
                               </HBox>
-                              <Pane prefHeight="20.0" prefWidth="200.0" />
                            </children>
                         </VBox>
                      </content>
