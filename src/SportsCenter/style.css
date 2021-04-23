@@ -129,7 +129,7 @@ and open the template in the editor.
 }
 
 #pane1{
-    -fx-background-color: purple;
+    -fx-background-color: #93329e;
 }
 
 #pane2{
@@ -145,5 +145,5 @@ and open the template in the editor.
 }
 
 #pane5{
-    -fx-background-color: blue;
+    -fx-background-color: #48BF91;
 }
