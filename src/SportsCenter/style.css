@@ -103,15 +103,24 @@ and open the template in the editor.
     -fx-border-radius:10 10 10 10;
     -fx-text-fill: #a5b9b9 ;
 }
+
 #passreset.button:hover {
     -fx-text-fill: red;
 }
 
-#tempbtn{
+#readmorebtn{
     -fx-background-color: null;
-    -fx-font-size: 12;
-    -fx-border-color:#464246;
-    -fx-text-fill: black;
+    -fx-border-color: #464246;
+    -fx-border-radius: 5;
+    -fx-border-width: 2;
+    -fx-border-style: solid outside line-cap round ;
+    -fx-text-fill: #464246 ;
+    -fx-font-weight: bold;
+}
+
+#readmorebtn.button:hover {
+    -fx-background-color: #464246;
+    -fx-text-fill: #a5b9b9;
 }
 
 /***********Labels***********/
@@ -128,8 +137,16 @@ and open the template in the editor.
     -fx-text-fill: red;
 }
 
+#white{
+    -fx-text-fill: #e8e8e8;
+}
+
+#grey{
+    -fx-text-fill: #777777;
+}
+
 #black{
-    -fx-text-fill: black;
+    -fx-text-fill: #464246;
 }
 
 /***********Empty Class***********/
@@ -144,10 +161,6 @@ and open the template in the editor.
 
 #hbox2{
     -fx-background-color: #a5b9b9;
-}
-
-#vbox_grey{
-    -fx-background-color: #dadada;
 }
 
 #pane1{
