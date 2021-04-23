@@ -55,6 +55,17 @@ and open the template in the editor.
      -fx-background-color: #cabcb0;
      -fx-background-radius: 0 10 10 0;
 }
+
+#midtab{
+     -fx-border-radius:0 0 0 0;
+     -fx-border-width: 2;
+}
+
+#midtab:selected{
+     -fx-background-color: #cabcb0;
+     -fx-background-radius: 0 0 0 0;
+}
+
 .tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {-fx-border-color: null}
 
 /***********Buttons***********/
