@@ -48,7 +48,7 @@
                                        <children>
                                           <TextField alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="213.0" promptText="Username" />
                                           <PasswordField alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="214.0" promptText="Password" />
-                                          <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="210.0" text="Login" />
+                                          <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#pressLogin" prefHeight="26.0" prefWidth="210.0" text="Login" />
                                           <Button id="passreset" mnemonicParsing="false" text="Forgot your password?" />
                                           <Button id="guestbtn" fx:id="btnGuest" mnemonicParsing="false" onAction="#pressGuest" prefHeight="5.0" prefWidth="133.0" text="Continue as Guest!" underline="true" />
                                        </children>
