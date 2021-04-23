@@ -107,6 +107,13 @@ and open the template in the editor.
     -fx-text-fill: red;
 }
 
+#tempbtn{
+    -fx-background-color: null;
+    -fx-font-size: 12;
+    -fx-border-color:#464246;
+    -fx-text-fill: black;
+}
+
 /***********Labels***********/
 
 .label{
@@ -119,6 +126,10 @@ and open the template in the editor.
 
 #loginstatus{
     -fx-text-fill: red;
+}
+
+#black{
+    -fx-text-fill: black;
 }
 
 /***********Empty Class***********/
