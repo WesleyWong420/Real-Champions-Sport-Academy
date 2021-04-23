@@ -8,8 +8,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -17,7 +20,7 @@
    <children>
       <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox id="vbox_grey" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
                   <ImageView fx:id="imgLogout" fitHeight="100.0" fitWidth="134.0" onMouseClicked="#pressLogout" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
@@ -91,14 +94,14 @@
                                        <children>
                                           <VBox id="hbox2" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <HBox prefHeight="50.0" prefWidth="335.0">
+                                                <HBox prefHeight="60.0" prefWidth="334.0">
                                                    <children>
-                                                      <Label id="black" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="2 Hours">
+                                                      <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Basketball" textFill="WHITE">
                                                          <font>
-                                                            <Font name="System Bold" size="18.0" />
+                                                            <Font name="System Bold" size="24.0" />
                                                          </font>
                                                          <HBox.margin>
-                                                            <Insets left="10.0" top="5.0" />
+                                                            <Insets right="10.0" top="5.0" />
                                                          </HBox.margin>
                                                       </Label>
                                                       <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -110,57 +113,92 @@
                                                          </HBox.margin>
                                                       </ImageView>
                                                    </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
                                                 </HBox>
-                                                <VBox prefHeight="111.0" prefWidth="335.0">
+                                                <GridPane hgap="20.0" prefHeight="49.0" prefWidth="195.0">
+                                                  <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="153.2000244140625" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="51.5999755859375" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="85.59998779296876" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
                                                    <children>
-                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="336.0" text="Basketball" VBox.vgrow="ALWAYS">
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
                                                          <font>
-                                                            <Font name="System Bold" size="24.0" />
+                                                            <Font name="System Bold" size="14.0" />
                                                          </font>
-                                                         <VBox.margin>
-                                                            <Insets right="10.0" top="5.0" />
-                                                         </VBox.margin></Label>
-                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="338.0" text="80 MYR" VBox.vgrow="ALWAYS">
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                                          <font>
-                                                            <Font name="System Bold" size="18.0" />
+                                                            <Font name="System Bold" size="12.0" />
                                                          </font>
-                                                         <VBox.margin>
-                                                            <Insets right="10.0" />
-                                                         </VBox.margin></Label>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
                                                    </children>
-                                                </VBox>
-                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </VBox.margin>
+                                                </GridPane>
+                                                <HBox prefHeight="100.0" prefWidth="334.0">
                                                    <children>
-                                                      <Pane prefHeight="72.0" prefWidth="159.0" />
+                                                      <Pane prefHeight="93.0" prefWidth="169.0" />
                                                       <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
-                                                            <Insets right="10.0" top="20.0" />
+                                                            <Insets right="10.0" top="27.0" />
                                                          </HBox.margin>
                                                          <image>
                                                             <Image url="@images/info.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Button id="tempbtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="122.0" text="Enroll" HBox.hgrow="ALWAYS">
+                                                      <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
-                                                            <Insets top="15.0" />
+                                                            <Insets top="25.0" />
                                                          </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
                                                       </Button>
-                                                   </children></HBox>
+                                                   </children>
+                                                </HBox>
                                              </children>
                                              <HBox.margin>
-                                                <Insets right="10.0" />
+                                                <Insets />
                                              </HBox.margin>
                                           </VBox>
                                           <VBox id="hbox1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <HBox prefHeight="50.0" prefWidth="335.0">
+                                                <HBox prefHeight="60.0" prefWidth="334.0">
                                                    <children>
-                                                      <Label id="black" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="2 Hours">
+                                                      <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Badminton" textFill="WHITE">
                                                          <font>
-                                                            <Font name="System Bold" size="18.0" />
+                                                            <Font name="System Bold" size="24.0" />
                                                          </font>
                                                          <HBox.margin>
-                                                            <Insets left="10.0" top="5.0" />
+                                                            <Insets right="10.0" top="5.0" />
                                                          </HBox.margin>
                                                       </Label>
                                                       <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -172,48 +210,80 @@
                                                          </HBox.margin>
                                                       </ImageView>
                                                    </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
                                                 </HBox>
-                                                <VBox prefHeight="111.0" prefWidth="335.0">
+                                                <GridPane hgap="20.0" prefHeight="49.0" prefWidth="195.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="153.2000244140625" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="51.5999755859375" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="85.59998779296876" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
                                                    <children>
-                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="336.0" text="Badminton" VBox.vgrow="ALWAYS">
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
                                                          <font>
-                                                            <Font name="System Bold" size="24.0" />
+                                                            <Font name="System Bold" size="14.0" />
                                                          </font>
-                                                         <VBox.margin>
-                                                            <Insets right="10.0" top="5.0" />
-                                                         </VBox.margin>
                                                       </Label>
-                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="51.0" prefWidth="338.0" text="80 MYR" VBox.vgrow="ALWAYS">
+                                                      <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                                          <font>
-                                                            <Font name="System Bold" size="18.0" />
+                                                            <Font name="System Bold" size="12.0" />
                                                          </font>
-                                                         <VBox.margin>
-                                                            <Insets right="10.0" />
-                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
                                                       </Label>
                                                    </children>
-                                                </VBox>
-                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <VBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </VBox.margin>
+                                                </GridPane>
+                                                <HBox prefHeight="100.0" prefWidth="334.0">
                                                    <children>
-                                                      <Pane prefHeight="72.0" prefWidth="159.0" />
+                                                      <Pane prefHeight="93.0" prefWidth="169.0" />
                                                       <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
-                                                            <Insets right="10.0" top="20.0" />
+                                                            <Insets right="10.0" top="27.0" />
                                                          </HBox.margin>
                                                          <image>
                                                             <Image url="@images/info.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Button id="tempbtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="38.0" prefWidth="122.0" text="Enroll" HBox.hgrow="ALWAYS">
+                                                      <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
                                                          <HBox.margin>
-                                                            <Insets top="15.0" />
+                                                            <Insets top="25.0" />
                                                          </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
                                                       </Button>
                                                    </children>
                                                 </HBox>
                                              </children>
                                              <HBox.margin>
-                                                <Insets />
+                                                <Insets left="10.0" />
                                              </HBox.margin>
                                           </VBox>
                                        </children>
@@ -228,22 +298,299 @@
                                        <padding>
                                           <Insets bottom="10.0" left="10.0" right="10.0" />
                                        </padding>
-                                       <children>
-                                          <HBox id="hbox1" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                                          <HBox id="hbox2" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                                             <HBox.margin>
-                                                <Insets left="10.0" />
-                                             </HBox.margin>
-                                          </HBox>
-                                          <HBox id="hbox1" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
-                                             <HBox.margin>
-                                                <Insets left="10.0" />
-                                             </HBox.margin>
-                                          </HBox>
-                                       </children>
                                        <VBox.margin>
                                           <Insets />
                                        </VBox.margin>
+                                       <children>
+                                          <VBox id="hbox1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <HBox prefHeight="60.0" prefWidth="334.0">
+                                                   <children>
+                                                      <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Track &amp; Field" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="24.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@images/trackandfield.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <GridPane hgap="5.0" prefHeight="49.0" prefWidth="195.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="70.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="54.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="84.39999542236328" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </VBox.margin>
+                                                </GridPane>
+                                                <HBox prefHeight="100.0" prefWidth="334.0">
+                                                   <children>
+                                                      <Pane prefHeight="82.0" prefWidth="56.0" />
+                                                      <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" top="27.0" />
+                                                         </HBox.margin>
+                                                         <image>
+                                                            <Image url="@images/info.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="25.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox id="hbox2" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <HBox prefHeight="60.0" prefWidth="334.0">
+                                                   <children>
+                                                      <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Swimming" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="24.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@images/swimming.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <GridPane hgap="5.0" prefHeight="49.0" prefWidth="195.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="70.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="54.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="84.39999542236328" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </VBox.margin>
+                                                </GridPane>
+                                                <HBox prefHeight="100.0" prefWidth="334.0">
+                                                   <children>
+                                                      <Pane prefHeight="82.0" prefWidth="56.0" />
+                                                      <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" top="27.0" />
+                                                         </HBox.margin>
+                                                         <image>
+                                                            <Image url="@images/info.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="25.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox id="hbox1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <HBox prefHeight="60.0" prefWidth="334.0">
+                                                   <children>
+                                                      <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Soccer" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="24.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@images/soccer.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <GridPane hgap="5.0" prefHeight="49.0" prefWidth="195.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="70.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="54.2" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="84.39999542236328" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets right="10.0" />
+                                                   </VBox.margin>
+                                                </GridPane>
+                                                <HBox prefHeight="82.0" prefWidth="219.0">
+                                                   <children>
+                                                      <Pane prefHeight="82.0" prefWidth="56.0" />
+                                                      <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" top="27.0" />
+                                                         </HBox.margin>
+                                                         <image>
+                                                            <Image url="@images/info.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets top="25.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Button>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
                                     </HBox>
                                  </children>
                               </VBox>
