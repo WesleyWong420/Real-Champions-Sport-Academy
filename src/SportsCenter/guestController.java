@@ -1,46 +1,51 @@
 package SportsCenter;
 
 import java.awt.event.ActionEvent;
+import java.util.HashSet;
+import java.util.Set;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
-import javafx.scene.control.Dialog;
 
 
 public class guestController {
     
+    // Guest - Sports Tab
     @FXML
-    private ImageView imgLogout, imgSport1Logo, imgSport2Logo, imgSport3Logo, imgSport4Logo, imgSport5Logo;
+    private ImageView imgLogout, imgSport1Logo_SportsTab, imgSport2Logo_SportsTab, imgSport3Logo_SportsTab, imgSport4Logo_SportsTab, imgSport5Logo_SportsTab;
     @FXML
-    private Button btnSport1Enroll, btnSport2Enroll, btnSport3Enroll, btnSport4Enroll, btnSport5Enroll;
+    private Button btnSport1Enroll_SportsTab, btnSport2Enroll_SportsTab, btnSport3Enroll_SportsTab, btnSport4Enroll_SportsTab, btnSport5Enroll_SportsTab;
     @FXML
-    private Label lblSport1Name, lblSport1Duration, lblSport1Fee, lblSport1Coach; 
+    private Label lblSport1Name_SportsTab, lblSport1Duration_SportsTab, lblSport1Fee_SportsTab, lblSport1Coach_SportsTab; 
     @FXML
-    private Label lblSport2Name, lblSport2Duration, lblSport2Fee, lblSport2Coach;
+    private Label lblSport2Name_SportsTab, lblSport2Duration_SportsTab, lblSport2Fee_SportsTab, lblSport2Coach_SportsTab;
     @FXML
-    private Label lblSport3Name, lblSport3Duration, lblSport3Fee, lblSport3Coach;
+    private Label lblSport3Name_SportsTab, lblSport3Duration_SportsTab, lblSport3Fee_SportsTab, lblSport3Coach_SportsTab;
     @FXML
-    private Label lblSport4Name, lblSport4Duration, lblSport4Fee, lblSport4Coach;
+    private Label lblSport4Name_SportsTab, lblSport4Duration_SportsTab, lblSport4Fee_SportsTab, lblSport4Coach_SportsTab;
     @FXML
-    private Label lblSport5Name, lblSport5Duration, lblSport5Fee, lblSport5Coach;
+    private Label lblSport5Name_SportsTab, lblSport5Duration_SportsTab, lblSport5Fee_SportsTab, lblSport5Coach_SportsTab;
     
+    // Guest - Schedule Tab
     @FXML
-    private Label lblSport1Name2, lblSport1Time, lblSport1Date, lblSport1Location, lblSport1Coach2; 
+    private Label lblSport1Name_ScheduleTab, lblSport1Time_ScheduleTab, lblSport1Date_ScheduleTab, lblSport1Location_ScheduleTab, lblSport1Coach_ScheduleTab; 
     @FXML
-    private Label lblSport2Name2, lblSport2Time, lblSport2Date, lblSport2Location, lblSport2Coach2; 
+    private Label lblSport2Name_ScheduleTab, lblSport2Time_ScheduleTab, lblSport2Date_ScheduleTab, lblSport2Location_ScheduleTab, lblSport2Coach_ScheduleTab; 
     @FXML
-    private Label lblSport3Name2, lblSport3Time, lblSport3Date, lblSport3Location, lblSport3Coach2; 
+    private Label lblSport3Name_ScheduleTab, lblSport3Time_ScheduleTab, lblSport3Date_ScheduleTab, lblSport3Location_ScheduleTab, lblSport3Coach_ScheduleTab; 
     @FXML
-    private Label lblSport4Name2, lblSport4Time, lblSport4Date, lblSport4Location, lblSport4Coach2; 
+    private Label lblSport4Name_ScheduleTab, lblSport4Time_ScheduleTab, lblSport4Date_ScheduleTab, lblSport4Location_ScheduleTab, lblSport4Coach_ScheduleTab; 
     @FXML
-    private Label lblSport5Name2, lblSport5Time, lblSport5Date, lblSport5Location, lblSport5Coach2; 
+    private Label lblSport5Name_ScheduleTab, lblSport5Time_ScheduleTab, lblSport5Date_ScheduleTab, lblSport5Location_ScheduleTab, lblSport5Coach_ScheduleTab; 
 
     public void initialize() {
     }
@@ -53,39 +58,12 @@ public class guestController {
         window.setTitle("Real Champions Sports Academy");
     }
     
-    static void showDialog(Button button){
-        Dialog<String> dialog = new Dialog<String>();
-        dialog.setTitle("Error");
-        ButtonType type = new ButtonType("Ok", ButtonData.OK_DONE);
-        dialog.setContentText("Please login to enroll in a sport.");
-        dialog.getDialogPane().getButtonTypes().add(type);
-        button.setOnAction(e -> {
-         dialog.showAndWait();
-        });
-    }
-    
     @FXML
-    private void pressEnrollSport1(javafx.event.ActionEvent event) throws Exception {
-        showDialog(btnSport1Enroll);
-    }
-    
-    @FXML
-    private void pressEnrollSport2(javafx.event.ActionEvent event) throws Exception {
-        showDialog(btnSport2Enroll);
-    }
-    
-    @FXML
-    private void pressEnrollSport3(javafx.event.ActionEvent event) throws Exception {
-        showDialog(btnSport3Enroll);
-    }
-    
-    @FXML
-    private void pressEnrollSport4(javafx.event.ActionEvent event) throws Exception {
-        showDialog(btnSport4Enroll);
-    }
-    
-    @FXML
-    private void pressEnrollSport5(javafx.event.ActionEvent event) throws Exception {
-        showDialog(btnSport5Enroll);
+    private void pressEnrollSport() throws Exception {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Access Denied!");
+        String s = "Please login to enroll in a sport.";
+        alert.setContentText(s);
+        alert.showAndWait(); 
     }
 }
