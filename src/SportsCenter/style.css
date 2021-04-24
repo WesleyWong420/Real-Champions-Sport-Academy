@@ -137,7 +137,23 @@ and open the template in the editor.
     -fx-text-fill: red;
 }
 
-#white{
+#white16{
+    -fx-text-fill: #e8e8e8;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+#clickable_white16{
+    -fx-text-fill: #e8e8e8;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+#clickable_white16:hover{
+    -fx-text-fill: #c30101;
+}
+
+#white24{
     -fx-text-fill: #e8e8e8;
     -fx-font-weight: bold;
     -fx-font-size: 24;
@@ -147,6 +163,16 @@ and open the template in the editor.
     -fx-text-fill: #777777;
     -fx-font-weight: bold;
     -fx-font-size: 12;
+}
+
+#clickable_grey12{
+    -fx-text-fill: #777777;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+#clickable_grey12:hover{
+    -fx-text-fill: #c30101;
 }
 
 #grey22{
@@ -165,6 +191,16 @@ and open the template in the editor.
     -fx-text-fill: #464246;
     -fx-font-weight: bold;
     -fx-font-size: 16;
+}
+
+#clickable_black16{
+    -fx-text-fill: #464246;
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
+#clickable_black16:hover{
+    -fx-text-fill: #c30101;
 }
 
 /***********Empty Class***********/
@@ -199,4 +235,12 @@ and open the template in the editor.
 
 #pane5{
     -fx-background-color: #48BF91;
+}
+
+#hbox3{
+    -fx-background-color: null;
+}
+
+#hbox3:hover{
+    -fx-background-color: #aeaeae;
 }
