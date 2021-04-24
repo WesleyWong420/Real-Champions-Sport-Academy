@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SportsCenter.studentController">
    <children>
@@ -35,46 +34,194 @@
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="hboxSport1" alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <HBox id="hbox1" alignment="CENTER" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
+                                    <HBox id="hbox1" alignment="CENTER" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label id="grey22" fx:id="lblSport1Name2" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Badminton " GridPane.columnIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets top="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label id="black16" fx:id="lblSport1Time" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport1Location" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport1Coach2" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport1Date" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" top="5.0" />
+                                             </HBox.margin>
+                                          </GridPane>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </HBox>
                                     <Pane id="pane1" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="hboxSport2" alignment="CENTER" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <HBox id="hbox2" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
-                                    <Pane id="pane2" disable="true" opacity="0.5" prefHeight="200.0" prefWidth="20.0" />
+                                    <HBox id="hbox2" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label id="grey22" fx:id="lblSport2Name2" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Basketball" GridPane.columnIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets top="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label id="black16" fx:id="lblSport2Time" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport2Location" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport2Coach2" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport2Date" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </GridPane>
+                                       </children>
+                                    </HBox>
+                                    <Pane id="pane2" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="hboxSport3" alignment="CENTER" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <HBox id="hbox1" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
-                                    <Pane id="pane3" disable="true" opacity="0.5" prefHeight="200.0" prefWidth="20.0" />
+                                    <HBox id="hbox1" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label id="grey22" fx:id="lblSport3Name2" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Soccer" GridPane.columnIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets top="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label id="black16" fx:id="lblSport3Time" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport3Location" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport3Coach2" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport3Date" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </GridPane>
+                                       </children>
+                                    </HBox>
+                                    <Pane id="pane3" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="hboxSport4" alignment="CENTER" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <HBox id="hbox2" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
-                                    <Pane id="pane4" disable="true" opacity="0.5" prefHeight="200.0" prefWidth="20.0" />
+                                    <HBox id="hbox2" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label id="grey22" fx:id="lblSport4Name2" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Swimming" GridPane.columnIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets top="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label id="black16" fx:id="lblSport4Time" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Location" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Pool 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Coach2" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Date" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </GridPane>
+                                       </children>
+                                    </HBox>
+                                    <Pane id="pane4" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="hboxSport5" alignment="CENTER" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <HBox id="hbox1" disable="true" opacity="0.5" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER" />
-                                    <Pane id="pane5" disable="true" opacity="0.5" prefHeight="200.0" prefWidth="20.0" />
+                                    <HBox id="hbox1" prefHeight="100.0" prefWidth="640.0" HBox.hgrow="NEVER">
+                                       <children>
+                                          <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Label id="grey22" fx:id="lblSport5Name2" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Track &amp; Field" GridPane.columnIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets top="5.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label id="black16" fx:id="lblSport5Time" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Location" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Track 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Coach2" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Date" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </GridPane>
+                                       </children>
+                                    </HBox>
+                                    <Pane id="pane5" prefHeight="200.0" prefWidth="20.0" />
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
@@ -90,19 +237,16 @@
                            <children>
                               <HBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="219.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <VBox id="hbox2" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <VBox id="hbox2" fx:id="vboxSport2" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                        <children>
                                           <HBox prefHeight="60.0" prefWidth="334.0">
                                              <children>
-                                                <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Basketball" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="24.0" />
-                                                   </font>
+                                                <Label id="white" fx:id="lblSport2Name" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Basketball">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgSport2Logo" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/basketball.png" />
                                                    </image>
@@ -126,36 +270,12 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="95.0" text="🕒 Duration" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport2Duration" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="💵 Fee" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport2Fee" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport2Coach" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets right="10.0" />
@@ -163,22 +283,11 @@
                                           </GridPane>
                                           <HBox prefHeight="100.0" prefWidth="334.0">
                                              <children>
-                                                <Pane prefHeight="93.0" prefWidth="169.0" />
-                                                <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                                   <HBox.margin>
-                                                      <Insets right="10.0" top="27.0" />
-                                                   </HBox.margin>
-                                                   <image>
-                                                      <Image url="@images/info.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
+                                                <Pane prefHeight="93.0" prefWidth="211.0" />
+                                                <Button id="enrollbtn" fx:id="btnSport2Enroll" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="ENROLL" HBox.hgrow="ALWAYS">
                                                    <HBox.margin>
                                                       <Insets top="25.0" />
                                                    </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
                                                 </Button>
                                              </children>
                                           </HBox>
@@ -187,19 +296,16 @@
                                           <Insets />
                                        </HBox.margin>
                                     </VBox>
-                                    <VBox id="hbox1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <VBox id="hbox1" fx:id="vboxSport1" disable="true" nodeOrientation="RIGHT_TO_LEFT" opacity="0.5" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                        <children>
                                           <HBox prefHeight="60.0" prefWidth="334.0">
                                              <children>
-                                                <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Badminton" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="24.0" />
-                                                   </font>
+                                                <Label id="white" fx:id="lblSport1Name" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Badminton">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgSport1Logo" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/badminton.png" />
                                                    </image>
@@ -223,36 +329,12 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="95.0" text="🕒 Duration " GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport1Duration" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="💵 Fee" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport1Fee" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫 " GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport1Coach" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets right="10.0" />
@@ -260,22 +342,11 @@
                                           </GridPane>
                                           <HBox prefHeight="100.0" prefWidth="334.0">
                                              <children>
-                                                <Pane prefHeight="93.0" prefWidth="169.0" />
-                                                <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                                                   <HBox.margin>
-                                                      <Insets right="10.0" top="27.0" />
-                                                   </HBox.margin>
-                                                   <image>
-                                                      <Image url="@images/info.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
+                                                <Pane prefHeight="93.0" prefWidth="211.0" />
+                                                <Button id="enrollbtn" fx:id="btnSport1Enroll" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="ENROLLED" HBox.hgrow="ALWAYS">
                                                    <HBox.margin>
                                                       <Insets top="25.0" />
                                                    </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
                                                 </Button>
                                              </children>
                                           </HBox>
@@ -300,19 +371,16 @@
                                     <Insets />
                                  </VBox.margin>
                                  <children>
-                                    <VBox id="hbox1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <VBox id="hbox1" fx:id="vboxSport5" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <HBox prefHeight="60.0" prefWidth="334.0">
+                                          <HBox prefHeight="49.0" prefWidth="219.0">
                                              <children>
-                                                <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Track &amp; Field" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="24.0" />
-                                                   </font>
+                                                <Label id="white" fx:id="lblSport5Name" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Track &amp; Field">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgSport5Logo" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/trackandfield.png" />
                                                    </image>
@@ -325,88 +393,54 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <GridPane hgap="5.0" prefHeight="49.0" prefWidth="195.0">
+                                          <GridPane prefHeight="102.0" prefWidth="209.0" vgap="10.0">
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="70.2" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="54.2" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="84.39999542236328" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="87.20001220703125" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="95.0" text="🕒 Duration" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport5Duration" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="50.0" text="💵 Fee" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport5Fee" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport5Coach" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets right="10.0" />
                                              </VBox.margin>
                                           </GridPane>
-                                          <HBox prefHeight="100.0" prefWidth="334.0">
+                                          <HBox prefHeight="51.0" prefWidth="219.0">
                                              <children>
-                                                <Pane prefHeight="82.0" prefWidth="56.0" />
-                                                <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                <Pane prefHeight="51.0" prefWidth="92.0" />
+                                                <Button id="enrollbtn" fx:id="btnSport5Enroll" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="ENROLL" HBox.hgrow="ALWAYS">
                                                    <HBox.margin>
-                                                      <Insets right="10.0" top="27.0" />
+                                                      <Insets top="15.0" />
                                                    </HBox.margin>
-                                                   <image>
-                                                      <Image url="@images/info.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
-                                                   <HBox.margin>
-                                                      <Insets top="25.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
                                                 </Button>
                                              </children>
                                           </HBox>
                                        </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
                                     </VBox>
-                                    <VBox id="hbox2" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <VBox id="hbox2" fx:id="vboxSport4" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <HBox prefHeight="60.0" prefWidth="334.0">
+                                          <HBox prefHeight="49.0" prefWidth="219.0">
                                              <children>
-                                                <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Swimming" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="24.0" />
-                                                   </font>
+                                                <Label id="white" fx:id="lblSport4Name" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Swimming">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgSport4Logo" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/swimming.png" />
                                                    </image>
@@ -419,70 +453,36 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <GridPane hgap="5.0" prefHeight="49.0" prefWidth="195.0">
+                                          <GridPane prefHeight="102.0" prefWidth="209.0" vgap="10.0">
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="70.2" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="54.2" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="84.39999542236328" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="87.20001220703125" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="95.0" text="🕒 Duration" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport4Duration" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="50.0" text="💵 Fee" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport4Fee" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport4Coach" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets right="10.0" />
                                              </VBox.margin>
                                           </GridPane>
-                                          <HBox prefHeight="100.0" prefWidth="334.0">
+                                          <HBox prefHeight="51.0" prefWidth="219.0">
                                              <children>
-                                                <Pane prefHeight="82.0" prefWidth="56.0" />
-                                                <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                <Pane prefHeight="51.0" prefWidth="92.0" />
+                                                <Button id="enrollbtn" fx:id="btnSport4Enroll" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="ENROLL" HBox.hgrow="ALWAYS">
                                                    <HBox.margin>
-                                                      <Insets right="10.0" top="27.0" />
+                                                      <Insets top="15.0" />
                                                    </HBox.margin>
-                                                   <image>
-                                                      <Image url="@images/info.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
-                                                   <HBox.margin>
-                                                      <Insets top="25.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
                                                 </Button>
                                              </children>
                                           </HBox>
@@ -491,19 +491,16 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </VBox>
-                                    <VBox id="hbox1" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <VBox id="hbox1" fx:id="vboxSport3" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                                        <children>
-                                          <HBox prefHeight="60.0" prefWidth="334.0">
+                                          <HBox prefHeight="49.0" prefWidth="219.0">
                                              <children>
-                                                <Label id="white" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Soccer" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="System Bold" size="24.0" />
-                                                   </font>
+                                                <Label id="white" fx:id="lblSport3Name" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Soccer">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
-                                                <ImageView fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="imgSport3Logo" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@images/soccer.png" />
                                                    </image>
@@ -516,70 +513,36 @@
                                                 <Insets bottom="10.0" />
                                              </VBox.margin>
                                           </HBox>
-                                          <GridPane hgap="5.0" prefHeight="49.0" prefWidth="195.0">
+                                          <GridPane id="grey12" prefHeight="102.0" prefWidth="209.0" vgap="10.0">
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="10.0" prefWidth="70.2" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.8000091552734" minWidth="0.0" prefWidth="54.2" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="84.39999542236328" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="335.2" minWidth="2.399990844726574" prefWidth="87.20001220703125" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="33.0" text="Time" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" textFill="#9e9e9e" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Fee" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="black" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Coach" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label id="grey" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" textFill="#9e9e9e" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
-                                                </Label>
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="22.0" prefWidth="95.0" text="🕒 Duration" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport3Duration" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="50.0" text="💵 Fee" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport3Fee" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                                                <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                <Label id="grey12" fx:id="lblSport3Coach" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                                              </children>
                                              <VBox.margin>
                                                 <Insets right="10.0" />
                                              </VBox.margin>
                                           </GridPane>
-                                          <HBox prefHeight="82.0" prefWidth="219.0">
+                                          <HBox prefHeight="51.0" prefWidth="219.0">
                                              <children>
-                                                <Pane prefHeight="82.0" prefWidth="56.0" />
-                                                <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                                <Pane prefHeight="51.0" prefWidth="92.0" />
+                                                <Button id="enrollbtn" fx:id="btnSport3Enroll" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="ENROLL" HBox.hgrow="ALWAYS">
                                                    <HBox.margin>
-                                                      <Insets right="10.0" top="27.0" />
+                                                      <Insets top="15.0" />
                                                    </HBox.margin>
-                                                   <image>
-                                                      <Image url="@images/info.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button id="readmorebtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="33.0" prefWidth="110.0" text="READ MORE" HBox.hgrow="ALWAYS">
-                                                   <HBox.margin>
-                                                      <Insets top="25.0" />
-                                                   </HBox.margin>
-                                                   <font>
-                                                      <Font name="System Bold" size="12.0" />
-                                                   </font>
                                                 </Button>
                                              </children>
                                           </HBox>
