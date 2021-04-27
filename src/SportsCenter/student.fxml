@@ -51,7 +51,7 @@
                                                 <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="grey22" fx:id="lblSport1Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Badminton " GridPane.columnIndex="3">
+                                                <Label id="grey22" fx:id="lblSport1Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Sport 1" GridPane.columnIndex="3">
                                                    <GridPane.margin>
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
@@ -92,7 +92,7 @@
                                                 <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="grey22" fx:id="lblSport2Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Basketball" GridPane.columnIndex="3">
+                                                <Label id="grey22" fx:id="lblSport2Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Sport 2" GridPane.columnIndex="3">
                                                    <GridPane.margin>
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
@@ -130,7 +130,7 @@
                                                 <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="grey22" fx:id="lblSport3Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Soccer" GridPane.columnIndex="3">
+                                                <Label id="grey22" fx:id="lblSport3Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Sport 3" GridPane.columnIndex="3">
                                                    <GridPane.margin>
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
@@ -168,13 +168,13 @@
                                                 <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="grey22" fx:id="lblSport4Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Swimming" GridPane.columnIndex="3">
+                                                <Label id="grey22" fx:id="lblSport4Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Sport 4" GridPane.columnIndex="3">
                                                    <GridPane.margin>
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
                                                 <Label id="black16" fx:id="lblSport4Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport4Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Pool 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label id="clickable_black16" fx:id="lblSport4Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
                                                 <Label id="black16" fx:id="lblSport4Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                              </children>
@@ -206,13 +206,13 @@
                                                 <RowConstraints maxHeight="51.999991989135744" minHeight="10.0" prefHeight="44.59998168945313" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Label id="grey22" fx:id="lblSport5Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Track &amp; Field" GridPane.columnIndex="3">
+                                                <Label id="grey22" fx:id="lblSport5Name_ScheduleTab" alignment="BOTTOM_RIGHT" prefHeight="32.0" prefWidth="284.0" text="Sport 5" GridPane.columnIndex="3">
                                                    <GridPane.margin>
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
                                                 <Label id="black16" fx:id="lblSport5Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport5Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Track 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                                 <Label id="clickable_black16" fx:id="lblSport5Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
                                                 <Label id="black16" fx:id="lblSport5Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                              </children>
@@ -242,14 +242,14 @@
                                        <children>
                                           <HBox prefHeight="60.0" prefWidth="334.0">
                                              <children>
-                                                <Label id="white24" fx:id="lblSport2Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Basketball">
+                                                <Label id="white24" fx:id="lblSport2Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Sport 2">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
                                                 <ImageView fx:id="imgSport2Logo_SportsTab" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@images/basketball.png" />
+                                                      <Image url="@images/logo.png" />
                                                    </image>
                                                    <HBox.margin>
                                                       <Insets right="5.0" top="5.0" />
@@ -301,14 +301,14 @@
                                        <children>
                                           <HBox prefHeight="60.0" prefWidth="334.0">
                                              <children>
-                                                <Label id="white24" fx:id="lblSport1Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Badminton">
+                                                <Label id="white24" fx:id="lblSport1Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Sport 1">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
                                                 <ImageView fx:id="imgSport1Logo_SportsTab" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@images/badminton.png" />
+                                                      <Image url="@images/logo.png" />
                                                    </image>
                                                    <HBox.margin>
                                                       <Insets right="5.0" top="5.0" />
@@ -376,14 +376,14 @@
                                        <children>
                                           <HBox prefHeight="49.0" prefWidth="219.0">
                                              <children>
-                                                <Label id="white24" fx:id="lblSport5Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Track &amp; Field">
+                                                <Label id="white24" fx:id="lblSport5Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Sport 5">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
                                                 <ImageView fx:id="imgSport5Logo_SportsTab" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@images/trackandfield.png" />
+                                                      <Image url="@images/logo.png" />
                                                    </image>
                                                    <HBox.margin>
                                                       <Insets right="5.0" top="5.0" />
@@ -436,14 +436,14 @@
                                        <children>
                                           <HBox prefHeight="49.0" prefWidth="219.0">
                                              <children>
-                                                <Label id="white24" fx:id="lblSport4Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Swimming">
+                                                <Label id="white24" fx:id="lblSport4Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Sport 4">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
                                                 <ImageView fx:id="imgSport4Log_SportsTabo" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@images/swimming.png" />
+                                                      <Image url="@images/logo.png" />
                                                    </image>
                                                    <HBox.margin>
                                                       <Insets right="5.0" top="5.0" />
@@ -496,14 +496,14 @@
                                        <children>
                                           <HBox prefHeight="49.0" prefWidth="219.0">
                                              <children>
-                                                <Label id="white24" fx:id="lblSport3Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Soccer">
+                                                <Label id="white24" fx:id="lblSport3Name_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="44.0" prefWidth="295.0" text="Sport 3">
                                                    <HBox.margin>
                                                       <Insets right="10.0" top="5.0" />
                                                    </HBox.margin>
                                                 </Label>
                                                 <ImageView fx:id="imgSport3Logo_SportsTab" fitHeight="39.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@images/soccer.png" />
+                                                      <Image url="@images/logo.png" />
                                                    </image>
                                                    <HBox.margin>
                                                       <Insets right="5.0" top="5.0" />
