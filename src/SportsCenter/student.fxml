@@ -2,10 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +24,7 @@
          <children>
             <VBox id="vbox_grey" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="imgLogout" fitHeight="100.0" fitWidth="134.0" onMouseClicked="#pressLogout" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                  <ImageView fitHeight="100.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
                         <Image url="@images/logo.png" />
                      </image>
@@ -31,7 +33,126 @@
             </VBox>
             <TabPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="480.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab id="firsttab" text="Schedule">
+                  <Tab id="firsttab" text="Account">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="468.0" prefWidth="700.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="35.0" prefWidth="700.0">
+                                       <children>
+                                          <Button fx:id="btnLogout" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#pressLogout" prefHeight="26.0" prefWidth="68.0" text="Logout" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Label id="white24" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="35.0" prefWidth="576.0" text="Student Profile">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Separator prefWidth="200.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="77.0" prefWidth="700.0">
+                                       <children>
+                                          <ImageView fitHeight="113.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/login.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="45.0" prefWidth="700.0">
+                                       <children>
+                                          <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label id="white13" fx:id="lblGender" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Gender" visible="false" />
+                                                <ChoiceBox id="profile-text-field" fx:id="choiceboxGender" prefHeight="46.0" prefWidth="205.0" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label id="white13" fx:id="lblUsername" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Username" visible="false" VBox.vgrow="ALWAYS" />
+                                                <TextField id="profile-text-field" fx:id="txtUsername" alignment="CENTER_RIGHT" editable="false" prefHeight="45.0" prefWidth="180.0" promptText="Username" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label id="white13" fx:id="lblUserID" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="User ID" visible="false" VBox.vgrow="ALWAYS" />
+                                                <TextField id="profile-text-field" fx:id="txtUserID" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="180.0" promptText="User ID" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin></HBox>
+                                    <HBox prefHeight="45.0" prefWidth="700.0">
+                                       <children>
+                                          <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label id="white13" fx:id="lblAddress" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Address" visible="false" />
+                                                <TextField id="profile-text-field" fx:id="txtAddress" alignment="CENTER_RIGHT" editable="false" prefHeight="45.0" prefWidth="180.0" promptText="Address" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label id="white13" fx:id="lblMobileNo" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Mobile Number" visible="false" VBox.vgrow="ALWAYS" />
+                                                <TextField id="profile-text-field" fx:id="txtMobileNo" alignment="CENTER_RIGHT" editable="false" prefHeight="45.0" prefWidth="180.0" promptText="Mobile Number" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label id="white13" fx:id="lblEmail" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Email" visible="false" VBox.vgrow="ALWAYS" />
+                                                <TextField id="profile-text-field" fx:id="txtEmail" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="180.0" promptText="Email" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="660.0">
+                                       <VBox.margin>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <Button id="boldbtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" text="Edit" HBox.hgrow="ALWAYS" />
+                                          <Button id="boldbtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="71.0" text="Save" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children></HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                <Tab id="midtab" text="Schedule">
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
@@ -580,8 +701,8 @@
                               </Separator>
                               <HBox id="hbox3" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="655.0">
                                  <children>
-                                    <Label id="white16" fx:id="lblSport1Name_HistoryTab" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="168.0" text="Badminton" />
-                                    <Label id="white16" fx:id="lblSport1Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="25th May, 2021" />
+                                    <Label id="white16" fx:id="lblSport1Name_HistoryTab" alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="168.0" text="-" />
+                                    <Label id="white16" fx:id="lblSport1Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="-" />
                                     <Label id="clickable_white16" fx:id="lblSport1Coach_HistoryTab" alignment="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="170.0" text="Alex" />
                                     <Label id="clickable_white16" fx:id="lblSport1Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="5.0/5.0" HBox.hgrow="ALWAYS" />
                                  </children>
@@ -591,8 +712,8 @@
                               </HBox>
                               <HBox id="hbox3" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="635.0">
                                  <children>
-                                    <Label id="white16" fx:id="lblSport2Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="Basketball" />
-                                    <Label id="white16" fx:id="lblSport2Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="17th May, 2021" />
+                                    <Label id="white16" fx:id="lblSport2Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="-" />
+                                    <Label id="white16" fx:id="lblSport2Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="-" />
                                     <Label id="clickable_white16" fx:id="lblSport2Coach_HistoryTab" alignment="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="170.0" text="Alex" />
                                     <Label id="clickable_white16" fx:id="lblSport2Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="-/5.0" HBox.hgrow="ALWAYS" />
                                  </children>
@@ -602,8 +723,8 @@
                               </HBox>
                               <HBox id="hbox3" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="635.0">
                                  <children>
-                                    <Label id="white16" fx:id="lblSport3Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="Soccer" />
-                                    <Label id="white16" fx:id="lblSport3Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="09th May, 2021" />
+                                    <Label id="white16" fx:id="lblSport3Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="-" />
+                                    <Label id="white16" fx:id="lblSport3Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="-" />
                                     <Label id="clickable_white16" fx:id="lblSport3Coach_HistoryTab" alignment="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="170.0" text="Alex" />
                                     <Label id="clickable_white16" fx:id="lblSport3Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="-/5.0" HBox.hgrow="ALWAYS" />
                                  </children>
@@ -613,8 +734,8 @@
                               </HBox>
                               <HBox id="hbox3" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="635.0">
                                  <children>
-                                    <Label id="white16" fx:id="lblSport4Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="Swimming" />
-                                    <Label id="white16" fx:id="lblSport4Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="28th Apr, 2021" />
+                                    <Label id="white16" fx:id="lblSport4Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="-" />
+                                    <Label id="white16" fx:id="lblSport4Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="-" />
                                     <Label id="clickable_white16" fx:id="lblSport4Coach_HistoryTab" alignment="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="170.0" text="Alex" />
                                     <Label id="clickable_white16" fx:id="lblSport4Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="-/5.0" HBox.hgrow="ALWAYS" />
                                  </children>
@@ -624,8 +745,8 @@
                               </HBox>
                               <HBox id="hbox3" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="635.0">
                                  <children>
-                                    <Label id="white16" fx:id="lblSport5Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="Track &amp; Field" />
-                                    <Label id="white16" fx:id="lblSport5Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="11th Mar, 2021" />
+                                    <Label id="white16" fx:id="lblSport5Name_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="168.0" text="-" />
+                                    <Label id="white16" fx:id="lblSport5Date_HistoryTab" alignment="CENTER" prefHeight="26.0" prefWidth="146.0" text="-" />
                                     <Label id="clickable_white16" fx:id="lblSport5Coach_HistoryTab" alignment="CENTER" onMouseClicked="#pressCoachName" prefHeight="26.0" prefWidth="170.0" text="Alex" />
                                     <Label id="clickable_white16" fx:id="lblSport5Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="-/5.0" HBox.hgrow="ALWAYS" />
                                  </children>
