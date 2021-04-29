@@ -222,7 +222,24 @@ and open the template in the editor.
     -fx-background-color: transparent;
     -fx-text-fill: #cabcb0;
 }
+
 #profile-text-field:focused {
+    -fx-border-color: #cabcb0;
+    -fx-text-fill: #cabcb0;
+}
+
+.combo-box{
+    -fx-border-color: grey;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: #cabcb0;
+}
+
+.combo-box-base .text{
+    -fx-fill: lightgray;
+}
+
+.combo-box:focused {
     -fx-border-color: #cabcb0;
     -fx-text-fill: #cabcb0;
 }
