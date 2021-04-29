@@ -2,7 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
@@ -78,13 +78,13 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblGender" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Gender" visible="false" />
-                                                <ChoiceBox id="profile-text-field" fx:id="choiceboxGender" prefHeight="46.0" prefWidth="205.0" />
+                                                <ComboBox fx:id="comboboxGender" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#mouseHello" onMouseExited="#mouseBye" prefHeight="26.0" prefWidth="242.0" promptText="Gender                                     " visibleRowCount="3" VBox.vgrow="ALWAYS" />
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblUsername" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Username" visible="false" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtUsername" alignment="CENTER_RIGHT" editable="false" prefHeight="45.0" prefWidth="180.0" promptText="Username" />
+                                                <TextField id="profile-text-field" fx:id="txtUsername" alignment="CENTER_RIGHT" onMouseClicked="#mouseHello" onMouseExited="#mouseBye" prefHeight="45.0" prefWidth="180.0" promptText="Username" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -93,7 +93,7 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblUserID" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="User ID" visible="false" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtUserID" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="180.0" promptText="User ID" />
+                                                <TextField id="profile-text-field" fx:id="txtUserID" alignment="CENTER_RIGHT" onMouseClicked="#mouseHello" onMouseExited="#mouseBye" prefHeight="45.0" prefWidth="180.0" promptText="User ID" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -108,13 +108,13 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblAddress" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Address" visible="false" />
-                                                <TextField id="profile-text-field" fx:id="txtAddress" alignment="CENTER_RIGHT" editable="false" prefHeight="45.0" prefWidth="180.0" promptText="Address" />
+                                                <TextField id="profile-text-field" fx:id="txtAddress" alignment="CENTER_RIGHT" onMouseClicked="#mouseHello" onMouseExited="#mouseBye" prefHeight="45.0" prefWidth="180.0" promptText="Address" />
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblMobileNo" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Mobile Number" visible="false" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtMobileNo" alignment="CENTER_RIGHT" editable="false" prefHeight="45.0" prefWidth="180.0" promptText="Mobile Number" />
+                                                <TextField id="profile-text-field" fx:id="txtMobileNo" alignment="CENTER_RIGHT" onMouseClicked="#mouseHello" onMouseExited="#mouseBye" prefHeight="45.0" prefWidth="180.0" promptText="Mobile Number" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -123,7 +123,7 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblEmail" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Email" visible="false" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtEmail" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="180.0" promptText="Email" />
+                                                <TextField id="profile-text-field" fx:id="txtEmail" alignment="CENTER_RIGHT" onMouseClicked="#mouseHello" onMouseExited="#mouseBye" prefHeight="45.0" prefWidth="180.0" promptText="Email" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
