@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -16,7 +15,7 @@
    <children>
       <HBox alignment="CENTER" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox id="vbox_grey" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <ImageView fitHeight="100.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                      <image>
@@ -27,7 +26,7 @@
             </VBox>
             <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="500.0" prefWidth="706.0" style="-fx-background-color: #464246;" HBox.hgrow="ALWAYS">
                <children>
-                  <VBox prefHeight="468.0" prefWidth="700.0">
+                  <VBox prefHeight="500.0" prefWidth="700.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <HBox alignment="CENTER" prefHeight="35.0" prefWidth="700.0">
                            <children>
@@ -51,7 +50,7 @@
                               <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </Separator>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="77.0" prefWidth="700.0">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="77.0" prefWidth="700.0" VBox.vgrow="NEVER">
                            <children>
                               <ImageView fitHeight="113.0" fitWidth="179.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -67,8 +66,8 @@
                            <children>
                               <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Label id="white13" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Gender" />
-                                    <ComboBox fx:id="comboboxGender" disable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="242.0" promptText="Gender                                     " visibleRowCount="2" VBox.vgrow="ALWAYS" />
+                                    <Label id="white13" fx:id="lblGender" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Gender" />
+                                    <TextField id="profile-text-field" fx:id="txtGender" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Gender" text="Female" />
                                  </children>
                               </VBox>
                               <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
@@ -82,7 +81,7 @@
                               </VBox>
                               <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Label id="white13" fx:id="lblCoachID" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Coach ID" VBox.vgrow="ALWAYS" />
+                                    <Label id="white13" fx:id="lblCoachID" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Coach ID" />
                                     <TextField id="profile-text-field" fx:id="txtCoachID" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Coach ID" text="C001" />
                                  </children>
                                  <HBox.margin>
@@ -113,7 +112,7 @@
                               </VBox>
                               <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <Label id="white13" fx:id="lblEmail" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Email" VBox.vgrow="ALWAYS" />
+                                    <Label id="white13" fx:id="lblEmail" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Email" />
                                     <TextField id="profile-text-field" fx:id="txtEmail" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Email" text="abc@gmail.com" />
                                  </children>
                                  <HBox.margin>
@@ -125,12 +124,49 @@
                               <Insets bottom="20.0" left="20.0" right="20.0" />
                            </VBox.margin>
                         </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="700.0">
+                           <children>
+                              <VBox prefHeight="46.0" prefWidth="205.0">
+                                 <children>
+                                    <Label id="white13" fx:id="lblRating" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Rating" VBox.vgrow="ALWAYS" />
+                                    <TextField id="profile-text-field" fx:id="txtRating" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Rating" text="4.0/5.0" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="46.0" prefWidth="206.0">
+                                 <children>
+                                    <Label id="white13" fx:id="lblNextClass" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="19.0" prefWidth="465.0" text="Next Class Session" VBox.vgrow="ALWAYS" />
+                                    <TextField id="profile-text-field" fx:id="txtNextClass" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="26.0" prefWidth="407.0" promptText="Next Class Session" text="Tue 9th May, 9am - 11am, Court 1" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="46.0" prefWidth="206.0">
+                                 <children>
+                                    <Label id="white13" fx:id="lblSport" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="19.0" prefWidth="658.0" text="Sport" />
+                                    <TextField id="profile-text-field" fx:id="txtSport" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="26.0" prefWidth="180.0" promptText="Sport" text="Gymnastics" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="660.0">
                            <VBox.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                            <children>
-                              <Button id="boldbtn" fx:id="btnEdit" mnemonicParsing="false" onAction="#pressEdit" prefHeight="30.0" prefWidth="71.0" text="Edit" HBox.hgrow="ALWAYS" />
+                              <Button id="boldbtn" fx:id="btnEdit" mnemonicParsing="false" onAction="#pressEdit" prefHeight="30.0" prefWidth="71.0" text="Edit" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Button>
                               <Button id="boldbtn" fx:id="btnSave" disable="true" mnemonicParsing="false" onAction="#pressSave" prefHeight="30.0" prefWidth="71.0" text="Save" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets left="30.0" />

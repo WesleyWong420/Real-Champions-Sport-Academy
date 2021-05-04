@@ -192,6 +192,16 @@ and open the template in the editor.
     -fx-font-size: 22;
 }
 
+#clickable_grey22{
+    -fx-text-fill: #777777;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+}
+
+#clickable_grey22:hover{
+    -fx-text-fill: #c30101;
+}
+
 #black14{
     -fx-text-fill: #464246;
     -fx-font-weight: bold;
@@ -224,22 +234,6 @@ and open the template in the editor.
 }
 
 #profile-text-field:focused {
-    -fx-border-color: #cabcb0;
-    -fx-text-fill: #cabcb0;
-}
-
-.combo-box{
-    -fx-border-color: grey;
-    -fx-border-width: 0 0 1 0;
-    -fx-background-color: transparent;
-    -fx-text-fill: #cabcb0;
-}
-
-.combo-box-base .text{
-    -fx-fill: lightgray;
-}
-
-.combo-box:focused {
     -fx-border-color: #cabcb0;
     -fx-text-fill: #cabcb0;
 }

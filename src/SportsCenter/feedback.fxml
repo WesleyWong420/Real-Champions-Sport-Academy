@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="645.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SportsCenter.feedbackController">
+   <children>
+      <VBox prefHeight="499.0" prefWidth="647.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="647.0">
+               <children>
+                  <Label id="clickable_grey22" fx:id="lblCancel" onMouseClicked="#pressCancel" text="❌">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label id="grey22" fx:id="lblTitle" text="Submit Feedback" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" style="-fx-background-color: #464246;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <VBox prefHeight="109.0" prefWidth="607.0" style="-fx-background-color: #464246; -fx-background-radius: 10 10 10 10;">
+               <children>
+                  <Label id="white16" fx:id="lblRating" prefHeight="32.0" prefWidth="307.0" text="Rate your experience...">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin></Label>
+                  <Rating fx:id="rating" partialRating="true" prefHeight="34.0" prefWidth="166.0" rating="0.0">
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin></Rating>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox prefHeight="253.0" prefWidth="607.0" style="-fx-background-color: #464246; -fx-background-radius: 10 10 10 10;">
+               <children>
+                  <Label id="white16" fx:id="lblFeedback" prefHeight="26.0" prefWidth="266.0" text="Anything that can be improved?" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </VBox.margin></Label>
+                  <TextArea fx:id="txtFeedback" prefHeight="132.0" prefWidth="572.0" promptText="Your feedback (Optional)" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets left="15.0" right="20.0" />
+                     </VBox.margin></TextArea>
+                  <HBox prefHeight="64.0" prefWidth="587.0">
+                     <VBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button id="boldbtn" fx:id="btnSubmit" mnemonicParsing="false" onAction="#pressSubmit" prefHeight="34.0" prefWidth="124.0" text="Submit">
+                           <HBox.margin>
+                              <Insets right="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

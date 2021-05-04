@@ -1,6 +1,5 @@
 package SportsCenter;
 
-import java.awt.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -33,5 +32,13 @@ public class welcomeController {
         Stage window = (Stage) btnLogin.getScene().getWindow(); 
         window.setScene(new Scene(root, 800, 500));
         window.setTitle("Student Dashboard");
+    }
+    
+    @FXML
+    private void pressTemp(javafx.event.ActionEvent event) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("coach.fxml"));
+        Stage window = (Stage) btnLogin.getScene().getWindow(); 
+        window.setScene(new Scene(root, 800, 500));
+        window.setTitle("Coach Dashboard");
     }
 }
