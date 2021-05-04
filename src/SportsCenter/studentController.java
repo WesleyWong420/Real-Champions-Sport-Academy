@@ -88,6 +88,7 @@ public class studentController {
     
     @FXML
     private void pressEnrollSport(javafx.event.ActionEvent event) throws Exception {
+        // if(!student.getSport().equals(null))
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setHeaderText("Are you sure?");
@@ -221,14 +222,11 @@ public class studentController {
         {
             selection.add(arraySports.get(index).getName()); // Add choices into the ComboBox inside the pop-up dialog
         }
-        selection.add("Withdraw"); // ***** Remove (Just for testing, Actual Implementation @ Line 227)*****
         
-        /*
-        if(!student.getSport().equals(null)) // If student has existing sport, then offer option to withdraw from enrollment
+        if(!txtSport.getText().isEmpty())
         {
-            selection.add("Withdraw");
+            selection.add("Withdraw"); // If student has existing sport, then offer option to withdraw from enrollment
         }
-        */
         
         ChoiceDialog<String> dialog = new ChoiceDialog<>(null, selection);
         dialog.setTitle("Sports Enrollment");
@@ -236,60 +234,56 @@ public class studentController {
         dialog.setContentText("Please select a sport:");
 
         Optional<String> result = dialog.showAndWait();
-        if(!txtSport.getText().isEmpty()) // Has existing sport
+        if(result.isPresent())
         {
-            if(!txtSport.getText().equals(result.get())) // Selecting a different sport than current one
+            if(!txtSport.getText().isEmpty()) // Has existing sport
             {
-                if(result.get().equals("Withdraw")) // Cancel Subscription (Un-enroll in a sport)
+                if(!txtSport.getText().equals(result.get())) // Selecting a different sport than current one
                 {
-                    txtSport.setText("");
-                }
-                else
-                {
-                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                    alert.setTitle("Confirmation");
-                    alert.setHeaderText("Are you sure?");
-                    String line1 = "You are already enrolled in a sport, do you wish to proceed?";
-                    String line2 = "By clicking OK, you will be unregistered from your current sport.";
-                    String msg = line1 + "\n" + line2;
-                    alert.setContentText(msg); 
+                    if(result.get().equals("Withdraw")) // Cancel Subscription (Un-enroll in a sport)
+                    {
+                        txtSport.setText("");
+                    }
+                    else
+                    {
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                        alert.setTitle("Confirmation");
+                        alert.setHeaderText("Are you sure?");
+                        String line1 = "You are already enrolled in a sport, do you wish to proceed?";
+                        String line2 = "By clicking OK, you will be unregistered from your current sport.";
+                        String msg = line1 + "\n" + line2;
+                        alert.setContentText(msg); 
 
-                    Optional<ButtonType> result_confirmation = alert.showAndWait();
-                    if (result_confirmation.get() == ButtonType.OK) // OK option is selected
-                    { 
-                        txtSport.setText(result.get());
-                    } 
-                    else  // CANCEL is selected or the dialog is closed
-                    { 
-                        // Do nothing
+                        Optional<ButtonType> result_confirmation = alert.showAndWait();
+                        if (result_confirmation.get() == ButtonType.OK) // OK option is selected
+                        { 
+                            txtSport.setText(result.get());
+                        } 
+                        else  // CANCEL is selected or the dialog is closed
+                        { 
+                            // Do nothing
+                        }
                     }
                 }
+                else // Selecting the same sport as the current one
+                {
+                    Alert alert = new Alert(AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Same sport selected!");
+                    alert.setContentText("Please select a sport different from the current one.");
+                    alert.showAndWait();
+                }
             }
-            else // Selecting the same sport as the current one
-            {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Same sport selected!");
-                alert.setContentText("Please select a sport different from the current one.");
-                alert.showAndWait();
-            }
-        }
-        else // New student, does not has existing sport
-        {
-            if(!result.get().equals("Withdraw"))
+            else // New student, does not has existing sport
             {
                 txtSport.setText(result.get());
             }
-            else
-            {
-                Alert alert = new Alert(AlertType.ERROR); // Student attempts to un-enroll when not part of an active sport
-                alert.setTitle("Error");
-                alert.setHeaderText("You do not have an active sport!");
-                alert.setContentText("You can only withdraw from a sport if you have an active sport.");
-                alert.showAndWait();
-            }
         }
-
+        else // Cancel Button is clicked
+        {
+            // Do Nothing  
+        }
+        
         if(txtSport.getText().isEmpty())
         {
             lblSport.setVisible(false); // Unfloat the label
