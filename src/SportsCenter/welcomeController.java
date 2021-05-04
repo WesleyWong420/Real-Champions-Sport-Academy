@@ -35,7 +35,7 @@ public class welcomeController {
     }
     
     @FXML
-    private void pressTemp(javafx.event.ActionEvent event) throws Exception {
+    private void pressTemp(javafx.event.ActionEvent event) throws Exception { // ** Remove later - For Testing **
         Parent root = FXMLLoader.load(getClass().getResource("coach.fxml"));
         Stage window = (Stage) btnLogin.getScene().getWindow(); 
         window.setScene(new Scene(root, 800, 500));
