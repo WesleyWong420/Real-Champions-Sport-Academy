@@ -16,6 +16,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -40,6 +41,8 @@ public class studentController {
     private Label lblSport5Name_SportsTab, lblSport5Duration_SportsTab, lblSport5Fee_SportsTab, lblSport5Coach_SportsTab;
     @FXML
     private VBox vboxSport1_SportsTab, vboxSport2_SportsTab, vboxSport3_SportsTab, vboxSport4_SportsTab, vboxSport5_SportsTab; // used to disable and lower opacity
+    @FXML
+    private Tooltip tooltipCoach1_SportsTab, tooltipCoach2_SportsTab, tooltipCoach3_SportsTab, tooltipCoach4_SportsTab, tooltipCoach5_SportsTab;
     
     // Student - Schedule Tab
     @FXML
@@ -54,6 +57,8 @@ public class studentController {
     private Label lblSport5Name_ScheduleTab, lblSport5Time_ScheduleTab, lblSport5Date_ScheduleTab, lblSport5Location_ScheduleTab, lblSport5Coach_ScheduleTab; 
     @FXML
     private HBox hboxSport1_ScheduleTab, hboxSport2_ScheduleTab, hboxSport3_ScheduleTab, hboxSport4_ScheduleTab, hboxSport5_ScheduleTab; // used to disable and lower opacity
+    @FXML
+    private Tooltip tooltipCoach1_ScheduleTab, tooltipCoach2_ScheduleTab, tooltipCoach3_ScheduleTab, tooltipCoach4_ScheduleTab, tooltipCoach5_ScheduleTab;
     
     // Student - History Tab
     @FXML
@@ -66,6 +71,8 @@ public class studentController {
     private Label lblSport4Name_HistoryTab, lblSport4Date_HistoryTab, lblSport4Coach_HistoryTab, lblSport4Feedback_HistoryTab;  
     @FXML
     private Label lblSport5Name_HistoryTab, lblSport5Date_HistoryTab, lblSport5Coach_HistoryTab, lblSport5Feedback_HistoryTab;  
+    @FXML
+    private Tooltip tooltipCoach1_HistoryTab, tooltipCoach2_HistoryTab, tooltipCoach3_HistoryTab, tooltipCoach4_HistoryTab, tooltipCoach5_HistoryTab;
 
     // Student - Account Tab
     @FXML
