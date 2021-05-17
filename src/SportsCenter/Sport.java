@@ -4,18 +4,28 @@ import java.io.Serializable;
 
 public class Sport implements Serializable{
     
+    protected String sportID;
     private String name;
     private int duration;
     private int fee;
     private String coach;
     
-    public Sport(){}  //parameterless constructor
+    public Sport(){}  // Parameterless constructor
     
-    public Sport(String name, int duration, int fee, String coach){  //constructor overloading
+    public Sport(String sportID, String name, int duration, int fee, String coach){  // Constructor overloading
+        this.sportID = sportID;
         this.name = name;
         this.duration = duration;
         this.fee = fee;
         this.coach = coach;
+    }
+    
+    public String getSportID() {
+        return sportID;
+    }
+    
+    public void setSportID(String sportID){
+        this.sportID = sportID;
     }
     
     public String getName() {

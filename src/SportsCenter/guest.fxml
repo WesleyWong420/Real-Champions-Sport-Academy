@@ -41,9 +41,9 @@
                                           <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
                                             <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="105.00001220703126" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="123.40001220703124" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="140.19998779296878" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
@@ -55,10 +55,13 @@
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
-                                                <Label id="black16" fx:id="lblSport1Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport1Time_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="200.0" text="🕒 08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets />
+                                                   </GridPane.margin></Label>
                                                 <Label id="black16" fx:id="lblSport1Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport1Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport1Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport1Coach_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="201.0" text="🎓 Alex" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport1Date_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets right="10.0" top="5.0" />
@@ -81,9 +84,9 @@
                                           <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="106.40003662109376" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="124.59998779296876" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="138.2000122070313" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
@@ -95,10 +98,10 @@
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
-                                                <Label id="black16" fx:id="lblSport2Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport2Time_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" text="🕒 08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                 <Label id="black16" fx:id="lblSport2Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport2Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport2Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport2Coach_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="201.0" text="🎓 Alex" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport2Date_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets right="10.0" />
@@ -118,9 +121,9 @@
                                           <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="102.39997558593751" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="127.00002441406252" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="140.20004882812498" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
@@ -132,10 +135,10 @@
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
-                                                <Label id="black16" fx:id="lblSport3Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport3Time_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" text="🕒 08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                 <Label id="black16" fx:id="lblSport3Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 3" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport3Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport3Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport3Coach_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="201.0" text="🎓 Alex" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport3Date_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="122.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets right="10.0" />
@@ -155,9 +158,9 @@
                                           <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="109.80000000000001" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="121.60001220703123" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="138.39998779296877" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
@@ -169,10 +172,10 @@
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
-                                                <Label id="black16" fx:id="lblSport4Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Time_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" text="🕒 08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                 <Label id="black16" fx:id="lblSport4Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport4Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport4Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Coach_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="201.0" text="🎓 Alex" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport4Date_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="119.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets right="10.0" />
@@ -193,9 +196,9 @@
                                           <GridPane alignment="CENTER_RIGHT" hgap="20.0" prefHeight="76.0" prefWidth="425.0" HBox.hgrow="ALWAYS">
                                              <columnConstraints>
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.200048828125" minWidth="0.0" prefWidth="200.60001220703126" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="88.79998779296872" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="120.19998779296873" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="154.20001220703125" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.40001220703127" minWidth="0.0" prefWidth="112.19996337890626" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.59998779296876" minWidth="10.0" prefWidth="117.5999755859375" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.1999877929688" minWidth="10.0" prefWidth="140.00002441406252" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints maxHeight="47.19998779296875" minHeight="10.0" prefHeight="31.000018310546878" vgrow="SOMETIMES" />
@@ -207,10 +210,10 @@
                                                       <Insets top="5.0" />
                                                    </GridPane.margin>
                                                 </Label>
-                                                <Label id="black16" fx:id="lblSport5Time_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="158.0" text="🕒  08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Time_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" text="🕒 08:00 - 10:00 AM" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                                 <Label id="black16" fx:id="lblSport5Location_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="20.0" prefWidth="87.0" text="📍  Court 5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport5Coach_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="204.0" text="Alex 👨‍🏫 " GridPane.rowIndex="1" />
-                                                <Label id="black16" fx:id="lblSport5Date_ScheduleTab" alignment="TOP_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="118.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Coach_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="201.0" text="🎓 Alex" GridPane.rowIndex="1" />
+                                                <Label id="black16" fx:id="lblSport5Date_ScheduleTab" alignment="TOP_LEFT" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="121.0" text="📅 Tue, 25 May" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets right="10.0" />
@@ -272,7 +275,7 @@
                                                       <Label id="grey12" fx:id="lblSport2Duration_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                       <Label id="black14" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="💵 Fee" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport2Fee_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="🎓 Coach" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport2Coach_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                    </children>
                                                    <VBox.margin>
@@ -331,7 +334,7 @@
                                                       <Label id="grey12" fx:id="lblSport1Duration_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                       <Label id="black14" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="💵 Fee" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport1Fee_SportsTab" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="60.0" text="MYR 80" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="20.0" prefWidth="162.0" text="Coach 👨‍🏫" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
+                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="20.0" prefWidth="162.0" text="🎓 Coach" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport1Coach_SportsTab" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="122.0" text="Alex" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                    </children>
                                                    <VBox.margin>
@@ -407,7 +410,7 @@
                                                       <Label id="grey12" fx:id="lblSport5Duration_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                       <Label id="black14" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="50.0" text="💵 Fee" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport5Fee_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="🎓 Coach" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport5Coach_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                                                    </children>
                                                    <VBox.margin>
@@ -467,7 +470,7 @@
                                                       <Label id="grey12" fx:id="lblSport4Duration_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                       <Label id="black14" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="50.0" text="💵 Fee" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport4Fee_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="🎓 Coach" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport4Coach_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                                                    </children>
                                                    <VBox.margin>
@@ -527,7 +530,7 @@
                                                       <Label id="grey12" fx:id="lblSport3Duration_SportsTab" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="75.0" text="120 Minutes" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                                                       <Label id="black14" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="50.0" text="💵 Fee" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport3Fee_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="MYR 80" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="Coach 👨‍🏫" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                                                      <Label id="black14" alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="154.0" text="🎓 Coach" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                                                       <Label id="grey12" fx:id="lblSport3Coach_SportsTab" alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="154.0" text="Alex" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
                                                    </children>
                                                    <VBox.margin>
