@@ -6,9 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class coachController {
@@ -20,7 +18,51 @@ public class coachController {
     @FXML
     private Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating;
     
+    Coach coach = new Coach("U042", "Evenlyn", "Female", "0124242424", "evenlyn@gmail.com", "home address", 4, 30);
+    ArrayList<Sport> arraySports = new ArrayList<>();
+    ArrayList<Schedule> arraySchedule = new ArrayList<>();
+    
     public void initialize() {
+        arraySports = FileIO.readSportsFile("sport.txt");
+        arraySchedule = FileIO.readScheduleFile("schedule.txt");
+        
+        groupSport(coach);
+        groupSchedule(coach);
+        groupSelfRecord(coach);
+    }
+    
+    private void groupSport(Coach coach){
+        
+        ArrayList<ArrayList> control_list = new ArrayList<>(); 
+        ArrayList<TextField> txt_list = new ArrayList<>(); 
+        txt_list.add(txtSport);
+        control_list.add(txt_list);
+        
+        coach.getSport(arraySports, control_list);
+    }
+    
+    private void groupSchedule(Coach coach){
+        
+        ArrayList<ArrayList> control_list = new ArrayList<>(); 
+        ArrayList<TextField> txt_list = new ArrayList<>(); 
+        txt_list.add(txtNextClass);
+        control_list.add(txt_list);
+        
+        coach.getSchedule(arraySchedule, control_list);
+    }
+    
+    private void groupSelfRecord(Coach coach){
+        
+        ArrayList<TextField> txt_list = new ArrayList<>(); 
+        txt_list.add(txtCoachID);
+        txt_list.add(txtUsername);
+        txt_list.add(txtGender);
+        txt_list.add(txtEmail);
+        txt_list.add(txtMobileNo);
+        txt_list.add(txtAddress);
+        txt_list.add(txtRating);
+        
+        coach.getSelfRecord(txt_list);
     }
     
     @FXML
@@ -33,17 +75,60 @@ public class coachController {
     
     @FXML
     private void pressSave() throws Exception {
-        btnSave.setDisable(true);
-        btnEdit.setDisable(false);
-        txtCoachID.setDisable(true); // Just for visual, CoachID cannot be modified
-        txtGender.setDisable(true); // Just for visual, Gender cannot be modified
-        txtUsername.setDisable(true);
-        txtEmail.setDisable(true);
-        txtMobileNo.setDisable(true);
-        txtAddress.setDisable(true);
-        txtSport.setDisable(true); // Just for visual, Coach's Sport cannot be modified
-        txtNextClass.setDisable(true); // Just for visual, next class session cannot be modified
-        txtRating.setDisable(true); // Just for visual, Coach's Rating cannot be modified
+        
+        if(!txtIsEmpty())
+        {
+            if(txtMobileNo.getText().matches("[0-9]+")) // Mobile number validation
+            {
+                if(emailIsValid(txtEmail.getText())) // Email regular expression validation
+                {
+                    btnSave.setDisable(true);
+                    btnEdit.setDisable(false);
+                    txtCoachID.setDisable(true); // Just for visual, CoachID cannot be modified
+                    txtGender.setDisable(true); // Just for visual, Gender cannot be modified
+                    txtUsername.setDisable(true);
+                    txtEmail.setDisable(true);
+                    txtMobileNo.setDisable(true);
+                    txtAddress.setDisable(true);
+                    txtSport.setDisable(true); // Just for visual, Coach's Sport cannot be modified
+                    txtNextClass.setDisable(true); // Just for visual, next class session cannot be modified
+                    txtRating.setDisable(true); // Just for visual, Coach's Rating cannot be modified
+        
+
+                    coach.setName(txtUsername.getText());
+                    coach.setEmail(txtEmail.getText());
+                    coach.setContact(txtMobileNo.getText());
+                    coach.setAddress(txtAddress.getText());
+                    
+                    //FileIO.writeCoach(coach, "coach.txt");
+                    FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
+                }
+                else
+                {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Invalid Email Address!");
+                    alert.setContentText("Please enter a valid email address.");
+                    alert.showAndWait();
+                }
+            }
+            else
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid Mobile Number!");
+                alert.setContentText("Please enter a valid mobile number.");
+                alert.showAndWait();
+            }
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Empty Fields!");
+            alert.setContentText("One or more details is incomplete");
+            alert.showAndWait();
+        }
     }
     
     @FXML
@@ -125,12 +210,28 @@ public class coachController {
         btnLogout.requestFocus(); // Transfer focus to other control
     }
     
-    private void getSelfRecord(){
-    }
+    private boolean emailIsValid(String email) {
+      String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+      return email.matches(regex);
+   }
     
-    private void setSelfRecord(){
-    }
-}
-
+    private boolean txtIsEmpty(){
         
-    
+        ArrayList<TextField> txt_list = new ArrayList<>(); 
+        txt_list.add(txtUsername);
+        txt_list.add(txtEmail);
+        txt_list.add(txtMobileNo);
+        txt_list.add(txtAddress);
+        
+        boolean empty = false;
+        for(TextField txt : txt_list)
+        {
+            if(txt.getText().equals(""))
+            {
+                empty = true;
+            }
+        }
+        
+        return empty;
+   }
+}

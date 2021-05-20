@@ -8,11 +8,12 @@ public class Sport implements Serializable{
     private String name;
     private int duration;
     private int fee;
-    private String coach;
+    private Coach coach;
     
-    public Sport(){}  // Parameterless constructor
+    public Sport(){ // Parameterless constructor
+    }  
     
-    public Sport(String sportID, String name, int duration, int fee, String coach){  // Constructor overloading
+    public Sport(String sportID, String name, int duration, int fee, Coach coach){  // Constructor overloading
         this.sportID = sportID;
         this.name = name;
         this.duration = duration;
@@ -52,11 +53,11 @@ public class Sport implements Serializable{
         this.fee = fee;
     }
     
-    public String getCoach(){
+    public Coach getCoachObject(){
         return coach;
     }
     
-    public void setCoach(String coach){
+    public void setCoachObject(Coach coach){
         this.coach = coach;
     }
 }
