@@ -1,28 +1,17 @@
 package SportsCenter;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import javafx.scene.input.MouseEvent;
-import java.util.ArrayList;
-import java.util.Optional;
+import java.util.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceDialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
-import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
+import javafx.scene.input.MouseEvent;
 
 public class studentController {
     
@@ -84,64 +73,22 @@ public class studentController {
     @FXML
     public Label lblUserID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport;
     
-    Student student = new Student();
-
+    ArrayList<String> lastFiveClassesID = new ArrayList<>();
+    Student student = new Student("U069", "Caren", "Female", "0126969696", "caren@gmail.com", "home address", lastFiveClassesID);
+    ArrayList<Sport> arraySports = new ArrayList<>();
+    ArrayList<Schedule> arraySchedule = new ArrayList<>();
+    
     public void initialize() {
+        arraySports = FileIO.readSportsFile("sport.txt");
+        arraySchedule = FileIO.readScheduleFile("schedule.txt");
+        
         groupSport(student);
         groupSchedule(student);
+        groupSelfRecord(student);
     }
     
-    public ArrayList<Sport> readSportsFile(String file){
+    private void groupSport(Student student){
         
-        ArrayList<Sport> arraySports = new ArrayList<Sport>();
-        
-        try 
-        {
-            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
-            arraySports = (ArrayList<Sport>) input.readObject(); // Reading ArrayList of Sports Object
-            input.close();
-        }
-        catch (FileNotFoundException e){
-            System.out.println("File not found!");
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        catch (ClassNotFoundException e){
-            System.out.println("Class not found");
-        }
-        
-        return arraySports;
-    }
-    
-    public ArrayList<Schedule> readScheduleFile(String file){
-        
-        ArrayList<Schedule> arraySchedule = new ArrayList<Schedule>();
-        
-        try 
-        {
-            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
-            arraySchedule = (ArrayList<Schedule>) input.readObject(); // Reading ArrayList of Schedule Object
-            input.close();
-        }
-        catch (FileNotFoundException e){
-            System.out.println("File not found!");
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-        catch (ClassNotFoundException e){
-            System.out.println("Class not found");
-        }
-        
-        return arraySchedule;
-    }
-    
-    public void groupSport(Student student){
-            
-        ArrayList<Sport> arraySports = new ArrayList<Sport>();
-        arraySports = readSportsFile("sports1.txt");
-
         ArrayList<ArrayList> control_list = new ArrayList<>(); // Outer ArrayList to hold ArrayList of different Controls
         ArrayList<Label> name = new ArrayList<>(); // Inner ArrayList 1 - Label
         name.add(lblSport1Name_SportsTab);
@@ -196,10 +143,7 @@ public class studentController {
         student.getSport(arraySports, control_list);
     }
     
-    public void groupSchedule(Student student){
-        
-        ArrayList<Schedule> arraySchedule = new ArrayList<Schedule>();
-        arraySchedule = readScheduleFile("schedule1.txt");
+    private void groupSchedule(Student student){
 
         ArrayList<ArrayList> control_list = new ArrayList<>(); // Outer ArrayList to hold ArrayList of different Controls
         ArrayList<Label> name = new ArrayList<>(); // Inner ArrayList 1 - Label
@@ -248,6 +192,20 @@ public class studentController {
         student.getSchedule(arraySchedule, control_list);
     }
     
+    private void groupSelfRecord(Student student){
+        
+        ArrayList<TextField> txt_list = new ArrayList<>(); 
+        txt_list.add(txtUserID);
+        txt_list.add(txtUsername);
+        txt_list.add(txtGender);
+        txt_list.add(txtEmail);
+        txt_list.add(txtMobileNo);
+        txt_list.add(txtAddress);
+        txt_list.add(txtSport);
+        
+        student.getSelfRecord(txt_list);
+    }
+    
     @FXML
     private void pressLogout() throws Exception { // Back to Home Page
         Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
@@ -259,7 +217,7 @@ public class studentController {
     @FXML
     private void pressEnrollSport(javafx.event.ActionEvent event) throws Exception {
         
-        Button btn_pressed = new Button();
+        Button btn_pressed;
         btn_pressed = (Button) event.getSource(); // To know which 1 out of 5 button is clicked
                 
         ArrayList<Button> btn_list = new ArrayList<>(); // Grouping all Buttons
@@ -269,51 +227,15 @@ public class studentController {
         btn_list.add(btnSport4Enroll_SportsTab);
         btn_list.add(btnSport5Enroll_SportsTab);
         int btn_index = btn_list.indexOf(btn_pressed);
+        Sport sport_to_enroll = arraySports.get(btn_index);
         
-        ArrayList<Sport> arraySports = new ArrayList<Sport>();
-        arraySports = readSportsFile("sports1.txt");
+        student.enrollSport(sport_to_enroll);
         
-        if(student.getCurrentSportID() != null) // Has existing sport enrolled
-        {
-            if(student.getCurrentSportID().equals(arraySports.get(btn_index).getSportID())) // Choosing same sport as current one
-            {
-                Alert alert = new Alert(AlertType.ERROR);
-                alert.setTitle("Error");
-                alert.setHeaderText("Same sport selected!");
-                alert.setContentText("Please select a sport different from the current one.");
-                alert.showAndWait();
-            }
-            else
-            {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation");
-                alert.setHeaderText("Are you sure?");
-                String line1 = "You are already enrolled in a sport, do you wish to proceed?";
-                String line2 = "By clicking OK, you will be unregistered from your current sport.";
-                String msg = line1 + "\n" + line2;
-                alert.setContentText(msg); 
-
-                Optional<ButtonType> result = alert.showAndWait();
-                if (result.get() == ButtonType.OK) // OK option is selected
-                {
-                    student.setCurrentSportID(arraySports.get(btn_index).getSportID());
-                    // write to student object file
-                    groupSport(student); // call the groupSport() method again to refresh the sport page
-                    groupSchedule(student); // call the groupSport() method again to refresh the schedule page
-                } 
-                else  // CANCEL is selected or the dialog is closed
-                { 
-                    // Do nothing
-                } 
-            }
-        }
-        else
-        {
-            student.setCurrentSportID(arraySports.get(btn_index).getSportID());
-            // write to student object file
-            groupSport(student); // call the groupSport() method again to refresh the sport page
-            groupSchedule(student); // call the groupSport() method again to refresh the schedule page
-        }
+        groupSport(student); // refresh the sport page
+        groupSchedule(student); // refresh the schedule page
+        groupSelfRecord(student); // refresh the profile page
+        //FileIO.writeStudent(student, "student.txt");
+        FileIO.pushNotification("Successful!", "You have been enrolled in a sport.");
     }
     
     @FXML
@@ -332,25 +254,79 @@ public class studentController {
         feedbackController feedback_con = loader.getController();
         //feedback_con.pushHistory(history1);
         Stage stage = new Stage();
+        stage.setTitle("Feedback Form Submission");
         stage.setScene(new Scene(root, 645, 545));
         stage.show();   
     }
     
     @FXML
-    private void pressCoachName(MouseEvent event) throws Exception {
-    }
-    
-    @FXML
     private void pressSave() throws Exception {
-        btnSave.setDisable(true);
-        btnEdit.setDisable(false);
-        txtUserID.setDisable(true); // Just for visual, UserID cannot be modified
-        txtGender.setDisable(true); // Just for visual, Gender cannot be modified
-        txtUsername.setDisable(true);
-        txtEmail.setDisable(true);
-        txtMobileNo.setDisable(true);
-        txtAddress.setDisable(true);
-        txtSport.setDisable(true);
+        
+        if(!txtIsEmpty())
+        {
+            if(txtMobileNo.getText().matches("[0-9]+")) // Mobile number validation
+            {
+                if(emailIsValid(txtEmail.getText())) // Email regular expression validation
+                {
+                    btnSave.setDisable(true);
+                    btnEdit.setDisable(false);
+                    txtUserID.setDisable(true); // Just for visual, UserID cannot be modified
+                    txtGender.setDisable(true); // Just for visual, Gender cannot be modified
+                    txtUsername.setDisable(true);
+                    txtEmail.setDisable(true);
+                    txtMobileNo.setDisable(true);
+                    txtAddress.setDisable(true);
+                    txtSport.setDisable(true);
+
+                    student.setName(txtUsername.getText());
+                    student.setEmail(txtEmail.getText());
+                    student.setContact(txtMobileNo.getText());
+                    student.setAddress(txtAddress.getText());
+                    
+                    for(Sport sport : arraySports)
+                    {
+                        if(sport.getName().equals(txtSport.getText())) // Search and found
+                        {
+                            student.setSportObject(sport);
+                            break;
+                        }
+                        else
+                        {   
+                            student.setSportObject(null); // Sports not found meaning unenrollment
+                        }
+                    }
+
+                    groupSport(student); // refresh the Sport page
+                    groupSchedule(student); // refresh the Schedule page
+                    //FileIO.writeStudent(student, "student.txt");
+                    FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
+                }
+                else
+                {
+                    Alert alert = new Alert(AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Invalid Email Address!");
+                    alert.setContentText("Please enter a valid email address.");
+                    alert.showAndWait();
+                }
+            }
+            else
+            {
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid Mobile Number!");
+                alert.setContentText("Please enter a valid mobile number.");
+                alert.showAndWait();
+            }
+        }
+        else
+        {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Empty Fields!");
+            alert.setContentText("One or more details is incomplete");
+            alert.showAndWait();
+        }
     }
     
     @FXML
@@ -420,8 +396,6 @@ public class studentController {
     
     @FXML
     private void selectSport() throws Exception { // Student Profile Tabs
-        ArrayList<Sport> arraySports = new ArrayList<Sport>();
-        arraySports = readSportsFile("sports1.txt");
         lblSport.setVisible(true); // Float the label
         
         ArrayList<String> selection = new ArrayList<>();
@@ -497,12 +471,28 @@ public class studentController {
         }
     }
     
-    private void getSelfRecord(){
-    }
+    private boolean emailIsValid(String email) {
+      String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+      return email.matches(regex);
+   }
     
-    private void setSelfRecord(){
-    }
-}
-
+    private boolean txtIsEmpty(){
         
-    
+        ArrayList<TextField> txt_list = new ArrayList<>(); 
+        txt_list.add(txtUsername);
+        txt_list.add(txtEmail);
+        txt_list.add(txtMobileNo);
+        txt_list.add(txtAddress);
+        
+        boolean empty = false;
+        for(TextField txt : txt_list)
+        {
+            if(txt.getText().equals(""))
+            {
+                empty = true;
+            }
+        }
+        
+        return empty;
+   }
+}

@@ -6,11 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
@@ -32,16 +29,7 @@ public class feedbackController {
     
     @FXML
     private void pressSubmit() throws Exception {  // Thank you notification after feedback submission
-        ImageView icon = new ImageView(new Image(new FileInputStream("src\\SportsCenter\\images\\success.png")));
-        icon.setFitWidth(32);
-	icon.setFitHeight(32);
-        Notifications notifier = Notifications.create()
-                .title("Feedback Submitted!")
-                .text("Thank you for your feedback.")
-                .graphic(icon)
-                .hideAfter(Duration.seconds(3))
-                .position(Pos.BOTTOM_RIGHT);
-        notifier.show();
+        FileIO.pushNotification("Feedback Submitted!", "Thank you for your feedback.");
     }   
     
     @FXML
