@@ -6,83 +6,26 @@ import javafx.scene.control.TextField;
 
 public class Coach extends User implements Serializable{
     
-    private String name;
-    private String gender;
-    private String contact;
-    private String email;
-    private String address;
-    private float rating;
+    private double coachRating;
     private int hourlyRate;
     
-    public Coach(String name){ // Temporarily
-        this.name = name;
+    public Coach(String userID, String username){ // For Feedback class
+        this.userID = userID;
+        this.username = username;
     }
     
-    public Coach(String userID, String name, String gender, String contact, String email, String address, float rating, int hourlyRate){
-        this.userID = userID;
-        this.name = name;
-        this.gender = gender;
-        this.contact = contact;
-        this.email = email;
-        this.address = address;
-        this.rating = rating;
+    public Coach(String userID, String username, String gender, String contact, String email, String address, double coachRating, int hourlyRate){
+        super(userID, username, gender, contact, email, address);
+        this.coachRating = coachRating;
         this.hourlyRate = hourlyRate;
     }
     
-    public String getUserID() {
-        return userID;
+    public double getCoachRating() {
+        return coachRating;
     }
     
-    public void setUserID(String userID){
-        this.userID = userID;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name){
-        this.name = name;
-    }
-    
-    public String getGender() {
-        return gender;
-    }
-    
-    public void setGender(String gender){
-        this.gender = gender;
-    }
-    
-    public String getContact() {
-        return contact;
-    }
-    
-    public void setContact(String contact){
-        this.contact = contact;
-    }
-    
-    public String getEmail() {
-        return email;
-    }
-    
-    public void setEmail(String email){
-        this.email = email;
-    }
-    
-    public String getAddress() {
-        return address;
-    }
-    
-    public void setAddress(String address){
-        this.address = address;
-    }
-    
-    public float getRating() {
-        return rating;
-    }
-    
-    public void setRating(float rating){
-        this.rating = rating;
+    public void setCoachRating(double coachRating){
+        this.coachRating = coachRating;
     }
     
     public int getHourlyRate() {
@@ -100,9 +43,9 @@ public class Coach extends User implements Serializable{
         
         for(Sport sport : arraySports)
         {
-            if(sport.getCoachObject().getName().equals(name))
+            if(sport.getCoachObject().getUserID().equals(userID))
             {
-                txt.setText(sport.getName());
+                txt.setText(sport.getSportName());
             }
         }
     }
@@ -114,7 +57,7 @@ public class Coach extends User implements Serializable{
         
         for(Schedule session : arraySchedule)
         {
-            if(session.getCoachObject().getName().equals(name))
+            if(session.getCoachObject().getUserID().equals(userID))
             {
                 txt.setText(session.getTime() + " " + session.getDate());
             }
@@ -131,7 +74,7 @@ public class Coach extends User implements Serializable{
                     txt.setText(userID);
                     break;
                 case 1:
-                    txt.setText(name);
+                    txt.setText(username);
                     break;
                 case 2:
                     txt.setText(gender);
@@ -146,8 +89,11 @@ public class Coach extends User implements Serializable{
                     txt.setText(address);
                     break;
                 case 6:
-                    txt.setText(Float.toString(rating) + "/5.0");
+                    txt.setText(Double.toString(coachRating) + "/5.0");
                     break;
+                case 7:
+                txt.setText("$" + Integer.toString(hourlyRate));
+                break;
             }
             index++;
         }
@@ -155,6 +101,5 @@ public class Coach extends User implements Serializable{
     
     /*
     public void getFeedback
-    public void setSelfRecord(){}
     */
 }

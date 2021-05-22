@@ -5,17 +5,14 @@ import java.io.Serializable;
 public class Sport implements Serializable{
     
     protected String sportID;
-    private String name;
+    private String sportName;
     private int duration;
     private int fee;
     private Coach coach;
     
-    public Sport(){ // Parameterless constructor
-    }  
-    
-    public Sport(String sportID, String name, int duration, int fee, Coach coach){  // Constructor overloading
+    public Sport(String sportID, String sportName, int duration, int fee, Coach coach){  // Constructor overloading
         this.sportID = sportID;
-        this.name = name;
+        this.sportName = sportName;
         this.duration = duration;
         this.fee = fee;
         this.coach = coach;
@@ -29,12 +26,12 @@ public class Sport implements Serializable{
         this.sportID = sportID;
     }
     
-    public String getName() {
-        return name;
+    public String getSportName() {
+        return sportName;
     }
     
-    public void setName(String name){
-        this.name = name;
+    public void setSportName(String sportName){
+        this.sportName = sportName;
     }
     
     public int getDuration(){

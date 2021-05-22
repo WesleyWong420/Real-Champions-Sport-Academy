@@ -163,6 +163,15 @@
                               <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                            <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="46.0" prefWidth="206.0">
+                                 <children>
+                                    <Label id="white13" fx:id="lblhourlyRate" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="19.0" prefWidth="77.0" text="Hourly Rate" />
+                                    <TextField id="profile-text-field" fx:id="txthourlyRate" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="26.0" prefWidth="103.0" promptText="Hourly Rate" text="\$30" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="50.0" />
+                                 </HBox.margin>
+                              </VBox>
                               <Button id="boldbtn" fx:id="btnEdit" mnemonicParsing="false" onAction="#pressEdit" prefHeight="30.0" prefWidth="71.0" text="Edit" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets />
