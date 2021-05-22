@@ -57,6 +57,7 @@ public class guestController {
         //temp.addSchedule("schedule.txt");
         //temp.addFeedback("feedback.txt");
         //temp.addStudent("student.txt");
+        //temp.addCoach("coach.txt");
     }
     
     private void groupSport(Guest guest){
