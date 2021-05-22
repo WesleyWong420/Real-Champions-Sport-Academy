@@ -341,45 +341,20 @@ public class Student extends User implements Serializable{
         getCoach_History(arraySchedule, tooltip_list.get(0));
     }
    
-    public void submitFeedback(ArrayList<Sport> arraySports, int index) throws IOException{
+    public void submitFeedback(int index) throws IOException{
 
-        int sport_index = -1;
-        if(sport != null)
-        {
-            for(Sport sprt: arraySports)
-            {
-                if(sprt.getSportID().equals(sport.getSportID()))
-                {
-                    sport_index = arraySports.indexOf(sprt);
-                    break;
-                }
-            }
-        }
-        
-        if(index == sport_index || !lastFiveFeedbackID.get(index).equals(""))
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("feedback.fxml"));
-            Parent root = (Parent) loader.load();
-            feedbackController feedback_con = loader.getController();
-            feedback_con.pushFeedback(lastFiveFeedbackID.get(index), index, this);
-            Stage stage = new Stage();
-            stage.setTitle("Feedback Form Submission");
-            stage.setScene(new Scene(root, 645, 490));
-            stage.show();  
-            
-            // Pass Feedback ID to feedbackController,
-            // so that it knows to Submit Feedback or Review Feedback
-            // Submit Feedback - Submit Button Enabled | 0 Stars by default
-            // Review Feedback - Submit Button Disabled | Stars populated according to record
-        }
-        else
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Access Denied");
-            alert.setHeaderText("Permission Insufficient!");
-            String msg = "You can only submit feedback to sport classes/coaches that you have enrolled in OR view submitted feedback.";
-            alert.setContentText(msg);
-            alert.showAndWait(); 
-        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("feedback.fxml"));
+        Parent root = (Parent) loader.load();
+        feedbackController feedback_con = loader.getController();
+        feedback_con.pushFeedback(lastFiveFeedbackID.get(index), index, this);
+        Stage stage = new Stage();
+        stage.setTitle("Feedback Form Submission");
+        stage.setScene(new Scene(root, 645, 490));
+        stage.show();  
+
+        // Pass Feedback ID to feedbackController,
+        // so that it knows to Submit Feedback or Review Feedback
+        // Submit Feedback - Submit Button Enabled | 0 Stars by default
+        // Review Feedback - Submit Button Disabled | Stars populated according to record
     }
 }

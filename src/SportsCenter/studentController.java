@@ -293,7 +293,7 @@ public class studentController {
         groupSport(student); // refresh the sport page
         groupSchedule(student); // refresh the schedule page
         groupSelfRecord(student); // refresh the profile page
-        //FileIO.writeStudent(student, "student.txt");
+        FileIO.writeStudent(student, "student.txt");
         FileIO.pushNotification("Successful!", "You have been enrolled in a sport.");
     }
     
@@ -313,9 +313,35 @@ public class studentController {
         arraySports = FileIO.readSportsFile("sport.txt");
         int index = lbl_list.indexOf(lbl);
         
-        student.submitFeedback(arraySports, index);
-        Stage stage = (Stage) btnLogout.getScene().getWindow();
-        stage.close(); 
+        int sport_index = -1;
+        if(student.getSportObject() != null)
+        {
+            for(Sport sprt: arraySports)
+            {
+                if(sprt.getSportID().equals(student.getSportObject().getSportID()))
+                {
+                    sport_index = arraySports.indexOf(sprt);
+                    break;
+                }
+            }
+        }
+        
+        ArrayList<String> feedback_id_list = student.getLastFiveFeedbackID();
+        if(index == sport_index || !feedback_id_list.get(index).equals(""))
+        {
+            student.submitFeedback(index);
+            Stage stage = (Stage) btnLogout.getScene().getWindow();
+            stage.close(); 
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Access Denied");
+            alert.setHeaderText("Permission Insufficient!");
+            String msg = "You can only submit feedback to sport classes/coaches that you have enrolled in OR view submitted feedback.";
+            alert.setContentText(msg);
+            alert.showAndWait(); 
+        }
     }
     
     @FXML
@@ -357,7 +383,7 @@ public class studentController {
 
                     groupSport(student); // refresh the Sport page
                     groupSchedule(student); // refresh the Schedule page
-                    //FileIO.writeStudent(student, "student.txt");
+                    FileIO.writeStudent(student, "student.txt");
                     FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
                 }
                 else

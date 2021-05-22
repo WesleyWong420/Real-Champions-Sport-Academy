@@ -98,6 +98,28 @@ public class FileIO {
         return arrayStudent;
     }
     
+    public static ArrayList<Coach> readCoachFile(String file){
+        
+        ArrayList<Coach> arrayCoach = new ArrayList<>();
+        
+        try 
+        {
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            arrayCoach = (ArrayList<Coach>) input.readObject(); // Reading ArrayList of Coach Object
+            input.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found!");
+        }
+        catch (IOException e){
+        }
+        catch (ClassNotFoundException e){
+            System.out.println("Class not found");
+        }
+        
+        return arrayCoach;
+    }
+    
     public void addSport(String file){
         try 
         {
@@ -209,6 +231,23 @@ public class FileIO {
         }
     }
     
+    public void addCoach(String file){
+        try 
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ArrayList<Coach> arrayCoach = new ArrayList<>();  // Writing ArrayList of Coach Object
+            
+            Coach coach1 = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3", 5.0, 40);
+            
+            arrayCoach.add(coach1);
+            
+            output.writeObject(arrayCoach);
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+    
     public static void writeFeedback(ArrayList<Feedback> arrayFeedback, Feedback feedback, String file){
         try 
         {
@@ -233,6 +272,22 @@ public class FileIO {
             arrayStudent.add(student);
             
             output.writeObject(arrayStudent);
+            
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+    
+    public static void writeCoach(Coach coach, String file){
+        try 
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ArrayList<Coach> arrayCoach = new ArrayList<Coach>();
+            
+            arrayCoach.add(coach);
+            
+            output.writeObject(arrayCoach);
             
             output.close(); 
         } 

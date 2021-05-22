@@ -18,7 +18,7 @@ public class coachController {
     @FXML
     public Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating, lblhourlyRate;
     
-    Coach coach = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3", 5.0, 40);
+    Coach coach = FileIO.readCoachFile("coach.txt").get(0);
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     
@@ -101,7 +101,7 @@ public class coachController {
                     coach.setContact(txtMobileNo.getText());
                     coach.setAddress(txtAddress.getText());
                     
-                    //FileIO.writeCoach(coach, "coach.txt");
+                    FileIO.writeCoach(coach, "coach.txt");
                     FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
                 }
                 else
