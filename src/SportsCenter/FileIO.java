@@ -54,17 +54,61 @@ public class FileIO {
         return arraySchedule;
     }
     
+    public static ArrayList<Feedback> readFeedbackFile(String file){
+        
+        ArrayList<Feedback> arrayFeedback = new ArrayList<>();
+        
+        try 
+        {
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            arrayFeedback = (ArrayList<Feedback>) input.readObject(); // Reading ArrayList of Feedback Object
+            input.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found!");
+        }
+        catch (IOException e){
+        }
+        catch (ClassNotFoundException e){
+            System.out.println("Class not found");
+        }
+        
+        return arrayFeedback;
+    }
+    
+    public static ArrayList<Student> readStudentFile(String file){
+        
+        ArrayList<Student> arrayStudent = new ArrayList<>();
+        
+        try 
+        {
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            arrayStudent = (ArrayList<Student>) input.readObject(); // Reading ArrayList of Student Object
+            input.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found!");
+        }
+        catch (IOException e){
+        }
+        catch (ClassNotFoundException e){
+            System.out.println("Class not found");
+        }
+        
+        return arrayStudent;
+    }
+    
     public void addSport(String file){
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
             ArrayList<Sport> arraySports = new ArrayList<>();  // Writing ArrayList of Sports Object
             
-            Coach alex = new Coach("Alex");
-            Coach bob = new Coach("Bob");
-            Coach caitlin = new Coach("Caitlin");
-            Coach demetrice = new Coach("Demetrice");
-            Coach evenlyn = new Coach("Evenlyn");
+            Coach alex = new Coach("C001", "Alex", "Male", "0123456789", "alex@gmail.com", "Street 1", 3.5, 40);
+            Coach bob = new Coach("C002", "Bob", "Male", "0123456789", "bob@gmail.com", "Street 2", 2.1, 30);
+            Coach caitlin = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3n", 4.8, 35);
+            Coach demetrice = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
+            Coach evenlyn = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
             
             Sport sport1 = new Sport("S001", "Archery", 120, 130, alex);
             Sport sport2 = new Sport("S002", "Badminton", 120, 90, bob);
@@ -83,8 +127,6 @@ public class FileIO {
         } 
         catch (IOException e){
         }
-        
-        System.out.println("Sports write operation completed");
     }
     
     public void addSchedule(String file){
@@ -93,11 +135,11 @@ public class FileIO {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
             ArrayList<Schedule> arraySchedule = new ArrayList<>();  // Writing ArrayList of Schedule Object
             
-            Coach alex = new Coach("Alex");
-            Coach bob = new Coach("Bob");
-            Coach caitlin = new Coach("Caitlin");
-            Coach demetrice = new Coach("Demetrice");
-            Coach evenlyn = new Coach("Evenlyn");
+            Coach alex = new Coach("C001", "Alex", "Male", "0123456789", "alex@gmail.com", "Street 1", 3.5, 40);
+            Coach bob = new Coach("C002", "Bob", "Male", "0123456789", "bob@gmail.com", "Street 2", 2.1, 30);
+            Coach caitlin = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3", 4.8, 35);
+            Coach demetrice = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
+            Coach evenlyn = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
             
             Schedule schedule1 = new Schedule("S001", "Archery", 120, 130, alex, "08:00 - 10:00", "Mon, 23 May", "Court 1");
             Schedule schedule2 = new Schedule("S002", "Badminton", 120, 90, bob, "10:00 - 12:00", "Tue, 24 May", "Court 2");
@@ -117,18 +159,79 @@ public class FileIO {
         } 
         catch (IOException e){
         }
-        
-        System.out.println("Schedule write operation completed");
+    }
+    
+    public void addFeedback(String file){
+        try 
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ArrayList<Feedback> arrayFeedback = new ArrayList<>();  // Writing ArrayList of Feedback Object
+            
+            Feedback feedback1 = new Feedback("C001", "Alex", "F001", "Coach is not friendly.", 1);
+            Feedback feedback2 = new Feedback("C002", "Bob", "F002", "Quite decent.", 3);
+            Feedback feedback3 = new Feedback("C003", "Caitlin", "F003", "Everything is good, coach is friendly.", 4);
+            Feedback feedback4 = new Feedback("C004", "Demetrice", "F004", "Teaching part can be improved.", 2);
+            Feedback feedback5 = new Feedback("C005", "Evenlyn", "F005", "Perfect! Friendly coach. Would come again.", 5);
+            
+            arrayFeedback.add(feedback1);
+            arrayFeedback.add(feedback2);
+            arrayFeedback.add(feedback3);
+            arrayFeedback.add(feedback4);
+            arrayFeedback.add(feedback5);
+            
+            output.writeObject(arrayFeedback);
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+    
+    public void addStudent(String file){
+        try 
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ArrayList<Student> arrayStudent = new ArrayList<>();  // Writing ArrayList of Student Object
+            
+            ArrayList<String> lastFiveFeedbackID = new ArrayList<>();
+            lastFiveFeedbackID.add("F001");
+            lastFiveFeedbackID.add("");
+            lastFiveFeedbackID.add("");
+            lastFiveFeedbackID.add("F004");
+            lastFiveFeedbackID.add("F005");
+            Student student1 = new Student("U001", "Caren", "Female", "0123456789", "caren@gmail.com", "Street 1", lastFiveFeedbackID);
+            
+            arrayStudent.add(student1);
+            
+            output.writeObject(arrayStudent);
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+    
+    public static void writeFeedback(ArrayList<Feedback> arrayFeedback, Feedback feedback, String file){
+        try 
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+                    
+            arrayFeedback.add(feedback);
+            
+            output.writeObject(arrayFeedback);
+            
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
     }
     
     public static void writeStudent(Student student, String file){
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
-            ArrayList<Student> arrayStudent = new ArrayList<>();  // Writing ArrayList of Schedule Object
-
+            ArrayList<Student> arrayStudent = new ArrayList<Student>();
+            
             arrayStudent.add(student);
-  
+            
             output.writeObject(arrayStudent);
             
             output.close(); 

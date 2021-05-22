@@ -12,13 +12,13 @@ import javafx.stage.Stage;
 public class coachController {
     
     @FXML
-    private Button btnLogout, btnSave, btnEdit;
+    public Button btnLogout, btnSave, btnEdit;
     @FXML
-    private TextField txtCoachID, txtUsername, txtGender, txtEmail, txtMobileNo, txtAddress, txtSport, txtNextClass, txtRating;
+    public TextField txtCoachID, txtUsername, txtGender, txtEmail, txtMobileNo, txtAddress, txtSport, txtNextClass, txtRating, txthourlyRate;
     @FXML
-    private Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating;
+    public Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating, lblhourlyRate;
     
-    Coach coach = new Coach("U042", "Evenlyn", "Female", "0124242424", "evenlyn@gmail.com", "home address", 4, 30);
+    Coach coach = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3", 5.0, 40);
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     
@@ -61,6 +61,7 @@ public class coachController {
         txt_list.add(txtMobileNo);
         txt_list.add(txtAddress);
         txt_list.add(txtRating);
+        txt_list.add(txthourlyRate);
         
         coach.getSelfRecord(txt_list);
     }
@@ -74,7 +75,7 @@ public class coachController {
     }
     
     @FXML
-    private void pressSave() throws Exception {
+    private void pressSave() throws Exception { // setSelfRecord()
         
         if(!txtIsEmpty())
         {
@@ -93,9 +94,9 @@ public class coachController {
                     txtSport.setDisable(true); // Just for visual, Coach's Sport cannot be modified
                     txtNextClass.setDisable(true); // Just for visual, next class session cannot be modified
                     txtRating.setDisable(true); // Just for visual, Coach's Rating cannot be modified
+                    txthourlyRate.setDisable(true); // Just for visual, Coach's Rating cannot be modified
         
-
-                    coach.setName(txtUsername.getText());
+                    coach.setUsername(txtUsername.getText());
                     coach.setEmail(txtEmail.getText());
                     coach.setContact(txtMobileNo.getText());
                     coach.setAddress(txtAddress.getText());
@@ -144,6 +145,7 @@ public class coachController {
         txtSport.setDisable(false); // Just for visual, Coach's Sport cannot be modified
         txtNextClass.setDisable(false); // Just for visual, next class session cannot be modified
         txtRating.setDisable(false); // Just for visual, Coach's Rating cannot be modified
+        txthourlyRate.setDisable(false); // Just for visual, Coach's Rating cannot be modified
     }
     
     @FXML
@@ -158,6 +160,7 @@ public class coachController {
         txt_list.add(txtSport);
         txt_list.add(txtNextClass);
         txt_list.add(txtRating);
+        txt_list.add(txthourlyRate);
         ArrayList<Label> lbl_list = new ArrayList<>();
         lbl_list.add(lblCoachID);
         lbl_list.add(lblUsername);
@@ -168,6 +171,7 @@ public class coachController {
         lbl_list.add(lblSport);
         lbl_list.add(lblNextClass);
         lbl_list.add(lblRating);
+        lbl_list.add(lblhourlyRate);
         
         TextField txt = (TextField) event.getSource(); // Type Casting
         int index = txt_list.indexOf(txt); // Search for the TextField's index 
@@ -186,6 +190,7 @@ public class coachController {
         txt_list.add(txtSport);
         txt_list.add(txtNextClass);
         txt_list.add(txtRating);
+        txt_list.add(txthourlyRate);
         ArrayList<Label> lbl_list = new ArrayList<>();
         lbl_list.add(lblCoachID);
         lbl_list.add(lblUsername);
@@ -196,6 +201,7 @@ public class coachController {
         lbl_list.add(lblSport);
         lbl_list.add(lblNextClass);
         lbl_list.add(lblRating);
+        lbl_list.add(lblhourlyRate);
         
         TextField txt = (TextField) event.getSource();  // Type Casting
         int index = txt_list.indexOf(txt); // Search for the TextField's index 

@@ -8,10 +8,8 @@ public class Schedule extends Sport implements Serializable{
     private String date;
     private String location;
     
-    public Schedule(){}  // Parameterless constructor
-    
-    public Schedule(String sportID, String name, int duration, int fee, Coach coach, String time, String date, String location){  // Constructor overloading
-        super(sportID, name, duration, fee, coach);
+    public Schedule(String sportID, String sportName, int duration, int fee, Coach coach, String time, String date, String location){  // Constructor overloading
+        super(sportID, sportName, duration, fee, coach);
         this.time = time;
         this.date = date;
         this.location = location;

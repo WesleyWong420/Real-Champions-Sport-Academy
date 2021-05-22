@@ -755,7 +755,7 @@
                                        <tooltip>
                                           <Tooltip fx:id="tooltipCoach1_HistoryTab" text="Rating: 5.0/5.0" />
                                        </tooltip></Label>
-                                    <Label id="clickable_white16" fx:id="lblSport1Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="5.0/5.0" HBox.hgrow="ALWAYS" />
+                                    <Label id="clickable_white16" fx:id="lblSport1Feedback_HistoryTab" alignment="CENTER" onMouseClicked="#pressFeedback" prefHeight="26.0" prefWidth="166.0" text="-/5.0" HBox.hgrow="ALWAYS" />
                                  </children>
                                  <VBox.margin>
                                     <Insets left="45.0" right="20.0" top="10.0" />

@@ -22,7 +22,7 @@ public class Guest extends User{
             {
                 switch(index1){
                     case 0: // Schedule Attribute 1 - Name
-                        lbl.setText(arraySchedule.get(index2).getName());
+                        lbl.setText(arraySchedule.get(index2).getSportName());
                         break;
                     case 1: // Schedule Attribute 2 - Time
                         lbl.setText("🕒 " + arraySchedule.get(index2).getTime());
@@ -34,7 +34,7 @@ public class Guest extends User{
                         lbl.setText("📍 " + arraySchedule.get(index2).getLocation());
                         break;
                     case 4: // Schedule Attribute 5 - Coach Name
-                        lbl.setText("🎓 " + arraySchedule.get(index2).getCoachObject().getName());
+                        lbl.setText("🎓 " + arraySchedule.get(index2).getCoachObject().getUsername());
                         break;
                 }
                 index2++;

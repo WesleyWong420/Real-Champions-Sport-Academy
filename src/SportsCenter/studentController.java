@@ -1,5 +1,6 @@
 package SportsCenter;
 
+import java.io.IOException;
 import java.util.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -73,8 +74,7 @@ public class studentController {
     @FXML
     public Label lblUserID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport;
     
-    ArrayList<String> lastFiveClassesID = new ArrayList<>();
-    Student student = new Student("U069", "Caren", "Female", "0126969696", "caren@gmail.com", "home address", lastFiveClassesID);
+    Student student = FileIO.readStudentFile("student.txt").get(0);
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     
@@ -85,6 +85,7 @@ public class studentController {
         groupSport(student);
         groupSchedule(student);
         groupSelfRecord(student);
+        groupHistory(student);
     }
     
     private void groupSport(Student student){
@@ -140,7 +141,15 @@ public class studentController {
         control_list.add(btn_list);
         control_list.add(vbox_list);
 
+        ArrayList<Tooltip> tooltip_list = new ArrayList<>();
+        tooltip_list.add(tooltipCoach1_SportsTab);
+        tooltip_list.add(tooltipCoach2_SportsTab);
+        tooltip_list.add(tooltipCoach3_SportsTab);
+        tooltip_list.add(tooltipCoach4_SportsTab);
+        tooltip_list.add(tooltipCoach5_SportsTab);
+
         student.getSport(arraySports, control_list);
+        student.getCoach(arraySports, tooltip_list);
     }
     
     private void groupSchedule(Student student){
@@ -182,13 +191,20 @@ public class studentController {
         hbox_list.add(hboxSport3_ScheduleTab);
         hbox_list.add(hboxSport4_ScheduleTab);
         hbox_list.add(hboxSport5_ScheduleTab);
+        ArrayList<Tooltip> tooltip_list = new ArrayList<>();
+        tooltip_list.add(tooltipCoach1_ScheduleTab);
+        tooltip_list.add(tooltipCoach2_ScheduleTab);
+        tooltip_list.add(tooltipCoach3_ScheduleTab);
+        tooltip_list.add(tooltipCoach4_ScheduleTab);
+        tooltip_list.add(tooltipCoach5_ScheduleTab);
         control_list.add(name); 
         control_list.add(time); 
         control_list.add(date); 
         control_list.add(location); 
         control_list.add(coach);
         control_list.add(hbox_list);
-
+        control_list.add(tooltip_list);
+        
         student.getSchedule(arraySchedule, control_list);
     }
     
@@ -204,6 +220,49 @@ public class studentController {
         txt_list.add(txtSport);
         
         student.getSelfRecord(txt_list);
+    }
+    
+    private void groupHistory(Student student){
+
+        ArrayList<ArrayList> control_list = new ArrayList<>(); // Outer ArrayList to hold ArrayList of different Controls
+        ArrayList<Label> name = new ArrayList<>();
+        name.add(lblSport1Name_HistoryTab);
+        name.add(lblSport2Name_HistoryTab);
+        name.add(lblSport3Name_HistoryTab);
+        name.add(lblSport4Name_HistoryTab);
+        name.add(lblSport5Name_HistoryTab);
+        ArrayList<Label> date = new ArrayList<>();
+        date.add(lblSport1Date_HistoryTab);
+        date.add(lblSport2Date_HistoryTab);
+        date.add(lblSport3Date_HistoryTab);
+        date.add(lblSport4Date_HistoryTab);
+        date.add(lblSport5Date_HistoryTab);
+        ArrayList<Label> coach = new ArrayList<>(); 
+        coach.add(lblSport1Coach_HistoryTab);
+        coach.add(lblSport2Coach_HistoryTab);
+        coach.add(lblSport3Coach_HistoryTab);
+        coach.add(lblSport4Coach_HistoryTab);
+        coach.add(lblSport5Coach_HistoryTab);
+        ArrayList<Label> feedback = new ArrayList<>();
+        feedback.add(lblSport1Feedback_HistoryTab);
+        feedback.add(lblSport2Feedback_HistoryTab);
+        feedback.add(lblSport3Feedback_HistoryTab);
+        feedback.add(lblSport4Feedback_HistoryTab);
+        feedback.add(lblSport5Feedback_HistoryTab);
+        ArrayList<Tooltip> tooltip_list = new ArrayList<>();
+        tooltip_list.add(tooltipCoach1_HistoryTab);
+        tooltip_list.add(tooltipCoach2_HistoryTab);
+        tooltip_list.add(tooltipCoach3_HistoryTab);
+        tooltip_list.add(tooltipCoach4_HistoryTab);
+        tooltip_list.add(tooltipCoach5_HistoryTab);
+        control_list.add(name); 
+        control_list.add(date);  
+        control_list.add(coach);
+        control_list.add(feedback);
+        control_list.add(tooltip_list);
+        
+        ArrayList<Feedback> arrayFeedback = FileIO.readFeedbackFile("feedback.txt");
+        student.getHistory(arraySchedule, arrayFeedback, control_list);
     }
     
     @FXML
@@ -239,28 +298,28 @@ public class studentController {
     }
     
     @FXML
-    private void pressFeedback(MouseEvent event) throws Exception {
-        Label lbl = new Label();
+    private void pressFeedback(MouseEvent event) throws IOException {
+        
+        Label lbl;
         lbl = (Label) event.getSource(); // To know which 1 out of 5 label is clicked
+
+        ArrayList<Label> lbl_list = new ArrayList<>();
+        lbl_list.add(lblSport1Feedback_HistoryTab);
+        lbl_list.add(lblSport2Feedback_HistoryTab);
+        lbl_list.add(lblSport3Feedback_HistoryTab);
+        lbl_list.add(lblSport4Feedback_HistoryTab);
+        lbl_list.add(lblSport5Feedback_HistoryTab);
         
-        // Use lbl to query History Object
-        // Pass History Object to feedbackController,
-        // so that it knows to Submit Feedback or Review Feedback
-        // Submit Feedback - Submit Button Enabled | 0 Stars by default
-        // Review Feedback - Submit Button Disabled | Stars populated according to record
+        arraySports = FileIO.readSportsFile("sport.txt");
+        int index = lbl_list.indexOf(lbl);
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("feedback.fxml"));
-        Parent root = (Parent) loader.load();
-        feedbackController feedback_con = loader.getController();
-        //feedback_con.pushHistory(history1);
-        Stage stage = new Stage();
-        stage.setTitle("Feedback Form Submission");
-        stage.setScene(new Scene(root, 645, 545));
-        stage.show();   
+        student.submitFeedback(arraySports, index);
+        Stage stage = (Stage) btnLogout.getScene().getWindow();
+        stage.close(); 
     }
     
     @FXML
-    private void pressSave() throws Exception {
+    private void pressSave() throws Exception { // setSelfRecord()
         
         if(!txtIsEmpty())
         {
@@ -278,14 +337,14 @@ public class studentController {
                     txtAddress.setDisable(true);
                     txtSport.setDisable(true);
 
-                    student.setName(txtUsername.getText());
+                    student.setUsername(txtUsername.getText());
                     student.setEmail(txtEmail.getText());
                     student.setContact(txtMobileNo.getText());
                     student.setAddress(txtAddress.getText());
                     
                     for(Sport sport : arraySports)
                     {
-                        if(sport.getName().equals(txtSport.getText())) // Search and found
+                        if(sport.getSportName().equals(txtSport.getText())) // Search and found
                         {
                             student.setSportObject(sport);
                             break;
@@ -401,7 +460,7 @@ public class studentController {
         ArrayList<String> selection = new ArrayList<>();
         for(int index = 0; index < arraySports.size(); index++)
         {
-            selection.add(arraySports.get(index).getName()); // Add choices into the ComboBox inside the pop-up dialog
+            selection.add(arraySports.get(index).getSportName()); // Add choices into the ComboBox inside the pop-up dialog
         }
         
         if(!txtSport.getText().isEmpty())
