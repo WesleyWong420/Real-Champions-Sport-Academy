@@ -27,8 +27,8 @@ public class feedbackController {
     }
     
     @FXML
-    private void pressSubmit() throws Exception {  // Thank you notification after feedback 
-        if(!txtFeedback.getText().equals("") && rating.getRating() != 0)
+    private void pressSubmit() throws Exception {  
+        if(!txtFeedback.getText().equals("") && rating.getRating() != 0) // Make sure all fields are filled
         {
            FileIO.pushNotification("Feedback Submitted!", "Thank you for your feedback.");
            btnSubmit.setDisable(true);
@@ -38,28 +38,39 @@ public class feedbackController {
            ArrayList<Feedback> arrayFeedback = FileIO.readFeedbackFile("feedback.txt");
            String historyID;
            int next_id = arrayFeedback.size() + 1;
-           if(next_id >= 10)
+           if(next_id >= 10) // FeedbackID Generator
            {
-               historyID = "F0" + next_id;
+               historyID = "F0" + next_id; // FeedbackID in tenth place
            }
            else if(next_id >= 100)
            {
-               historyID = "F" + next_id;
+               historyID = "F" + next_id; // FeedbackID in hundredth place
            }
            else
            {
-               historyID = "F00" + next_id;
+               historyID = "F00" + next_id; // FeedbackID in ones place
            }
             
             ArrayList<Sport> arraySports = FileIO.readSportsFile("sport.txt");
             Coach coach = arraySports.get(history_index).getCoachObject();
             Feedback feedback = new Feedback(coach.getUserID(), coach.getUsername(), historyID, txtFeedback.getText(), (int)rating.getRating());
-            FileIO.writeFeedback(arrayFeedback, feedback, "feedback.txt");
-            
+            arrayFeedback.add(feedback); // append to arraylist
+            FileIO.writeFeedback(arrayFeedback, "feedback.txt"); // then write to file
+
             ArrayList <String> feedback_id_list = student.getLastFiveFeedbackID();
             feedback_id_list.set(history_index, historyID);
             student.setLastFiveFeedbackID(feedback_id_list);
-            FileIO.writeStudent(student, "student.txt");
+            
+            ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+            for (Student sdt: arrayStudent) // overwrite the Student
+            {
+                if(student.getUserID().equals(sdt.getUserID()))
+                {
+                    sdt = student;
+                    break;
+                }
+            }
+            FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
         }
         else
         {
@@ -108,7 +119,7 @@ public class feedbackController {
             // Do Nothing (FXML is at Submit state by default)
         }
         
-        history_index = index;
-        student = stdnt;
+        history_index = index; // Overwriting the global variable so that is can be used in submitFeedback()
+        student = stdnt; // Overwriting the global variable so that is can be used in submitFeedback()
     }
 }

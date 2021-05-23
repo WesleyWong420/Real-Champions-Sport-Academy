@@ -74,9 +74,10 @@ public class studentController {
     @FXML
     public Label lblUserID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport;
     
-    Student student = FileIO.readStudentFile("student.txt").get(0);
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
+    ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+    Student student = arrayStudent.get(1);
     
     public void initialize() {
         arraySports = FileIO.readSportsFile("sport.txt");
@@ -141,7 +142,7 @@ public class studentController {
         control_list.add(btn_list);
         control_list.add(vbox_list);
 
-        ArrayList<Tooltip> tooltip_list = new ArrayList<>();
+        ArrayList<Tooltip> tooltip_list = new ArrayList<>(); // Tooltip - Display Coach Rating from Student View
         tooltip_list.add(tooltipCoach1_SportsTab);
         tooltip_list.add(tooltipCoach2_SportsTab);
         tooltip_list.add(tooltipCoach3_SportsTab);
@@ -191,7 +192,7 @@ public class studentController {
         hbox_list.add(hboxSport3_ScheduleTab);
         hbox_list.add(hboxSport4_ScheduleTab);
         hbox_list.add(hboxSport5_ScheduleTab);
-        ArrayList<Tooltip> tooltip_list = new ArrayList<>();
+        ArrayList<Tooltip> tooltip_list = new ArrayList<>(); // Inner ArrayList 7 - Tooltip (Display Coach Rating from Student View)
         tooltip_list.add(tooltipCoach1_ScheduleTab);
         tooltip_list.add(tooltipCoach2_ScheduleTab);
         tooltip_list.add(tooltipCoach3_ScheduleTab);
@@ -225,31 +226,31 @@ public class studentController {
     private void groupHistory(Student student){
 
         ArrayList<ArrayList> control_list = new ArrayList<>(); // Outer ArrayList to hold ArrayList of different Controls
-        ArrayList<Label> name = new ArrayList<>();
+        ArrayList<Label> name = new ArrayList<>(); // Inner ArrayList 1 - Label
         name.add(lblSport1Name_HistoryTab);
         name.add(lblSport2Name_HistoryTab);
         name.add(lblSport3Name_HistoryTab);
         name.add(lblSport4Name_HistoryTab);
         name.add(lblSport5Name_HistoryTab);
-        ArrayList<Label> date = new ArrayList<>();
+        ArrayList<Label> date = new ArrayList<>(); // Inner ArrayList 2 - Label
         date.add(lblSport1Date_HistoryTab);
         date.add(lblSport2Date_HistoryTab);
         date.add(lblSport3Date_HistoryTab);
         date.add(lblSport4Date_HistoryTab);
         date.add(lblSport5Date_HistoryTab);
-        ArrayList<Label> coach = new ArrayList<>(); 
+        ArrayList<Label> coach = new ArrayList<>();  // Inner ArrayList 3 - Label
         coach.add(lblSport1Coach_HistoryTab);
         coach.add(lblSport2Coach_HistoryTab);
         coach.add(lblSport3Coach_HistoryTab);
         coach.add(lblSport4Coach_HistoryTab);
         coach.add(lblSport5Coach_HistoryTab);
-        ArrayList<Label> feedback = new ArrayList<>();
+        ArrayList<Label> feedback = new ArrayList<>(); // Inner ArrayList 4 - Label
         feedback.add(lblSport1Feedback_HistoryTab);
         feedback.add(lblSport2Feedback_HistoryTab);
         feedback.add(lblSport3Feedback_HistoryTab);
         feedback.add(lblSport4Feedback_HistoryTab);
         feedback.add(lblSport5Feedback_HistoryTab);
-        ArrayList<Tooltip> tooltip_list = new ArrayList<>();
+        ArrayList<Tooltip> tooltip_list = new ArrayList<>(); // Inner ArrayList 5 - Tooltip (Display Coach Rating from Student View)
         tooltip_list.add(tooltipCoach1_HistoryTab);
         tooltip_list.add(tooltipCoach2_HistoryTab);
         tooltip_list.add(tooltipCoach3_HistoryTab);
@@ -285,15 +286,24 @@ public class studentController {
         btn_list.add(btnSport3Enroll_SportsTab);
         btn_list.add(btnSport4Enroll_SportsTab);
         btn_list.add(btnSport5Enroll_SportsTab);
-        int btn_index = btn_list.indexOf(btn_pressed);
-        Sport sport_to_enroll = arraySports.get(btn_index);
+        int btn_index = btn_list.indexOf(btn_pressed); // Index of which the button is pressed
+        Sport sport_to_enroll = arraySports.get(btn_index); // We use the index to determine the Sport that student wish to enroll
         
         student.enrollSport(sport_to_enroll);
         
         groupSport(student); // refresh the sport page
         groupSchedule(student); // refresh the schedule page
         groupSelfRecord(student); // refresh the profile page
-        FileIO.writeStudent(student, "student.txt");
+        
+        for (Student sdt: arrayStudent) // overwrite the student
+        {
+            if(student.getUserID().equals(sdt.getUserID()))
+            {
+                sdt = student;
+                break;
+            }
+        }
+        FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
         FileIO.pushNotification("Successful!", "You have been enrolled in a sport.");
     }
     
@@ -311,29 +321,29 @@ public class studentController {
         lbl_list.add(lblSport5Feedback_HistoryTab);
         
         arraySports = FileIO.readSportsFile("sport.txt");
-        int index = lbl_list.indexOf(lbl);
+        int index = lbl_list.indexOf(lbl); // Index of which the label is pressed
         
-        int sport_index = -1;
+        int sport_index = -1; // Value = -1 by default, since if a student is not enrolled in any Sport, Sport = null, and the returning index would be -1
         if(student.getSportObject() != null)
         {
             for(Sport sprt: arraySports)
             {
                 if(sprt.getSportID().equals(student.getSportObject().getSportID()))
                 {
-                    sport_index = arraySports.indexOf(sprt);
+                    sport_index = arraySports.indexOf(sprt); // Index of sport which the student is current enrolled in
                     break;
                 }
             }
         }
         
         ArrayList<String> feedback_id_list = student.getLastFiveFeedbackID();
-        if(index == sport_index || !feedback_id_list.get(index).equals(""))
-        {
+        if(index == sport_index || !feedback_id_list.get(index).equals("")) // Condition 1: Student can only submit feedback to Sport they are current enrolled in
+        {                                                                   // Condition 2: Student can also view previouly submitted feedback
             student.submitFeedback(index);
             Stage stage = (Stage) btnLogout.getScene().getWindow();
             stage.close(); 
         }
-        else
+        else // Neither one condition is satisfied
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Access Denied");
@@ -345,9 +355,9 @@ public class studentController {
     }
     
     @FXML
-    private void pressSave() throws Exception { // setSelfRecord()
+    private void pressSave() throws Exception { // equivalent to setSelfRecord()
         
-        if(!txtIsEmpty())
+        if(!txtIsEmpty()) // Check if all the text fields are filled
         {
             if(txtMobileNo.getText().matches("[0-9]+")) // Mobile number validation
             {
@@ -377,13 +387,22 @@ public class studentController {
                         }
                         else
                         {   
-                            student.setSportObject(null); // Sports not found meaning unenrollment
+                            student.setSportObject(null); // Sports not found meaning unenrollment because it is "Withdraw" in TextBox
                         }
                     }
 
                     groupSport(student); // refresh the Sport page
                     groupSchedule(student); // refresh the Schedule page
-                    FileIO.writeStudent(student, "student.txt");
+                    
+                    for (Student sdt: arrayStudent) // overwrite the Student
+                    {
+                        if(student.getUserID().equals(sdt.getUserID()))
+                        {
+                            sdt = student;
+                            break;
+                        }
+                    }
+                    FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
                     FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
                 }
                 else
@@ -480,7 +499,7 @@ public class studentController {
     }
     
     @FXML
-    private void selectSport() throws Exception { // Student Profile Tabs
+    private void selectSport() throws Exception { 
         lblSport.setVisible(true); // Float the label
         
         ArrayList<String> selection = new ArrayList<>();
