@@ -107,6 +107,7 @@
                                        <children>
                                           <Button mnemonicParsing="false" text="Cancel" />
                                           <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#pressSubmit" text="Submit" />
+                                          <Label fx:id="registerstatus" prefHeight="18.0" prefWidth="146.0" />
                                        </children>
                                     </HBox>
                                  </children>

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -17,9 +18,12 @@ public class welcomeController {
     @FXML
     private Button btnGuest, btnLogin,submitBtn;
     @FXML
-    private Label loginstatus;
+    private Label loginstatus,registerstatus;
     @FXML
-    private TextField userTxt,passTxt, studentIDRTxt,passRTxt,SportRCBox,nameRTxt,emailRTxt,contactRTxt,genderRTxt;
+    private TextField userTxt, studentIDRTxt,SportRCBox,nameRTxt,emailRTxt,contactRTxt,genderRTxt;
+    
+    @FXML
+    private PasswordField passTxt,passRTxt;
     
     @FXML
     private TextArea addressRTxt;
@@ -32,6 +36,8 @@ public class welcomeController {
     private  ArrayList<Sport> arraySports ;
 
     public void initialize() {
+//       FileIO temp = new FileIO(); //initiating admin login for first use 
+//       temp.addlogin("login.txt");
        studentIDRTxt.setText(guest.generateUserID());
        arraySports = FileIO.readSportsFile("sport.txt");
        //adding sports to choicebox 
@@ -86,14 +92,25 @@ public class welcomeController {
     @FXML
     private void pressSubmit(javafx.event.ActionEvent event) throws Exception {
         Guest guest = new Guest();
-        if ((studentIDRTxt.getText()!= null) && (passRTxt.getText() != null)&& (nameRTxt.getText() != null) && (emailRTxt.getText() != null) && (contactRTxt.getText() != null)){
-            System.out.println("LOOOP IN");
-            guest.register(studentIDRTxt.getText(),nameRTxt.getText(),genderRTxt.getText(),contactRTxt.getText(),emailRTxt.getText(),addressRTxt.getText(),"S001");
+        String selectedSportID = null;
+        String value = (String) sportRCBox.getValue();
+        if(value != null){
+            String [] selectedSportText = value.split(" ", 2);
+            selectedSportID = selectedSportText[0];
         }
-        Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
-        Stage window = (Stage) submitBtn.getScene().getWindow(); 
-        window.setScene(new Scene(root, 800, 480));
-        window.setTitle("Welcome");
+        if ((studentIDRTxt.getText()!= null) && (passRTxt.getText() != null)&& (nameRTxt.getText() != null) && (emailRTxt.getText() != null) && (contactRTxt.getText() != null) && (selectedSportID != null)){
+            System.out.println("LOOOP IN");
+            System.out.println(selectedSportID);
+            //making guest user a student
+            guest.register(studentIDRTxt.getText(),nameRTxt.getText(),genderRTxt.getText(),contactRTxt.getText(),emailRTxt.getText(),addressRTxt.getText(),selectedSportID,passRTxt.getText());
+            
+            Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
+            Stage window = (Stage) submitBtn.getScene().getWindow(); 
+            window.setScene(new Scene(root, 800, 480));
+            window.setTitle("Welcome");
+        }else{
+            registerstatus.setText("Please enter all details!");
+        }
     }
     
     @FXML
