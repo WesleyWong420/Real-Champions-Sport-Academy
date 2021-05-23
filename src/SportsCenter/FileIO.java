@@ -16,7 +16,8 @@ public class FileIO {
         
         try 
         {
-            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             arraySports = (ArrayList<Sport>) input.readObject(); // Reading ArrayList of Sports Object
             input.close();
         }
@@ -38,7 +39,8 @@ public class FileIO {
         
         try 
         {
-            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             arraySchedule = (ArrayList<Schedule>) input.readObject(); // Reading ArrayList of Schedule Object
             input.close();
         }
@@ -60,7 +62,8 @@ public class FileIO {
         
         try 
         {
-            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             arrayFeedback = (ArrayList<Feedback>) input.readObject(); // Reading ArrayList of Feedback Object
             input.close();
         }
@@ -82,7 +85,8 @@ public class FileIO {
         
         try 
         {
-            ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectInputStream input = new ObjectInputStream(new FileInputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectInputStream input = new ObjectInputStream(new FileInputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             arrayStudent = (ArrayList<Student>) input.readObject(); // Reading ArrayList of Student Object
             input.close();
         }
@@ -187,6 +191,7 @@ public class FileIO {
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             ArrayList<Feedback> arrayFeedback = new ArrayList<>();  // Writing ArrayList of Feedback Object
             
             Feedback feedback1 = new Feedback("C001", "Alex", "F001", "Coach is not friendly.", 1);
@@ -211,7 +216,8 @@ public class FileIO {
     public void addStudent(String file){
         try 
         {
-            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             ArrayList<Student> arrayStudent = new ArrayList<>();  // Writing ArrayList of Student Object
             
             ArrayList<String> lastFiveFeedbackID = new ArrayList<>();
@@ -234,7 +240,8 @@ public class FileIO {
     public void addCoach(String file){
         try 
         {
-            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             ArrayList<Coach> arrayCoach = new ArrayList<>();  // Writing ArrayList of Coach Object
             
             Coach coach1 = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3", 5.0, 40);
@@ -251,7 +258,8 @@ public class FileIO {
     public static void writeFeedback(ArrayList<Feedback> arrayFeedback, Feedback feedback, String file){
         try 
         {
-            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
                     
             arrayFeedback.add(feedback);
             
@@ -266,11 +274,15 @@ public class FileIO {
     public static void writeStudent(Student student, String file){
         try 
         {
-            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             ArrayList<Student> arrayStudent = new ArrayList<Student>();
-            
+            arrayStudent = readStudentFile("student.txt");
+            System.out.println("before");
+            System.out.println(arrayStudent);
+         
             arrayStudent.add(student);
-            
+            System.out.println("after");
             output.writeObject(arrayStudent);
             
             output.close(); 
@@ -282,7 +294,8 @@ public class FileIO {
     public static void writeCoach(Coach coach, String file){
         try 
         {
-            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             ArrayList<Coach> arrayCoach = new ArrayList<Coach>();
             
             arrayCoach.add(coach);
@@ -295,6 +308,40 @@ public class FileIO {
         }
     }
     
+        public static void writeLogin(Student student, String file){
+        try 
+        {
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
+            ArrayList<Student> arrayStudent = new ArrayList<Student>();
+            
+            arrayStudent.add(student);
+            
+            output.writeObject(arrayStudent);
+            
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+        public void addLogin(String file){
+        try 
+        {
+            //ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
+            ArrayList<login> arrayLogin = new ArrayList<>();  // Writing ArrayList of login Object
+            
+            login login1 = new login("C003", "Caitlin");
+            
+            arrayLogin.add(login1);
+            
+            output.writeObject(arrayLogin);
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+        
     public static void pushNotification(String title, String description) throws FileNotFoundException{
         
         ImageView icon = new ImageView(new Image(new FileInputStream("src\\SportsCenter\\images\\success.png")));

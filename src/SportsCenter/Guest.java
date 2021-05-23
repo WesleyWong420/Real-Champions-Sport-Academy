@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import javafx.scene.control.Label;
 
 public class Guest extends User{
+    
+    public Guest(){
+        
+    }
+    
+    public Guest(String userID, String username, String gender, String contact, String email, String address){
+        super(userID, username, gender, contact, email, address);
+    }
 
     @Override // Override User getSport() Method - Dynamic Polymorphism
     public void getSport(ArrayList<Sport> arraySports, ArrayList<ArrayList> control_list){
@@ -41,5 +49,28 @@ public class Guest extends User{
             }  
             index1++;
         }
+    }
+    public String generateUserID(){
+        ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+        //Checking for last Student UserID
+        Student lastStudent = arrayStudent.get(arrayStudent.size() - 1);
+        String lastStudentID = lastStudent.getUserID();
+        int temp = Integer.parseInt(lastStudentID.substring(1));
+        String newID = "S" + String.valueOf(temp+1);
+        return newID;
+    }
+    
+    public void register(String guestUserID, String guestUsername, String guestGender, String guestContact, String guestEmail, String guestAddress,String selectedSportID){
+        ArrayList<String> lastFiveFeedbackID = new ArrayList<String>();
+        ArrayList<Sport> arraySports = FileIO.readSportsFile("sport.txt");
+        Guest guest = new Guest(guestUserID, guestUsername, guestGender, guestContact, guestEmail, guestAddress);
+        for (Sport tempSport : arraySports){
+            if (tempSport.getSportID().equals(selectedSportID)){
+                System.out.println("Sports found in register");
+                 Sport enroll =  tempSport;
+                 Student newStudent = new Student(guest.getUserID(), guest.getUsername(), guest.getGender(), guest.getContact(), guest.getEmail(), guest.getAddress(),lastFiveFeedbackID , enroll);
+                 FileIO.writeStudent(newStudent,"student.txt");
+            }
+         }
     }
 }

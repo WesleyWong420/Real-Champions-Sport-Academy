@@ -34,10 +34,18 @@ public class login {
     
     public Boolean validate(String userID ,String password) {
         Boolean success = false;
-        if (userID.equals("U1000") && password.equals("test")){
+        
+        if (userID.equals("A1000") && password.equals("test")){
             success = true;
         }
         return success;
+    }
+    
+    //Identify user type by first character "S" -Student "A" - Admin
+    public char getAccess(){
+        char accessCode = userID.charAt(0);
+        return accessCode;
+    
     }
     
 }
