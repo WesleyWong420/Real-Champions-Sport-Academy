@@ -18,9 +18,10 @@ public class coachController {
     @FXML
     public Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating, lblhourlyRate;
     
-    Coach coach = FileIO.readCoachFile("coach.txt").get(0);
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
+    ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
+    Coach coach = arrayCoach.get(0);
     
     public void initialize() {
         arraySports = FileIO.readSportsFile("sport.txt");
@@ -100,9 +101,38 @@ public class coachController {
                     coach.setEmail(txtEmail.getText());
                     coach.setContact(txtMobileNo.getText());
                     coach.setAddress(txtAddress.getText());
-                    
-                    FileIO.writeCoach(coach, "coach.txt");
+                   
                     FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
+                    
+                    for (Coach ch: arrayCoach)
+                    {
+                        if(coach.getUserID().equals(ch.getUserID()))
+                        {
+                            ch = coach;
+                            break;
+                        }
+                    }
+                    FileIO.writeCoach(arrayCoach, "coach.txt");
+                    
+                    for (Sport sprt : arraySports)
+                    {
+                        if(coach.getUserID().equals(sprt.getCoachObject().getUserID()))
+                        {
+                            sprt.setCoachObject(coach);
+                            break;
+                        }
+                    }
+                    FileIO.writeSport(arraySports, "sport.txt");
+                    
+                    for (Schedule classes : arraySchedule)
+                    {
+                        if(coach.getUserID().equals(classes.getCoachObject().getUserID()))
+                        {
+                            classes.setCoachObject(coach);
+                            break;
+                        }
+                    }
+                    FileIO.writeSchedule(arraySchedule, "schedule.txt");
                 }
                 else
                 {
