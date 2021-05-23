@@ -75,10 +75,12 @@ public abstract class User implements Serializable{
     }
     
     protected void getSport(ArrayList<Sport> arraySports, ArrayList<ArrayList> control_list){
-        
+        // Not abstract method because implementation is needed for Guest & Student as they share a partial of common codes
+        // Will be called by Guest and Student using super.getSport()
+
         String img_dir = "src\\SportsCenter\\images\\"; // Image directory    
-        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,4)); 
-        ArrayList<ArrayList> img_list = new ArrayList<>(control_list.subList(4,5));
+        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,4)); // Extract the subset of all Labels ArrayList
+        ArrayList<ArrayList> img_list = new ArrayList<>(control_list.subList(4,5)); // Extract the subset of all ImageViews ArrayList
         
         int index1 = 0; 
         for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)
@@ -125,8 +127,7 @@ public abstract class User implements Serializable{
             index3++;
         }
     }
-    // Not abstract method because implementation is needed for Guest & Student as they share a partial of common codes
-    // Will be called by Guest and Student using super.getSport() // Will be implemented separately by Coach
+    
     
     protected abstract void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list);
     // Will be implemented separately for Guest, Student & Coach

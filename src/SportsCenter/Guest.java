@@ -10,9 +10,10 @@ public class Guest extends User{
         super.getSport(arraySports, control_list);
     }
     
-    @Override // Override User getSport() Method - Dynamic Polymorphism
+    @Override // Override User getSchedule() Method - Dynamic Polymorphism
     public void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list){
-        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,5));
+        
+        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,5)); // Extract the subset of all Labels ArrayList
         
         int index1 = 0; 
         for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)
