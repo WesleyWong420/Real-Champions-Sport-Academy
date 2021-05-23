@@ -54,12 +54,23 @@ public class feedbackController {
             ArrayList<Sport> arraySports = FileIO.readSportsFile("sport.txt");
             Coach coach = arraySports.get(history_index).getCoachObject();
             Feedback feedback = new Feedback(coach.getUserID(), coach.getUsername(), historyID, txtFeedback.getText(), (int)rating.getRating());
-            FileIO.writeFeedback(arrayFeedback, feedback, "feedback.txt");
-            
+            arrayFeedback.add(feedback); // append to arraylist
+            FileIO.writeFeedback(arrayFeedback, "feedback.txt"); // then write to file
+
             ArrayList <String> feedback_id_list = student.getLastFiveFeedbackID();
             feedback_id_list.set(history_index, historyID);
             student.setLastFiveFeedbackID(feedback_id_list);
-            FileIO.writeStudent(student, "student.txt");
+            
+            ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+            for (Student sdt: arrayStudent) // overwrite the student
+            {
+                if(student.getUserID().equals(sdt.getUserID()))
+                {
+                    sdt = student;
+                    break;
+                }
+            }
+            FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
         }
         else
         {

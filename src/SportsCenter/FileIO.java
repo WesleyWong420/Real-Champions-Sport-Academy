@@ -10,6 +10,15 @@ import org.controlsfx.control.Notifications;
 
 public class FileIO {
     
+    /*
+    File IO Operations:
+    1) Add Student - Append Student File (Done by System)
+    2) Update Student Details - Overwrite Student File (Done by Student)
+    3) Update Coach Details - Overwrite Coach, Sport & Schedule File (Done by Coach and Admin)
+    4) Update Sport Details - Overwrite Sport, Schedule & Student File (Done by Admin)
+    5) Update Schedule Details - Overwrite Schedule File (Done by Admin)
+    */
+    
     public static ArrayList<Sport> readSportsFile(String file){
         
         ArrayList<Sport> arraySports = new ArrayList<>();
@@ -120,7 +129,7 @@ public class FileIO {
         return arrayCoach;
     }
     
-    public void addSport(String file){
+    public void addSport(String file){ // Manual writing of Sport object
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
@@ -151,7 +160,7 @@ public class FileIO {
         }
     }
     
-    public void addSchedule(String file){
+    public void addSchedule(String file){ // Manual writing of Schedule object
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
@@ -183,7 +192,7 @@ public class FileIO {
         }
     }
     
-    public void addFeedback(String file){
+    public void addFeedback(String file){ // Manual writing of Feedback object
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
@@ -208,7 +217,7 @@ public class FileIO {
         }
     }
     
-    public void addStudent(String file){
+    public void addStudent(String file){ // Manual writing of Student object
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
@@ -231,15 +240,23 @@ public class FileIO {
         }
     }
     
-    public void addCoach(String file){
+    public void addCoach(String file){ // Manual writing of Coach object
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
             ArrayList<Coach> arrayCoach = new ArrayList<>();  // Writing ArrayList of Coach Object
             
-            Coach coach1 = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3", 5.0, 40);
+            Coach coach1 = new Coach("C001", "Alex", "Male", "0123456789", "alex@gmail.com", "Street 1", 3.5, 40);
+            Coach coach2 = new Coach("C002", "Bob", "Male", "0123456789", "bob@gmail.com", "Street 2", 2.1, 30);
+            Coach coach3 = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3n", 4.8, 35);
+            Coach coach4 = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
+            Coach coach5 = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
             
             arrayCoach.add(coach1);
+            arrayCoach.add(coach2);
+            arrayCoach.add(coach3);
+            arrayCoach.add(coach4);
+            arrayCoach.add(coach5);
             
             output.writeObject(arrayCoach);
             output.close(); 
@@ -248,12 +265,36 @@ public class FileIO {
         }
     }
     
-    public static void writeFeedback(ArrayList<Feedback> arrayFeedback, Feedback feedback, String file){
+    public static void writeSport(ArrayList<Sport> arraySport, String file){ 
         try 
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
-                    
-            arrayFeedback.add(feedback);
+            
+            output.writeObject(arraySport);
+            
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+    
+    public static void writeSchedule(ArrayList<Schedule> arraySchedule, String file){ 
+        try
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
+            
+            output.writeObject(arraySchedule);
+            
+            output.close(); 
+        } 
+        catch (IOException e){
+        }
+    }
+    
+    public static void writeFeedback(ArrayList<Feedback> arrayFeedback, String file){ 
+        try 
+        {
+            ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
             
             output.writeObject(arrayFeedback);
             
@@ -263,13 +304,10 @@ public class FileIO {
         }
     }
     
-    public static void writeStudent(Student student, String file){
-        try 
+    public static void writeStudent(ArrayList<Student> arrayStudent, String file){
+        try  
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
-            ArrayList<Student> arrayStudent = new ArrayList<Student>();
-            
-            arrayStudent.add(student);
             
             output.writeObject(arrayStudent);
             
@@ -279,13 +317,10 @@ public class FileIO {
         }
     }
     
-    public static void writeCoach(Coach coach, String file){
-        try 
+    public static void writeCoach(ArrayList<Coach> arrayCoach, String file){
+        try  
         {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
-            ArrayList<Coach> arrayCoach = new ArrayList<Coach>();
-            
-            arrayCoach.add(coach);
             
             output.writeObject(arrayCoach);
             

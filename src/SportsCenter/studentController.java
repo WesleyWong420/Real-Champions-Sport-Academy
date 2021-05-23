@@ -74,9 +74,10 @@ public class studentController {
     @FXML
     public Label lblUserID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport;
     
-    Student student = FileIO.readStudentFile("student.txt").get(0);
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
+    ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+    Student student = arrayStudent.get(0);
     
     public void initialize() {
         arraySports = FileIO.readSportsFile("sport.txt");
@@ -293,7 +294,16 @@ public class studentController {
         groupSport(student); // refresh the sport page
         groupSchedule(student); // refresh the schedule page
         groupSelfRecord(student); // refresh the profile page
-        FileIO.writeStudent(student, "student.txt");
+        
+        for (Student sdt: arrayStudent) // overwrite the student
+        {
+            if(student.getUserID().equals(sdt.getUserID()))
+            {
+                sdt = student;
+                break;
+            }
+        }
+        FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
         FileIO.pushNotification("Successful!", "You have been enrolled in a sport.");
     }
     
@@ -383,7 +393,16 @@ public class studentController {
 
                     groupSport(student); // refresh the Sport page
                     groupSchedule(student); // refresh the Schedule page
-                    FileIO.writeStudent(student, "student.txt");
+                    
+                    for (Student sdt: arrayStudent) // overwrite the student
+                    {
+                        if(student.getUserID().equals(sdt.getUserID()))
+                        {
+                            sdt = student;
+                            break;
+                        }
+                    }
+                    FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
                     FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
                 }
                 else
