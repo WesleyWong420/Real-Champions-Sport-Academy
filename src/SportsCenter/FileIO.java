@@ -203,12 +203,16 @@ public class FileIO {
             Feedback feedback3 = new Feedback("C003", "Caitlin", "F003", "Everything is good, coach is friendly.", 4);
             Feedback feedback4 = new Feedback("C004", "Demetrice", "F004", "Teaching part can be improved.", 2);
             Feedback feedback5 = new Feedback("C005", "Evenlyn", "F005", "Perfect! Friendly coach. Would come again.", 5);
+            Feedback feedback6 = new Feedback("C001", "Alex", "F006", "Coach is not teaching closely. Just taking a peek once in a while.", 2);
+            Feedback feedback7 = new Feedback("C005", "Evenlyn", "F007", "Coach is great but the court is awful in maintenance.", 3);
             
             arrayFeedback.add(feedback1);
             arrayFeedback.add(feedback2);
             arrayFeedback.add(feedback3);
             arrayFeedback.add(feedback4);
             arrayFeedback.add(feedback5);
+            arrayFeedback.add(feedback6);
+            arrayFeedback.add(feedback7);
             
             output.writeObject(arrayFeedback);
             output.close(); 
@@ -223,15 +227,53 @@ public class FileIO {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src\\SportsCenter\\txt\\" + file));
             ArrayList<Student> arrayStudent = new ArrayList<>();  // Writing ArrayList of Student Object
             
+            Coach alex = new Coach("C001", "Alex", "Male", "0123456789", "alex@gmail.com", "Street 1", 3.5, 40);
+            Coach bob = new Coach("C002", "Bob", "Male", "0123456789", "bob@gmail.com", "Street 2", 2.1, 30);
+            Coach caitlin = new Coach("C003", "Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3n", 4.8, 35);
+            Coach demetrice = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
+            Coach evenlyn = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
+            
+            Sport sport1 = new Sport("S001", "Archery", 120, 130, alex);
+            Sport sport2 = new Sport("S002", "Badminton", 120, 90, bob);
+            Sport sport3 = new Sport("S003", "Basketball", 120, 90, caitlin);
+            Sport sport4 = new Sport("S004", "Gymnastics", 120, 70, demetrice);
+            Sport sport5 = new Sport("S005", "Hockey", 120, 125, evenlyn);
+            
             ArrayList<String> lastFiveFeedbackID = new ArrayList<>();
             lastFiveFeedbackID.add("F001");
             lastFiveFeedbackID.add("");
             lastFiveFeedbackID.add("");
             lastFiveFeedbackID.add("F004");
             lastFiveFeedbackID.add("F005");
-            Student student1 = new Student("U001", "Caren", "Female", "0123456789", "caren@gmail.com", "Street 1", lastFiveFeedbackID);
+            Student student1 = new Student("S001", "Caren", "Female", "0123456789", "caren@gmail.com", "Street 1", lastFiveFeedbackID, sport3);
+            ArrayList<String> lastFiveFeedbackID1 = new ArrayList<>();
+            lastFiveFeedbackID1.add("");
+            lastFiveFeedbackID1.add("F002");
+            lastFiveFeedbackID1.add("F003");
+            lastFiveFeedbackID1.add("");
+            lastFiveFeedbackID1.add("");
+            Student student2 = new Student("S002", "Helen", "Female", "0123456789", "helen@gmail.com", "Street 2", lastFiveFeedbackID1, sport1);
+            ArrayList<String> lastFiveFeedbackID2 = new ArrayList<>();
+            lastFiveFeedbackID2.add("F006");
+            lastFiveFeedbackID2.add("");
+            lastFiveFeedbackID2.add("");
+            lastFiveFeedbackID2.add("");
+            lastFiveFeedbackID2.add("F007");
+            Student student3 = new Student("S003", "Stella", "Female", "0123456789", "stella@gmail.com", "Street 3", lastFiveFeedbackID2, sport4);
+            ArrayList<String> lastFiveFeedbackID3 = new ArrayList<>();
+            lastFiveFeedbackID3.add("");
+            lastFiveFeedbackID3.add("");
+            lastFiveFeedbackID3.add("");
+            lastFiveFeedbackID3.add("");
+            lastFiveFeedbackID3.add("");
+            Student student4 = new Student("S004", "Chris", "Male", "0123456789", "chris@gmail.com", "Street 4", lastFiveFeedbackID3);
+            Student student5 = new Student("S005", "Rachel", "Female", "0123456789", "rachel@gmail.com", "Street 5", lastFiveFeedbackID3);
             
             arrayStudent.add(student1);
+            arrayStudent.add(student2);
+            arrayStudent.add(student3);
+            arrayStudent.add(student4);
+            arrayStudent.add(student5);
             
             output.writeObject(arrayStudent);
             output.close(); 

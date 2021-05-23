@@ -77,7 +77,7 @@ public class studentController {
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
-    Student student = arrayStudent.get(0);
+    Student student = arrayStudent.get(1);
     
     public void initialize() {
         arraySports = FileIO.readSportsFile("sport.txt");
