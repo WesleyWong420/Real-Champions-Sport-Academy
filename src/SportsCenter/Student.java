@@ -49,8 +49,8 @@ public class Student extends User implements Serializable{
         
         super.getSport(arraySports, control_list);
         
-        ArrayList<ArrayList> btn_list = new ArrayList<>(control_list.subList(5,6));
-        ArrayList<ArrayList> vbox_list = new ArrayList<>(control_list.subList(6,7));
+        ArrayList<ArrayList> btn_list = new ArrayList<>(control_list.subList(5,6)); // Extract the subset of all Buttons ArrayList
+        ArrayList<ArrayList> vbox_list = new ArrayList<>(control_list.subList(6,7)); // Extract the subset of all VBoxes ArrayList
         
         int index = 0;
         ArrayList<String> sportID_list = new ArrayList<>();
@@ -60,36 +60,36 @@ public class Student extends User implements Serializable{
             index++;
         }
 
-        if(sport != null)
+        if(sport != null) // If student has an enrolled sport
         {
             int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
             
             ArrayList<Button> btn_inner_list = new ArrayList<>(btn_list.get(0)); // the outer layer is an ArrayList of many Button ArrayList
             for(Button btn : btn_inner_list) // extract the Button ArrayList
             {
-                btn.setText("ENROLL");
+                btn.setText("ENROLL"); // All the remaining Buttons that hold the sports that are not enrolled by student
             }
-            btn_inner_list.get(sport_index).setText("ENROLLED");
+            btn_inner_list.get(sport_index).setText("ENROLLED"); // The respective Button that hold the student's enrolled sport
             
             ArrayList<VBox> vbox_inner_list = new ArrayList<>(vbox_list.get(0)); // the outer layer is an ArrayList of many VBox ArrayList
             for(VBox vbox : vbox_inner_list) // extract the VBox ArrayList
             {
-                vbox.setOpacity(1);
+                vbox.setOpacity(1); // All the remaining VBoxes that hold the sports that are not enrolled by student
             }
-            vbox_inner_list.get(sport_index).setOpacity(0.5);
+            vbox_inner_list.get(sport_index).setOpacity(0.5); // The respective VBoxes that hold the student's enrolled sport
         } 
-        else
+        else // Student does not has an enrolled sport
         {
             ArrayList<Button> btn_inner_list = new ArrayList<>(btn_list.get(0)); // the outer layer is an ArrayList of many Button ArrayList
             for(Button btn : btn_inner_list) // extract the Button ArrayList
             {
-                btn.setText("ENROLL");
+                btn.setText("ENROLL"); // Set all Buttons text because student is not enrolled in any Sport
             }
             
             ArrayList<VBox> vbox_inner_list = new ArrayList<>(vbox_list.get(0)); // the outer layer is an ArrayList of many VBox ArrayList
             for(VBox vbox : vbox_inner_list) // extract the VBox ArrayList
             {
-                vbox.setOpacity(1);
+                vbox.setOpacity(1); // Set all VBoxes opacity because student is not enrolled in any Sport
             }
         }
     }
@@ -97,9 +97,9 @@ public class Student extends User implements Serializable{
     @Override // Override User getSchedule() Method - Dynamic Polymorphism
     public void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list){
         
-        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,5));
-        ArrayList<ArrayList> hbox_list = new ArrayList<>(control_list.subList(5,6));
-        ArrayList<ArrayList> tooltip_list = new ArrayList<>(control_list.subList(6,7));
+        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,5)); // Extract the subset of all Labels ArrayList
+        ArrayList<ArrayList> hbox_list = new ArrayList<>(control_list.subList(5,6)); // Extract the subset of all HBoxes ArrayList
+        ArrayList<ArrayList> tooltip_list = new ArrayList<>(control_list.subList(6,7)); // Extract the subset of all Tooltips ArrayList
         
         for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)
         {
@@ -117,7 +117,7 @@ public class Student extends User implements Serializable{
             index++;
         }
         
-        if(sport != null)
+        if(sport != null) // If student has an enrolled sport
         {
             int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
             
@@ -155,21 +155,20 @@ public class Student extends User implements Serializable{
             ArrayList<HBox> hbox_inner_list = new ArrayList<>(hbox_list.get(0)); // the outer layer is an ArrayList of many Hbox ArrayList
             for(HBox hbox : hbox_inner_list) // extract the HBox ArrayList
             {
-                hbox.setOpacity(0.5);
+                hbox.setOpacity(0.5); // All the remaining HBoxes that hold the sports that are not enrolled by student
             }
-            hbox_inner_list.get(sport_index).setOpacity(1);
+            hbox_inner_list.get(sport_index).setOpacity(1); // The respective HBoxes that hold the student's enrolled sport
             
-            ArrayList<Tooltip> tooltip_inner_list = new ArrayList<>(tooltip_list.get(0));
+            ArrayList<Tooltip> tooltip_inner_list = new ArrayList<>(tooltip_list.get(0)); // the outer layer is an ArrayList of many Tooltip ArrayList
             double rating = arraySchedule.get(sport_index).getCoachObject().getCoachRating();
             getCoach(tooltip_inner_list, sport_index, rating);
-            
         }
-        else
+        else // Student does not has an enrolled sport
         {
             ArrayList<HBox> hbox_inner_list = new ArrayList<>(hbox_list.get(0)); // the outer layer is an ArrayList of many Hbox ArrayList
             for(HBox hbox : hbox_inner_list) // extract the HBox ArrayList
             {
-                hbox.setOpacity(0.5);
+                hbox.setOpacity(0.5); // Set all HBoxes opacity because student is not enrolled in any Sport
             }
         }
     }
@@ -225,7 +224,7 @@ public class Student extends User implements Serializable{
                 alert.setContentText("Please select a sport different from the current one.");
                 alert.showAndWait();
             }
-            else
+            else // Ask for confirmation
             {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
@@ -252,8 +251,8 @@ public class Student extends User implements Serializable{
         }
     }
     
-    public void getCoach(ArrayList<Sport> arraySports, ArrayList<Tooltip> tooltip_list){ // Get Coach Rating for tooltip under Sports tab
-        
+    public void getCoach(ArrayList<Sport> arraySports, ArrayList<Tooltip> tooltip_list){ // Method overloading - Static Polymorphism
+        // Get Coach Rating for tooltip under Sports tab - We pass the whole Tooltip ArrayList because all Coaches' rating will be populated 
         int index = 0;
         for(Tooltip tooltip : tooltip_list)
         {
@@ -264,14 +263,14 @@ public class Student extends User implements Serializable{
         }
     }
     
-    public void getCoach(ArrayList<Tooltip> tooltip_list, int sport_index, double rating){ // Get Coach Rating for tooltip under Schedule Tab
-        
+    public void getCoach(ArrayList<Tooltip> tooltip_list, int sport_index, double rating){ // Method overloading - Static Polymorphism
+        // Get Coach Rating for tooltip under Schedule Tab - We only pass the Sport index of which the student is enrolled in
         String txt = "Rating: " + rating + "/5.0";
-        tooltip_list.get(sport_index).setText(txt);
-    }
+        tooltip_list.get(sport_index).setText(txt); // We use the Sport index to populate only one Coach's rating 
+    }                                               // who is teaching the Sport of the student currently enrolled in
     
-    public void getCoach_History(ArrayList<Schedule> arraySchedule, ArrayList<Tooltip> tooltip_list){ // Get Coach Rating for tooltip under History tab
-        
+    public void getCoach_History(ArrayList<Schedule> arraySchedule, ArrayList<Tooltip> tooltip_list){ 
+        // Get Coach Rating for tooltip under History tab
         int index = 0;
         for(Tooltip tooltip : tooltip_list)
         {
@@ -283,8 +282,9 @@ public class Student extends User implements Serializable{
     }
     
     public void getHistory(ArrayList<Schedule> arraySchedule, ArrayList<Feedback> arrayFeedback, ArrayList<ArrayList> control_list){
-        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,4));
-        ArrayList<ArrayList> tooltip_list = new ArrayList<>(control_list.subList(4,5));
+        
+        ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,4)); // Extract the subset of all Labels ArrayList
+        ArrayList<ArrayList> tooltip_list = new ArrayList<>(control_list.subList(4,5)); // Extract the subset of all Tooltips ArrayList
         
         int index = 0;
         ArrayList<String> sportID_list = new ArrayList<>();
@@ -294,7 +294,7 @@ public class Student extends User implements Serializable{
             index++;
         }
         
-        if(sport != null)
+        if(sport != null) // If student has an enrolled sport
         {
             int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
         }
@@ -303,20 +303,20 @@ public class Student extends User implements Serializable{
         for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)
         {
             int index2 = 0;
-            for(Label lbl : controls) // Accessing inner ArrayList (Actual labels holding attributes of Schedules)
+            for(Label lbl : controls) // Accessing inner ArrayList (Actual labels holding attributes of History)
             {
                 switch(index1){
-                    case 0: // Schedule Attribute 1 - Sport Name
+                    case 0: // History Attribute 1 - Sport Name
                         lbl.setText(arraySchedule.get(index2).getSportName());
                         break;
-                    case 1: // Schedule Attribute 2 - Date
+                    case 1: // History Attribute 2 - Date
                         lbl.setText(arraySchedule.get(index2).getDate());
                         break;
-                    case 2: // Schedule Attribute 3 - Coach Name
+                    case 2: // History Attribute 3 - Coach Name
                         lbl.setText(arraySchedule.get(index2).getCoachObject().getUsername());
                         break;
-                    case 3: // Schedule Attribute 4 - Rating
-                        if(!lastFiveFeedbackID.get(index2).equals(""))
+                    case 3: // History Attribute 4 - Class Rating
+                        if(!lastFiveFeedbackID.get(index2).equals("")) // Check if the student has already provided a feedback
                         {
                             for(Feedback fdb: arrayFeedback)
                             {
@@ -329,7 +329,7 @@ public class Student extends User implements Serializable{
                         }
                         else
                         {
-                            lbl.setText("-/5.0");
+                            lbl.setText("-/5.0"); // No feedback submitted yet
                         }
                         break;
                 }

@@ -104,7 +104,7 @@ public class coachController {
                    
                     FileIO.pushNotification("Successful!", "Your profile details has been saved successfully.");
                     
-                    for (Coach ch: arrayCoach)
+                    for (Coach ch: arrayCoach) // overwrite the Coach
                     {
                         if(coach.getUserID().equals(ch.getUserID()))
                         {
@@ -112,9 +112,9 @@ public class coachController {
                             break;
                         }
                     }
-                    FileIO.writeCoach(arrayCoach, "coach.txt");
+                    FileIO.writeCoach(arrayCoach, "coach.txt"); // then write to file
                     
-                    for (Sport sprt : arraySports)
+                    for (Sport sprt : arraySports) // overwrite the Coach object in Sport 
                     {
                         if(coach.getUserID().equals(sprt.getCoachObject().getUserID()))
                         {
@@ -122,9 +122,9 @@ public class coachController {
                             break;
                         }
                     }
-                    FileIO.writeSport(arraySports, "sport.txt");
+                    FileIO.writeSport(arraySports, "sport.txt"); // then write to file
                     
-                    for (Schedule classes : arraySchedule)
+                    for (Schedule classes : arraySchedule) // overwrite the Coach object in Schedule
                     {
                         if(coach.getUserID().equals(classes.getCoachObject().getUserID()))
                         {
@@ -132,7 +132,7 @@ public class coachController {
                             break;
                         }
                     }
-                    FileIO.writeSchedule(arraySchedule, "schedule.txt");
+                    FileIO.writeSchedule(arraySchedule, "schedule.txt"); // then write to file
                 }
                 else
                 {

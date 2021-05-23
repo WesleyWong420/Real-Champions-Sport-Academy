@@ -9,7 +9,7 @@ public class Coach extends User implements Serializable{
     private double coachRating;
     private int hourlyRate;
     
-    public Coach(String userID, String username){ // For Feedback class
+    public Coach(String userID, String username){ // Constructor overloading - Will be called by Feedback class
         this.userID = userID;
         this.username = username;
     }
@@ -36,30 +36,30 @@ public class Coach extends User implements Serializable{
         this.hourlyRate = hourlyRate;
     }
     
-    @Override
+    @Override // Override User getSport() Method - Dynamic Polymorphism
     public void getSport(ArrayList<Sport> arraySports, ArrayList<ArrayList> control_list){
         
-        TextField txt = (TextField) control_list.get(0).get(0);
+        TextField txt = (TextField) control_list.get(0).get(0); // Extract out from inner and outer ArrayList and cast as TextField
         
         for(Sport sport : arraySports)
         {
-            if(sport.getCoachObject().getUserID().equals(userID))
-            {
-                txt.setText(sport.getSportName());
+            if(sport.getCoachObject().getUserID().equals(userID)) // Sport HAS-A Coach Relationship (Aggregation)
+            {                                                     // Make sure that the coachID of the Coach object stored inside Sport object
+                txt.setText(sport.getSportName());                // equals to the coachID of the current Coach object.
             }
         }
     }
     
-    @Override 
+    @Override // Override User getSchedule() Method - Dynamic Polymorphism
     public void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list){
         
-        TextField txt = (TextField) control_list.get(0).get(0);
+        TextField txt = (TextField) control_list.get(0).get(0); // Extract out from inner and outer ArrayList and cast as TextField
         
         for(Schedule session : arraySchedule)
         {
-            if(session.getCoachObject().getUserID().equals(userID))
-            {
-                txt.setText(session.getTime() + " " + session.getDate());
+            if(session.getCoachObject().getUserID().equals(userID)) // Schedule extends Sport (Inheritance)
+            {                                                       // Make sure that the coachID of the Coach Object stored inside Schedule object
+                txt.setText(session.getTime() + " " + session.getDate());// equals to the coachID of the current Coach object.
             }
         }
     }
@@ -92,14 +92,10 @@ public class Coach extends User implements Serializable{
                     txt.setText(Double.toString(coachRating) + "/5.0");
                     break;
                 case 7:
-                txt.setText("$" + Integer.toString(hourlyRate));
-                break;
+                    txt.setText("$" + Integer.toString(hourlyRate));
+                    break;
             }
             index++;
         }
     }
-    
-    /*
-    public void getFeedback
-    */
 }

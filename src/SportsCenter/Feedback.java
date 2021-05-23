@@ -9,8 +9,8 @@ public class Feedback extends Coach implements Serializable{
     private String comment;
     private int classRating;
     
-    public Feedback(String userID, String username, String feedbackID, String comment, int classRating){  // Constructor overloading
-        super(userID, username);
+    public Feedback(String userID, String username, String feedbackID, String comment, int classRating){ 
+        super(userID, username); // Call the overloaded constructor of Coach
         this.feedbackID = feedbackID;
         this.comment = comment;
         this.classRating = classRating;
