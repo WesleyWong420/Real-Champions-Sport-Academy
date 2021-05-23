@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 public class welcomeController {
     
@@ -14,6 +15,8 @@ public class welcomeController {
     private Button btnGuest, btnLogin;
     @FXML
     private Label loginstatus;
+    @FXML
+    private TextField userTxt,passTxt;
 
     public void initialize() {
     }
@@ -28,10 +31,23 @@ public class welcomeController {
 
     @FXML
     private void pressLogin(javafx.event.ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("student.fxml"));
-        Stage window = (Stage) btnLogin.getScene().getWindow(); 
-        window.setScene(new Scene(root, 800, 500));
-        window.setTitle("Student Dashboard");
+        if ((userTxt.getText() != null)&& (passTxt.getText()!= null)){
+            login tempLogin = new login(userTxt.getText(),passTxt.getText());
+            Boolean success = tempLogin.validate(userTxt.getText(), passTxt.getText());
+            if (success){
+                System.out.println(success);
+                Parent root = FXMLLoader.load(getClass().getResource("admin.fxml"));
+                Stage window = (Stage) btnLogin.getScene().getWindow(); 
+                window.setScene(new Scene(root, 800, 480));
+                window.setTitle("Admin Dashboard");
+            }else{
+                loginstatus.setText("*Incorrect Login Details!");
+                userTxt.clear();
+                passTxt.clear();
+            }
+        }else{
+            System.out.println("login nulll");
+        }
     }
     
     @FXML
