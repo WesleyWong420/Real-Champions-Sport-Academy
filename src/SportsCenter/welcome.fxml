@@ -46,11 +46,11 @@
                                     <Label fx:id="loginstatus" alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" />
                                     <VBox alignment="CENTER" spacing="15.0">
                                        <children>
-                                          <TextField alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="213.0" promptText="Username" />
-                                          <PasswordField alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="214.0" promptText="Password" />
+                                          <TextField fx:id="userTxt" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="213.0" promptText="Username" />
+                                          <PasswordField fx:id="passTxt" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="214.0" promptText="Password" />
                                           <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#pressLogin" prefHeight="26.0" prefWidth="210.0" text="Login" />
-                                          <Button id="passreset" mnemonicParsing="false" onAction="#pressTemp" text="Forgot your password?" />
-                                          <Button id="guestbtn" fx:id="btnGuest" mnemonicParsing="false" onAction="#pressGuest" prefHeight="5.0" prefWidth="133.0" text="Continue as Guest!" underline="true" />
+                                          <Button id="passreset" fx:id="forgotBtn" mnemonicParsing="false" text="Forgot your password?" />
+                                          <Button id="guestbtn" fx:id="guestBtn" mnemonicParsing="false" prefHeight="5.0" prefWidth="133.0" text="Continue as Guest!" underline="true" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -61,45 +61,52 @@
                   </Tab>
                   <Tab id="lasttab" text="Register">
                      <content>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                        <HBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <VBox alignment="CENTER" spacing="20.0">
+                              <VBox alignment="CENTER" prefHeight="447.0" prefWidth="338.0" spacing="20.0">
                                  <children>
                                     <HBox alignment="CENTER">
                                        <children>
-                                          <Label id="reglabel" alignment="TOP_LEFT" text="Student Registration" underline="true" />
+                                          <Label id="reglabel" alignment="TOP_LEFT" text="Student Registration" />
                                        </children>
                                     </HBox>
-                                    <GridPane alignment="CENTER" hgap="10.0" prefHeight="410.0" prefWidth="273.0">
+                                    <GridPane alignment="CENTER" hgap="10.0" prefHeight="282.0" prefWidth="268.0" vgap="5.0">
                                       <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="133.0" />
-                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="67.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="429.0" minWidth="0.0" prefWidth="265.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="0.0" prefWidth="63.0" />
                                       </columnConstraints>
                                       <rowConstraints>
                                         <RowConstraints maxHeight="69.0" minHeight="4.0" prefHeight="39.60000762939453" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="39.60000762939453" vgrow="SOMETIMES" />
                                           <RowConstraints maxHeight="69.0" minHeight="0.0" prefHeight="44.399986267089844" vgrow="SOMETIMES" />
                                         <RowConstraints maxHeight="179.0" minHeight="0.0" prefHeight="39.40001831054688" vgrow="SOMETIMES" />
                                         <RowConstraints maxHeight="301.0" minHeight="0.0" prefHeight="39.999999999999986" vgrow="SOMETIMES" />
                                           <RowConstraints maxHeight="340.0" minHeight="0.0" prefHeight="43.19999999999999" vgrow="SOMETIMES" />
                                           <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
-                                          <RowConstraints maxHeight="350.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <TextField editable="false" nodeOrientation="LEFT_TO_RIGHT" />
-                                          <TextField nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="2" />
-                                          <TextField nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="3" />
-                                          <TextField nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="4" />
+                                          <TextField fx:id="studentIDRTxt" editable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="236.0" />
+                                          <TextField fx:id="nameRTxt" nodeOrientation="LEFT_TO_RIGHT" GridPane.rowIndex="3" />
+                                          <TextField fx:id="emailRTxt" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="289.0" GridPane.rowIndex="4" />
+                                          <TextField fx:id="contactRTxt" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="248.0" GridPane.rowIndex="5" />
                                           <Label text="Student ID" GridPane.columnIndex="1" />
-                                          <Label text="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                          <Label text="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                          <Label text="Contact No" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                          <Label alignment="CENTER" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                          <TextArea nodeOrientation="LEFT_TO_RIGHT" prefHeight="199.0" prefWidth="142.0" wrapText="true" GridPane.rowIndex="5" />
-                                          <ChoiceBox nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" GridPane.rowIndex="1" />
-                                          <Label text="Enroll Sport" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <Label text="Email" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label text="Contact No" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <Label alignment="CENTER" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                          <TextArea fx:id="addressRTxt" nodeOrientation="LEFT_TO_RIGHT" prefHeight="199.0" prefWidth="142.0" wrapText="true" GridPane.rowIndex="6" />
+                                          <ChoiceBox fx:id="sportRCBox" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="402.0" GridPane.rowIndex="2" />
+                                          <Label text="Sport" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label text="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <PasswordField fx:id="passRTxt" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="181.0" GridPane.rowIndex="1" />
                                        </children>
                                     </GridPane>
-                                    <Button mnemonicParsing="false" text="Button" />
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" text="Cancel" />
+                                          <Button mnemonicParsing="false" text="Submit" />
+                                       </children>
+                                    </HBox>
                                  </children>
                               </VBox>
                            </children>
