@@ -5,11 +5,10 @@ import javafx.scene.control.Label;
 
 public class Guest extends User{
     
-    public Guest(){
-        
+    public Guest(){ //remove this line later  
     }
     
-    public Guest(String userID, String username, String gender, String contact, String email, String address){
+    public Guest(String userID, String username, String gender, String contact, String email, String address){ //remove this line later
         super(userID, username, gender, contact, email, address);
     }
 
