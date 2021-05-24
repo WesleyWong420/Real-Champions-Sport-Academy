@@ -49,6 +49,7 @@ public class Guest extends User{
             index1++;
         }
     }
+    
     public String generateUserID(){
         ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
         String newID = "S001";
@@ -71,10 +72,7 @@ public class Guest extends User{
         for (int i = 0; i < 5;i++){
             lastFiveFeedbackID.add("");
         }
-        
-        //remove this line later
-        //Guest guest = new Guest(guestUserID, guestUsername, guestGender, guestContact, guestEmail, guestAddress);
-        
+             
         for (Sport tempSport : arraySports){
             if (tempSport.getSportID().equals(selectedSportID)){
                 System.out.println("Sports found in register");

@@ -36,14 +36,15 @@ public class welcomeController {
     private  ArrayList<Sport> arraySports ;
 
     public void initialize() {
-       //FileIO temp = new FileIO(); //initiating admin login for first use 
-       //temp.addlogin("login.txt");
+//       FileIO temp = new FileIO(); //initiating admin login for first use 
+//       temp.addlogin("login.txt");
        studentIDRTxt.setText(guest.generateUserID());
        arraySports = FileIO.readSportsFile("sport.txt");
        //adding sports to choicebox 
        for (Sport tempSport : arraySports){
            sportRCBox.getItems().add(tempSport.getSportID()+" "+tempSport.getSportName());
        }
+
     }
     
     @FXML
@@ -64,7 +65,7 @@ public class welcomeController {
             if (success){
                 System.out.println(success);
                 
-                switch(tempLogin.getAccess()){
+               switch(tempLogin.getAccess()){
                 case 'A':
                     resource ="admin.fxml";
                     title = "Admin Dashboard";
@@ -73,7 +74,13 @@ public class welcomeController {
                     resource ="student.fxml";
                     title = "Student Dashboard";
                     break;
+                    
+                case 'C':
+                    resource ="coach.fxml";
+                    title = "Coach Dashboard";
+                    break;
                 }
+               
                 Parent root = FXMLLoader.load(getClass().getResource(resource));
                 Stage window = (Stage) btnLogin.getScene().getWindow(); 
                 window.setScene(new Scene(root, 800, 480));
@@ -82,11 +89,6 @@ public class welcomeController {
                 loginstatus.setText("*Incorrect Login Details!");
                 userTxt.clear();
                 passTxt.clear();
-                
-                Parent root = FXMLLoader.load(getClass().getResource("student.fxml"));
-                Stage window = (Stage) btnLogin.getScene().getWindow(); 
-                window.setScene(new Scene(root, 800, 480));
-                window.setTitle("Student Dashboard");
             }
         }else{
             System.out.println("Error in Login!");
@@ -101,7 +103,7 @@ public class welcomeController {
             String [] selectedSportText = value.split(" ", 2);
             selectedSportID = selectedSportText[0];
         }
-        System.out.println("Pasword:" + passRTxt.getText());
+
         if ((studentIDRTxt.getText()!= null) && (passRTxt.getText() != null)&& (nameRTxt.getText() != null) && (emailRTxt.getText() != null) && (contactRTxt.getText() != null) && (selectedSportID != null)){
             System.out.println("LOOOP IN");
             System.out.println(selectedSportID);

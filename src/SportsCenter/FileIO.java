@@ -345,7 +345,19 @@ public class FileIO {
             ArrayList<login> arrayLogin = new ArrayList<>();  // Writing ArrayList of login Object
             login tempLogin= new login("A001","Welcome123","Simon", "Male", "0123456789", "simon@gmail.com", "Street 2","2007");
             
+            login tempLogin2 = new login("C001","Welcome123", "Alex", "Male", "0123456789", "alex@gmail.com", "Street 1", 3.5, 40);
+            login tempLogin3 = new login("C002","Welcome123", "Bob", "Male", "0123456789", "bob@gmail.com", "Street 2", 2.1, 30);
+            login tempLogin4 = new login("C003", "Welcome123","Caitlin", "Female", "0123456789", "caitlin@gmail.com", "Street 3n", 4.8, 35);
+            login tempLogin5 = new login("C004","Welcome123", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
+            login tempLogin6 = new login("C005", "Welcome123","Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
+            
             arrayLogin.add(tempLogin);
+            arrayLogin.add(tempLogin2);
+            arrayLogin.add(tempLogin3);
+            arrayLogin.add(tempLogin4);
+            arrayLogin.add(tempLogin5);
+            arrayLogin.add(tempLogin6);
+            
             System.out.println(arrayLogin);
             
             output.writeObject(arrayLogin);

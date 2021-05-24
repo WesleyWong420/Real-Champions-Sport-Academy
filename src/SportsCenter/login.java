@@ -9,6 +9,7 @@ public class login implements Serializable{
     private String password;
     private Student newStudent;
     private Admin newAdmin;
+    private Coach newCoach;
     
     //Login creation for student
     //Composition Association
@@ -24,6 +25,14 @@ public class login implements Serializable{
         this.userID = userID;
         this.password = password;
         newAdmin = new Admin(userID,username,gender,contact,email, address,year);
+    }
+    
+    //Login creation for Coach
+    //Composition Association
+    public login(String userID, String password, String username, String gender, String contact, String email, String address, double coachRating, int hourlyRate) {
+        this.userID = userID;
+        this.password = password;
+        newCoach = new Coach(userID,username, gender, contact, email, address, coachRating, hourlyRate);
     }
     
     //without user for login access only
@@ -44,9 +53,6 @@ public class login implements Serializable{
         return newStudent;
     }
     
-    public Admin getAdmin() {
-        return newAdmin;
-    }
         
     public void setPassword(String password) {
         this.password = password;
@@ -68,6 +74,7 @@ public class login implements Serializable{
     //Identify user type by first character "S" -Student "A" - Admin
     public char getAccess(){
         char accessCode = userID.charAt(0);
+        System.out.println(accessCode);
         return accessCode;
     
     }
