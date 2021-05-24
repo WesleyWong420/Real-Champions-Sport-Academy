@@ -62,14 +62,16 @@ public class feedbackController {
             student.setLastFiveFeedbackID(feedback_id_list);
             
             ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+            int index = 0;
             for (Student sdt: arrayStudent) // overwrite the Student
             {
                 if(student.getUserID().equals(sdt.getUserID()))
                 {
-                    sdt = student;
+                    index = arrayStudent.indexOf(sdt);
                     break;
                 }
             }
+            arrayStudent.set(index, student); // overwrite the student
             FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
         }
         else
