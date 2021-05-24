@@ -36,15 +36,14 @@ public class welcomeController {
     private  ArrayList<Sport> arraySports ;
 
     public void initialize() {
-//       FileIO temp = new FileIO(); //initiating admin login for first use 
-//       temp.addlogin("login.txt");
+       //FileIO temp = new FileIO(); //initiating admin login for first use 
+       //temp.addlogin("login.txt");
        studentIDRTxt.setText(guest.generateUserID());
        arraySports = FileIO.readSportsFile("sport.txt");
        //adding sports to choicebox 
        for (Sport tempSport : arraySports){
            sportRCBox.getItems().add(tempSport.getSportID()+" "+tempSport.getSportName());
        }
-
     }
     
     @FXML
@@ -83,6 +82,11 @@ public class welcomeController {
                 loginstatus.setText("*Incorrect Login Details!");
                 userTxt.clear();
                 passTxt.clear();
+                
+                Parent root = FXMLLoader.load(getClass().getResource("student.fxml"));
+                Stage window = (Stage) btnLogin.getScene().getWindow(); 
+                window.setScene(new Scene(root, 800, 480));
+                window.setTitle("Student Dashboard");
             }
         }else{
             System.out.println("Error in Login!");
@@ -112,13 +116,5 @@ public class welcomeController {
         }else{
             registerstatus.setText("Please enter all details!");
         }
-    }
-    
-    @FXML
-    private void pressTemp(javafx.event.ActionEvent event) throws Exception { // ** Remove later - For Testing **
-        Parent root = FXMLLoader.load(getClass().getResource("coach.fxml"));
-        Stage window = (Stage) btnLogin.getScene().getWindow(); 
-        window.setScene(new Scene(root, 800, 500));
-        window.setTitle("Coach Dashboard");
     }
 }
