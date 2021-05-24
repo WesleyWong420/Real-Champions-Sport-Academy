@@ -91,18 +91,19 @@ public class welcomeController {
     
     @FXML
     private void pressSubmit(javafx.event.ActionEvent event) throws Exception {
-        Guest guest = new Guest();
         String selectedSportID = null;
         String value = (String) sportRCBox.getValue();
         if(value != null){
             String [] selectedSportText = value.split(" ", 2);
             selectedSportID = selectedSportText[0];
         }
+        System.out.println("Pasword:" + passRTxt.getText());
         if ((studentIDRTxt.getText()!= null) && (passRTxt.getText() != null)&& (nameRTxt.getText() != null) && (emailRTxt.getText() != null) && (contactRTxt.getText() != null) && (selectedSportID != null)){
             System.out.println("LOOOP IN");
             System.out.println(selectedSportID);
             //making guest user a student
-            guest.register(studentIDRTxt.getText(),nameRTxt.getText(),genderRTxt.getText(),contactRTxt.getText(),emailRTxt.getText(),addressRTxt.getText(),selectedSportID,passRTxt.getText());
+            Guest newGuest = new Guest(studentIDRTxt.getText(),nameRTxt.getText(),genderRTxt.getText(),contactRTxt.getText(),emailRTxt.getText(),addressRTxt.getText());
+            newGuest.register(selectedSportID,passRTxt.getText());
             
             Parent root = FXMLLoader.load(getClass().getResource("welcome.fxml"));
             Stage window = (Stage) submitBtn.getScene().getWindow(); 

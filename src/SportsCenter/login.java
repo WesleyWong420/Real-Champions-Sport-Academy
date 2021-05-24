@@ -17,14 +17,23 @@ public class login implements Serializable{
 
     private String userID;
     private String password;
-    private User user;
+    private Student newStudent;
+    private Admin newAdmin;
     
-    
-    //with User for login creation 
-    public login(String userID, String password, User user) {
+    //Login creation for student
+    //Composition Association
+    public login(String userID, String password, String username, String gender, String contact, String email, String address, ArrayList<String> lastFiveFeedbackID, Sport sport) {
         this.userID = userID;
         this.password = password;
-        this.user =  user;
+        newStudent = new Student(userID,username,gender,contact,email, address,lastFiveFeedbackID, sport);
+    }
+    
+    //Login creation for admin
+    //Composition Association
+    public login(String userID, String password, String username, String gender, String contact, String email, String address,String year) {
+        this.userID = userID;
+        this.password = password;
+        newAdmin = new Admin(userID,username,gender,contact,email, address,year);
     }
     
     //without user for login access only
@@ -41,6 +50,14 @@ public class login implements Serializable{
         return password;
     }
     
+    public Student getStudent() {
+        return newStudent;
+    }
+    
+    public Admin getAdmin() {
+        return newAdmin;
+    }
+        
     public void setPassword(String password) {
         this.password = password;
     }
@@ -66,10 +83,10 @@ public class login implements Serializable{
     }
     
     // creating and writing login to file
-    public void createLogin(){
-        login login1 = new login(userID, password,user);
+    public void createLogin(login newlogin){
+        
         ArrayList<login> arrayLogin = FileIO.readLoginFile("login.txt");
-        arrayLogin.add(login1);
+        arrayLogin.add(newlogin);
         FileIO.writeLogin(arrayLogin, "login.txt");
         
     }

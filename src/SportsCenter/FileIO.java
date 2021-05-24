@@ -343,8 +343,7 @@ public class FileIO {
             ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("C:\\Users\\Hamdhan\\Documents\\NetBeansProjects\\Real-Champions-Sport-Academy\\src\\SportsCenter\\txt\\" + file));
             
             ArrayList<login> arrayLogin = new ArrayList<>();  // Writing ArrayList of login Object
-            Admin newAdmin = new Admin("A001", "Simon", "Male", "0123456789", "simon@gmail.com", "Street 2","2007");
-            login tempLogin = new login("A001","Welcome123",newAdmin);
+            login tempLogin= new login("A001","Welcome123","Simon", "Male", "0123456789", "simon@gmail.com", "Street 2","2007");
             
             arrayLogin.add(tempLogin);
             System.out.println(arrayLogin);

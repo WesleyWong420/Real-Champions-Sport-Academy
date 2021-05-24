@@ -63,20 +63,29 @@ public class Guest extends User{
         return newID;
     }
     
-    public void register(String guestUserID, String guestUsername, String guestGender, String guestContact, String guestEmail, String guestAddress,String selectedSportID,String password){
+    public void register(String selectedSportID,String password){
         ArrayList<String> lastFiveFeedbackID = new ArrayList<String>();
         ArrayList<Sport> arraySports = FileIO.readSportsFile("sport.txt");
-        Guest guest = new Guest(guestUserID, guestUsername, guestGender, guestContact, guestEmail, guestAddress);
+        ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
+        
+        //Initilizing 5 FiveFeedbackID for UI use.
+        for (int i = 0; i < 5;i++){
+            lastFiveFeedbackID.add("");
+        }
+        
+        //remove this line later
+        //Guest guest = new Guest(guestUserID, guestUsername, guestGender, guestContact, guestEmail, guestAddress);
+        
         for (Sport tempSport : arraySports){
             if (tempSport.getSportID().equals(selectedSportID)){
                 System.out.println("Sports found in register");
-                 Sport enroll =  tempSport;
-                 Student newStudent = new Student(guest.getUserID(), guest.getUsername(), guest.getGender(), guest.getContact(), guest.getEmail(), guest.getAddress(),lastFiveFeedbackID , enroll);
-                 login tempLogin = new login(guest.getUserID(),password ,newStudent);
-                 ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
-                 arrayStudent.add(newStudent);
-                 tempLogin.createLogin();
-                 FileIO.writeStudent(arrayStudent,"student.txt");
+                Sport enroll =  tempSport;
+                login tempLogin = new login(userID,password ,username, gender, contact, email, address,lastFiveFeedbackID , enroll);
+                System.out.println(tempLogin.getPassword()+ tempLogin.getUserID());
+                Student newStudent = tempLogin.getStudent();
+                arrayStudent.add(newStudent);
+                tempLogin.createLogin(tempLogin);
+                FileIO.writeStudent(arrayStudent,"student.txt");
             }
          }
     }
