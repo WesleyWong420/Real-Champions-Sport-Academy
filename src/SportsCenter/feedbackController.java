@@ -63,7 +63,7 @@ public class feedbackController {
             
             ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
             int index = 0;
-            for (Student sdt: arrayStudent) // overwrite the Student
+            for (Student sdt: arrayStudent)
             {
                 if(student.getUserID().equals(sdt.getUserID()))
                 {

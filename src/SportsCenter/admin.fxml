@@ -68,9 +68,8 @@
                                              <children>
                                                 <Button fx:id="deleteSBtn" mnemonicParsing="false" onAction="#deleteStudent" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
                                                 <Button fx:id="clearSBtn" mnemonicParsing="false" onAction="#clearStudent" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <Button fx:id="editSBtn" mnemonicParsing="false" onAction="#editStudent" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Button fx:id="searchSBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
-                                                <Button fx:id="addSBtn" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
+                                                <Button fx:id="editSBtn" mnemonicParsing="false" onAction="#editStudent" prefHeight="26.0" prefWidth="138.0" text="Edit" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                                <Button fx:id="searchSBtn" mnemonicParsing="false" onAction="#searchStudent" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
                                              </children>
                                              <padding>
                                                 <Insets right="5.0" top="3.0" />
@@ -89,21 +88,20 @@
                                             </rowConstraints>
                                              <children>
                                                 <TextField fx:id="studentIDTxt" promptText="Student ID" />
-                                                <TextField fx:id="emailSTxt" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="emailSTxt" promptText="Email" GridPane.columnSpan="2" GridPane.rowIndex="1">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
                                                    <GridPane.margin>
                                                       <Insets />
                                                    </GridPane.margin></TextField>
-                                                <TextField fx:id="firstNameSTxt" promptText="First Name" GridPane.columnIndex="1">
+                                                <TextField fx:id="nameSTxt" promptText="First Name" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="lastNameSTxt" promptText="Last Name" GridPane.columnIndex="2" />
                                                 <TextField fx:id="contactSTxt" promptText="Conatct No" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField fx:id="genderSTxt" promptText="Gender" GridPane.rowIndex="1" />
+                                                <TextField fx:id="genderSTxt" promptText="Gender" GridPane.columnIndex="2" />
                                                 <TextField fx:id="addressSTxt" prefHeight="26.0" prefWidth="99.0" promptText="Address" GridPane.columnSpan="3" GridPane.rowIndex="2">
                                                    <opaqueInsets>
                                                       <Insets />
@@ -128,14 +126,13 @@
                                  <children>
                                     <TableView fx:id="coach_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getStudent" prefHeight="322.0" prefWidth="650.0">
                                        <columns>
-                                          <TableColumn fx:id="studentIDCol1" prefWidth="75.0" text="Coach ID" />
-                                          <TableColumn fx:id="firstNameSCol1" prefWidth="75.0" text="First Name" />
-                                          <TableColumn fx:id="lastNameSCol1" prefWidth="75.0" text="Last Name" />
-                                          <TableColumn fx:id="genderSCol1" prefWidth="75.0" text="Gender" />
-                                          <TableColumn fx:id="emailSCol1" prefWidth="75.0" text="Email" />
-                                          <TableColumn fx:id="contactSCol1" prefWidth="75.0" text="Contact No" />
-                                          <TableColumn fx:id="addressSCol1" prefWidth="173.0" text="Address" />
-                                          <TableColumn fx:id="ratingCol" prefWidth="134.0" text="Rating" />
+                                          <TableColumn fx:id="coachIDCol" prefWidth="75.0" text="Coach ID" />
+                                          <TableColumn fx:id="nameCCol" prefWidth="110.0" text="Name" />
+                                          <TableColumn fx:id="genderCCol" prefWidth="78.0" text="Gender" />
+                                          <TableColumn fx:id="emailCCol" prefWidth="94.0" text="Email" />
+                                          <TableColumn fx:id="contactCCol" prefWidth="97.0" text="Contact No" />
+                                          <TableColumn fx:id="addressCCol" prefWidth="136.0" text="Address" />
+                                          <TableColumn fx:id="ratingCol" prefWidth="92.0" text="Rating" />
                                           <TableColumn fx:id="hourlyRateCol" prefWidth="293.0" text="Hourly Rate" />
                                        </columns>
                                     </TableView>
@@ -155,7 +152,7 @@
                                                 <Button fx:id="deleteCBtn" mnemonicParsing="false" onAction="#deleteStudent" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
                                                 <Button fx:id="clearCBtn" mnemonicParsing="false" onAction="#clearStudent" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                                 <Button fx:id="editCBtn" mnemonicParsing="false" onAction="#editStudent" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Button fx:id="searchCBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
+                                                <Button fx:id="searchCBtn" mnemonicParsing="false" onAction="#searchStudent" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
                                                 <Button fx:id="addCBtn" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
                                              </children>
                                              <padding>
@@ -175,7 +172,7 @@
                                              </rowConstraints>
                                              <children>
                                                 <TextField fx:id="coachIDTxt" promptText="Coach ID" />
-                                                <TextField fx:id="emailCTxt" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="emailCTxt" promptText="Email" GridPane.rowIndex="1">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -183,15 +180,20 @@
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="firstNameCTxt1" promptText="First Name" GridPane.columnIndex="1">
+                                                <TextField fx:id="nameCTxt" promptText="Name" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="lastNameCTxt" promptText="Last Name" GridPane.columnIndex="2" />
-                                                <TextField fx:id="contactCTxt" promptText="Conatct No" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField fx:id="genderCTxt" promptText="Gender" GridPane.rowIndex="1" />
-                                                <TextField fx:id="addressCTxt" prefHeight="26.0" prefWidth="99.0" promptText="Address" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                                                <TextField fx:id="hourlyCTxt" promptText="Hourly Rate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                <TextField fx:id="contactCTxt" promptText="Conatct No" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="genderCTxt" promptText="Gender" GridPane.columnIndex="2" />
+                                                <TextField fx:id="addressCTxt" prefHeight="26.0" prefWidth="99.0" promptText="Address" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </TextField>
+                                                <TextField fx:id="ratingCTxt" editable="false" layoutX="178.0" layoutY="59.0" promptText="Rating" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
