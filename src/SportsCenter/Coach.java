@@ -6,8 +6,11 @@ import javafx.scene.control.TextField;
 
 public class Coach extends User implements Serializable{
     
+    private static final long serialVersionUID = 1069953104396136378L;
     private double coachRating;
     private int hourlyRate;
+    
+    public Coach(){} // for calling id gen
     
     public Coach(String userID, String username){ // Constructor overloading - Will be called by Feedback class
         this.userID = userID;
@@ -98,4 +101,30 @@ public class Coach extends User implements Serializable{
             index++;
         }
     }
+    
+    public String generateUserID(){
+        ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
+        String newID = "C001";
+        //Checking for last Student UserID
+        if (arrayCoach.size() > 0){
+            Coach lastCoach = arrayCoach.get(arrayCoach.size() - 1);
+            String lastCoachID = lastCoach.getUserID();
+            int temp = Integer.parseInt(lastCoachID.substring(1));
+            newID = "C" + String.format("%03d", temp+1);
+        }
+        return newID;
+    }
+    
+    public Coach validate(String coachID){
+        ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
+        Coach valid = null;
+        for (Coach tempCoach : arrayCoach){
+            if (tempCoach.getUserID().equals(coachID) ){
+                    valid = tempCoach;
+                break;
+            }
+        }
+        return valid;
+    }
+    
 }

@@ -1,9 +1,11 @@
 package SportsCenter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Schedule extends Sport implements Serializable{
     
+    private static final long serialVersionUID = -6282085553881134190L;
     private String time;
     private String date;
     private String location;
@@ -39,4 +41,5 @@ public class Schedule extends Sport implements Serializable{
     public void setLocation(String location){
         this.location = location;
     }
+    
 }

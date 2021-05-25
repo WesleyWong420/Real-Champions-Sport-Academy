@@ -124,7 +124,7 @@
                            <content>
                               <VBox alignment="TOP_CENTER">
                                  <children>
-                                    <TableView fx:id="coach_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getStudent" prefHeight="322.0" prefWidth="650.0">
+                                    <TableView fx:id="coach_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getCoach" prefHeight="322.0" prefWidth="650.0">
                                        <columns>
                                           <TableColumn fx:id="coachIDCol" prefWidth="75.0" text="Coach ID" />
                                           <TableColumn fx:id="nameCCol" prefWidth="110.0" text="Name" />
@@ -149,11 +149,11 @@
                                                 <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Button fx:id="deleteCBtn" mnemonicParsing="false" onAction="#deleteStudent" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
-                                                <Button fx:id="clearCBtn" mnemonicParsing="false" onAction="#clearStudent" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <Button fx:id="editCBtn" mnemonicParsing="false" onAction="#editStudent" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Button fx:id="searchCBtn" mnemonicParsing="false" onAction="#searchStudent" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
-                                                <Button fx:id="addCBtn" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
+                                                <Button fx:id="deleteCBtn" mnemonicParsing="false" onAction="#deleteCoach" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
+                                                <Button fx:id="clearCBtn" mnemonicParsing="false" onAction="#clearCoach" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Button fx:id="editCBtn" mnemonicParsing="false" onAction="#editCoach" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Button fx:id="searchCBtn" mnemonicParsing="false" onAction="#searchCoach" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
+                                                <Button fx:id="addCBtn" mnemonicParsing="false" onAction="#addCoach" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
                                              </children>
                                              <padding>
                                                 <Insets right="5.0" top="3.0" />
@@ -193,7 +193,7 @@
                                                       <Insets />
                                                    </opaqueInsets>
                                                 </TextField>
-                                                <TextField fx:id="ratingCTxt" editable="false" layoutX="178.0" layoutY="59.0" promptText="Rating" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                <TextField fx:id="ratingCTxt" layoutX="178.0" layoutY="59.0" promptText="Rating" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -216,13 +216,13 @@
                            <content>
                               <VBox alignment="TOP_CENTER">
                                  <children>
-                                    <TableView fx:id="student_table1" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getStudent" prefHeight="322.0" prefWidth="650.0">
+                                    <TableView fx:id="sport_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getSport" prefHeight="322.0" prefWidth="650.0">
                                        <columns>
-                                          <TableColumn fx:id="studentIDCol2" prefWidth="75.0" text="Sport ID" />
-                                          <TableColumn fx:id="firstNameSCol2" prefWidth="196.0" text="Name" />
-                                          <TableColumn fx:id="lastNameSCol2" minWidth="0.0" prefWidth="98.0" text="Duration" />
-                                          <TableColumn fx:id="genderSCol2" minWidth="7.0" prefWidth="73.0" text="Fee" />
-                                          <TableColumn fx:id="emailSCol2" prefWidth="149.0" text="Coach ID" />
+                                          <TableColumn fx:id="sportIDCol" prefWidth="75.0" text="Sport ID" />
+                                          <TableColumn fx:id="nameSPCol" prefWidth="238.0" text="Name" />
+                                          <TableColumn fx:id="durationSPCol" minWidth="0.0" prefWidth="103.0" text="Duration" />
+                                          <TableColumn fx:id="feeSPCol" minWidth="7.0" prefWidth="79.0" text="Fee" />
+                                          <TableColumn fx:id="coachIDSPCol" prefWidth="154.0" text="Coach ID" />
                                        </columns>
                                     </TableView>
                                     <HBox alignment="CENTER_LEFT" prefHeight="132.0" prefWidth="650.0" spacing="10.0">
@@ -238,11 +238,11 @@
                                                 <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Button fx:id="deleteSPBtn" mnemonicParsing="false" onAction="#deleteStudent" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
-                                                <Button fx:id="clearSPBtn" mnemonicParsing="false" onAction="#clearStudent" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <Button fx:id="editSPBtn" mnemonicParsing="false" onAction="#editStudent" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Button fx:id="searchSPBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
-                                                <Button fx:id="addSPBtn" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
+                                                <Button fx:id="deleteSPBtn" mnemonicParsing="false" onAction="#deleteSport" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
+                                                <Button fx:id="clearSPBtn" mnemonicParsing="false" onAction="#clearSport" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Button fx:id="editSPBtn" mnemonicParsing="false" onAction="#editSport" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <Button fx:id="searchSPBtn" mnemonicParsing="false" onAction="#searchSport" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
+                                                <Button fx:id="addSPBtn" mnemonicParsing="false" onAction="#addSport" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
                                              </children>
                                              <padding>
                                                 <Insets right="5.0" top="3.0" />
@@ -273,7 +273,7 @@
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="coachISPTxt" promptText="Coach ID" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                <TextField fx:id="coachIDSPTxt" promptText="Coach ID" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                 <TextField fx:id="durationSPTxt" promptText="Duration" GridPane.rowIndex="1" />
                                              </children>
                                           </GridPane>
@@ -293,13 +293,13 @@
                            <content>
                               <VBox alignment="TOP_CENTER">
                                  <children>
-                                    <TableView fx:id="schedule_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getStudent" prefHeight="322.0" prefWidth="650.0">
+                                    <TableView fx:id="schedule_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getSchedule" prefHeight="322.0" prefWidth="650.0">
                                        <columns>
-                                          <TableColumn fx:id="studentIDCol21" prefWidth="75.0" text="Name" />
-                                          <TableColumn fx:id="timeTxt" prefWidth="196.0" text="Time" />
-                                          <TableColumn fx:id="lastNameSCol21" minWidth="0.0" prefWidth="98.0" text="Duration" />
-                                          <TableColumn fx:id="genderSCol21" minWidth="7.0" prefWidth="73.0" text="Fee" />
-                                          <TableColumn fx:id="emailSCol21" prefWidth="149.0" text="Coach ID" />
+                                          <TableColumn fx:id="sportIDSCCol" prefWidth="89.0" text="Sport ID" />
+                                          <TableColumn fx:id="sportNameSCCol" prefWidth="148.0" text="Sport Name" />
+                                          <TableColumn fx:id="timeSCCol" minWidth="0.0" prefWidth="141.0" text="Time" />
+                                          <TableColumn fx:id="dateSCCol" minWidth="7.0" prefWidth="110.0" text="Date" />
+                                          <TableColumn fx:id="locationSCCol" prefWidth="160.0" text="Location" />
                                        </columns>
                                     </TableView>
                                     <HBox alignment="CENTER_LEFT" prefHeight="132.0" prefWidth="650.0" spacing="10.0">
@@ -315,11 +315,10 @@
                                                 <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <Button fx:id="deleteSCBtn" mnemonicParsing="false" onAction="#deleteStudent" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
-                                                <Button fx:id="clearSCBtn" mnemonicParsing="false" onAction="#clearStudent" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                                <Button fx:id="editSCBtn" mnemonicParsing="false" onAction="#editStudent" prefWidth="60.0" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                                <Button fx:id="searchSCBtn" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
-                                                <Button fx:id="addSCBtn" mnemonicParsing="false" onAction="#addStudent" prefHeight="26.0" prefWidth="68.0" text="Add" GridPane.rowIndex="1" />
+                                                <Button fx:id="deleteSCBtn" mnemonicParsing="false" onAction="#deleteSchedule" prefWidth="60.0" text="Delete" GridPane.rowIndex="2" />
+                                                <Button fx:id="clearSCBtn" mnemonicParsing="false" onAction="#clearSchedule" prefWidth="60.0" text="Clear" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <Button fx:id="searchSCBtn" mnemonicParsing="false" onAction="#searchSchedule" prefHeight="26.0" prefWidth="139.0" text="Search" GridPane.columnSpan="2" />
+                                                <Button fx:id="addSCBtn" mnemonicParsing="false" onAction="#addSchedule" prefHeight="26.0" prefWidth="140.0" text="Add" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                                              </children>
                                              <padding>
                                                 <Insets right="5.0" top="3.0" />
@@ -336,7 +335,7 @@
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="nameSCTxt" promptText="Name" />
+                                                <TextField fx:id="sportIDSCTxt" promptText="Sport ID" GridPane.columnSpan="2" />
                                                 <TextField fx:id="dateSCTxt" promptText="Date" GridPane.columnIndex="2">
                                                    <opaqueInsets>
                                                       <Insets />
@@ -345,13 +344,12 @@
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="timeSCTxt" promptText="Time" GridPane.columnIndex="1">
+                                                <TextField fx:id="timeSCTxt" promptText="Time" GridPane.rowIndex="1">
                                                    <GridPane.margin>
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="coachSCTxt" promptText="Coach ID" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField fx:id="locationSCTxt" promptText="Location" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                                                <TextField fx:id="locationSCTxt" promptText="Location" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
                                              </children>
                                           </GridPane>
                                        </children>

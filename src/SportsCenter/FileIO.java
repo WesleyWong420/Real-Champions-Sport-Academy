@@ -34,6 +34,7 @@ public class FileIO {
             System.out.println("File not found!");
         }
         catch (IOException e){
+            System.out.println(e);
         }
         catch (ClassNotFoundException e){
             System.out.println("Class not found");
@@ -57,6 +58,7 @@ public class FileIO {
             System.out.println("File not found!");
         }
         catch (IOException e){
+            System.out.println(e);
         }
         catch (ClassNotFoundException e){
             System.out.println("Class not found");
@@ -81,6 +83,7 @@ public class FileIO {
             System.out.println("File not found!");
         }
         catch (IOException e){
+            System.out.println(e);
         }
         catch (ClassNotFoundException e){
             System.out.println("Class not found");
@@ -104,6 +107,7 @@ public class FileIO {
             System.out.println("File not found!");
         }
         catch (IOException e){
+            System.out.println(e);
         }
         catch (ClassNotFoundException e){
             System.out.println("Class not found");
@@ -127,6 +131,7 @@ public class FileIO {
             System.out.println("File not found!");
         }
         catch (IOException e){
+            System.out.println(e);
         }
         catch (ClassNotFoundException e){
             System.out.println("Class not found");
@@ -150,6 +155,7 @@ public class FileIO {
             System.out.println("File not found!");
         }
         catch (IOException e){
+            System.out.println(e);
         }
         catch (ClassNotFoundException e){
             System.out.println("Class not found");
@@ -393,6 +399,7 @@ public class FileIO {
             output.close(); 
         } 
         catch (IOException e){
+            System.out.println(e);
         }
     }
     
@@ -407,6 +414,7 @@ public class FileIO {
             output.close(); 
         } 
         catch (IOException e){
+            System.out.println(e);
         }
     }
     

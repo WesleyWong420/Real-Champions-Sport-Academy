@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 public class Student extends User implements Serializable{
     
+    private static final long serialVersionUID = -5159246549876579356L;
     private ArrayList<String> lastFiveFeedbackID;
     private Sport sport;
     
@@ -42,6 +43,11 @@ public class Student extends User implements Serializable{
     
     public void setSportObject(Sport sport){
         this.sport = sport;
+    }
+    
+    //TO POPULATE TABLE COL
+    public String getSportName(){
+        return sport.getSportName();
     }
     
     @Override // Override User getSport() Method - Dynamic Polymorphism
