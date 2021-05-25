@@ -1,7 +1,6 @@
 package SportsCenter;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Schedule extends Sport implements Serializable{
     
@@ -10,8 +9,8 @@ public class Schedule extends Sport implements Serializable{
     private String date;
     private String location;
     
-    public Schedule(String sportID, String sportName, int duration, int fee, Coach coach, String time, String date, String location){  // Constructor overloading
-        super(sportID, sportName, duration, fee, coach);
+    public Schedule(String sportID, String sportName, int duration, int fee,String status, Coach coach, String time, String date, String location){  // Constructor overloading
+        super(sportID, sportName, duration, fee,status, coach);
         this.time = time;
         this.date = date;
         this.location = location;

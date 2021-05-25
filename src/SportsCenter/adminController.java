@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -50,7 +51,7 @@ public class adminController {
     @FXML 
     private TableColumn sportIDCol,nameSPCol,durationSPCol,feeSPCol,contactSPCol,coachIDSPCol;
     @FXML 
-    private TableColumn scheduleIDCol,sportIDSCCol,sportNameSCCol,timeSCCol,dateSCCol,locationSCCol;
+    private TableColumn sportIDSCCol,sportNameSCCol,timeSCCol,dateSCCol,locationSCCol,statusSPCol;
 
         
     @FXML
@@ -69,9 +70,9 @@ public class adminController {
     @FXML
     private TextField coachIDTxt, nameCTxt, genderCTxt, emailCTxt, contactCTxt, addressCTxt, ratingCTxt,hourlyCTxt;
     @FXML
-    private TextField sportIDTxt, nameSPTxt, durationSPTxt, feeSPTxt, coachIDSPTxt;
+    private TextField sportIDTxt, nameSPTxt, durationSPTxt, feeSPTxt, coachIDSPTxt, statusSPTxt;
     @FXML
-    private TextField scheduleIDTxt, sportIDSCTxt, dateSCTxt, timeSCTxt, locationSCTxt;
+    private TextField sportIDSCTxt, dateSCTxt, timeSCTxt, locationSCTxt;
     
     private Admin admin = new Admin();
     
@@ -112,6 +113,7 @@ public class adminController {
         durationSPCol.setCellValueFactory(new PropertyValueFactory("duration"));
         feeSPCol.setCellValueFactory(new PropertyValueFactory("fee"));
         coachIDSPCol.setCellValueFactory(new PropertyValueFactory("CoachID"));
+        statusSPCol.setCellValueFactory(new PropertyValueFactory("status"));
         sport_table.setItems(sportData);
         
         //Adding schedule to table
@@ -389,25 +391,27 @@ public class adminController {
             nameSPTxt.setText(selected.getSportName());
             durationSPTxt.setText(String.valueOf(selected.getDuration()));
             feeSPTxt.setText(String.valueOf(selected.getFee()));
+            statusSPTxt.setText(selected.getStatus());
             Coach tempCoach1 = selected.getCoachObject();
-            coachIDTxt.setText(tempCoach1.getUserID());
+            coachIDSPTxt.setText(tempCoach1.getUserID());
         }
     }
     
     @FXML
     private void addSport(ActionEvent event) throws Exception {
         ObservableList<Sport> sportData = sport_table.getItems();
-        if((!"".equals(nameSPTxt.getText()))&& (!"".equals(durationSPTxt.getText())) && (!"".equals(feeSPTxt.getText())) && (!"".equals(coachIDSPTxt.getText()))  ){
+        if((!"".equals(nameSPTxt.getText()))&& (!"".equals(durationSPTxt.getText())) && (!"".equals(feeSPTxt.getText())) && (!"".equals(coachIDSPTxt.getText())) && (!"".equals(statusSPTxt.getText()))  ){
             if(sportData != null){
                 Sport newSportID = new Sport();
                 Coach setCoach = new Coach();
                 setCoach = setCoach.validate(coachIDSPTxt.getText());
                 if (setCoach != null){
-                    sportData.add(new Sport(newSportID.generateSportID(), nameSPTxt.getText(), Integer.parseInt(durationSPTxt.getText()), Integer.parseInt(feeSPTxt.getText()),setCoach));
+                    sportData.add(new Sport(newSportID.generateSportID(), nameSPTxt.getText(), Integer.parseInt(durationSPTxt.getText()), Integer.parseInt(feeSPTxt.getText()),statusSPTxt.getText(),setCoach));
                     admin.addSport(sportData);
 
                     sportIDTxt.clear();
                     nameSPTxt.clear();
+                    statusSPTxt.clear();
                     durationSPTxt.clear();
                     feeSPTxt.clear();
                     coachIDSPTxt.clear();
@@ -430,6 +434,7 @@ public class adminController {
             sport_table.getSelectionModel().clearSelection();
             sportIDTxt.clear();
             nameSPTxt.clear();
+            statusSPTxt.clear();
             durationSPTxt.clear();
             feeSPTxt.clear();
             coachIDSPTxt.clear();
@@ -441,13 +446,14 @@ public class adminController {
         ObservableList<Sport> sportData = sport_table.getItems();
         Sport selected = sport_table.getSelectionModel().getSelectedItem();
         if (selected != null){
-            if((!"".equals(nameSPTxt.getText()))&& (!"".equals(durationSPTxt.getText())) && (!"".equals(feeSPTxt.getText())) && (!"".equals(coachIDSPTxt.getText()))  ){
+            if((!"".equals(nameSPTxt.getText()))&& (!"".equals(durationSPTxt.getText())) && (!"".equals(feeSPTxt.getText())) && (!"".equals(coachIDSPTxt.getText())) && (!"".equals(statusSPTxt.getText())) ){
                 Sport newSportID = new Sport();
                 Coach setCoach = new Coach();
                 setCoach = setCoach.validate(coachIDSPTxt.getText());
                 if (setCoach != null){
                     selected.setSportName(nameSPTxt.getText());
                     selected.setDuration(Integer.parseInt(durationSPTxt.getText()));
+                    selected.setStatus(statusSPTxt.getText());
                     selected.setFee(Integer.parseInt(feeSPTxt.getText()));
                     selected.setCoachObject(setCoach);
                     
@@ -458,6 +464,7 @@ public class adminController {
                     // clear text boxes
                     sport_table.getSelectionModel().clearSelection();
                     sportIDTxt.clear();
+                    statusSPTxt.clear();
                     nameSPTxt.clear();
                     durationSPTxt.clear();
                     feeSPTxt.clear();
@@ -476,6 +483,7 @@ public class adminController {
         // clear text boxes
         coach_table.getSelectionModel().clearSelection();
         sportIDTxt.clear();
+        statusSPTxt.clear();
         nameSPTxt.clear();
         durationSPTxt.clear();
         feeSPTxt.clear();
@@ -535,7 +543,7 @@ public class adminController {
                 Sport setSportID = new Sport();
                 setSportID = setSportID.validate(sportIDSCTxt.getText());
                 if (setSportID != null){
-                    scheduleData.add(new Schedule(setSportID.getSportID(), setSportID.getSportName(), setSportID.getDuration(), setSportID.getFee(),setSportID.getCoachObject(),timeSCTxt.getText(),dateSCTxt.getText(),locationSCTxt.getText()));
+                    scheduleData.add(new Schedule(setSportID.getSportID(), setSportID.getSportName(), setSportID.getDuration(), setSportID.getFee(),setSportID.getStatus(),setSportID.getCoachObject(),timeSCTxt.getText(),dateSCTxt.getText(),locationSCTxt.getText()));
                     admin.addSchedule(scheduleData);
 
                     sportIDSCTxt.clear();

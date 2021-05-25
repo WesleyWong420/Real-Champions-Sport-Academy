@@ -222,6 +222,7 @@
                                           <TableColumn fx:id="nameSPCol" prefWidth="238.0" text="Name" />
                                           <TableColumn fx:id="durationSPCol" minWidth="0.0" prefWidth="103.0" text="Duration" />
                                           <TableColumn fx:id="feeSPCol" minWidth="7.0" prefWidth="79.0" text="Fee" />
+                                          <TableColumn fx:id="statusSPCol" minWidth="7.0" prefWidth="79.0" text="Status" />
                                           <TableColumn fx:id="coachIDSPCol" prefWidth="154.0" text="Coach ID" />
                                        </columns>
                                     </TableView>
@@ -260,7 +261,7 @@
                                              </rowConstraints>
                                              <children>
                                                 <TextField fx:id="sportIDTxt" promptText="Sport ID" />
-                                                <TextField fx:id="feeSPTxt" promptText="Fee" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="feeSPTxt" promptText="Fee" GridPane.rowIndex="1">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -268,13 +269,14 @@
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="nameSPTxt" promptText="Name" GridPane.columnIndex="1" GridPane.columnSpan="2">
+                                                <TextField fx:id="nameSPTxt" promptText="Name" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets />
                                                    </GridPane.margin>
                                                 </TextField>
                                                 <TextField fx:id="coachIDSPTxt" promptText="Coach ID" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                                <TextField fx:id="durationSPTxt" promptText="Duration" GridPane.rowIndex="1" />
+                                                <TextField fx:id="durationSPTxt" promptText="Duration" GridPane.columnIndex="2" />
+                                                <TextField fx:id="statusSPTxt" layoutX="178.0" layoutY="28.0" promptText="Status" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                              </children>
                                           </GridPane>
                                        </children>

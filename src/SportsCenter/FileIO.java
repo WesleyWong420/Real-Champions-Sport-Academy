@@ -176,11 +176,11 @@ public class FileIO {
             Coach demetrice = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
             Coach evenlyn = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
             
-            Sport sport1 = new Sport("S001", "Archery", 120, 130, alex);
-            Sport sport2 = new Sport("S002", "Badminton", 120, 90, bob);
-            Sport sport3 = new Sport("S003", "Basketball", 120, 90, caitlin);
-            Sport sport4 = new Sport("S004", "Gymnastics", 120, 70, demetrice);
-            Sport sport5 = new Sport("S005", "Hockey", 120, 125, evenlyn);
+            Sport sport1 = new Sport("S001", "Archery", 120, 130,"Status", alex);
+            Sport sport2 = new Sport("S002", "Badminton", 120, 90,"Status", bob);
+            Sport sport3 = new Sport("S003", "Basketball", 120, 90,"Status", caitlin);
+            Sport sport4 = new Sport("S004", "Gymnastics", 120, 70,"Status",demetrice);
+            Sport sport5 = new Sport("S005", "Hockey", 120, 125,"Status", evenlyn);
             
             arraySports.add(sport1);
             arraySports.add(sport2);
@@ -207,11 +207,11 @@ public class FileIO {
             Coach demetrice = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
             Coach evenlyn = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
             
-            Schedule schedule1 = new Schedule("S001", "Archery", 120, 130, alex, "08:00 - 10:00", "Mon, 23 May", "Court 1");
-            Schedule schedule2 = new Schedule("S002", "Badminton", 120, 90, bob, "10:00 - 12:00", "Tue, 24 May", "Court 2");
-            Schedule schedule3 = new Schedule("S003", "Basketball", 120, 90, caitlin, "12:00 - 14:00", "Wed, 25 May", "Court 3");
-            Schedule schedule4 = new Schedule("S004", "Gymnastics", 120, 70, demetrice, "14:00 - 16:00", "Thu, 26 May", "Court 4");
-            Schedule schedule5 = new Schedule("S005", "Hockey", 120, 125, evenlyn, "16:00 - 18:00", "Fri, 27 May", "Court 5");
+            Schedule schedule1 = new Schedule("S001", "Archery", 120, 130,"Active",alex, "08:00 - 10:00", "Mon, 23 May", "Court 1");
+            Schedule schedule2 = new Schedule("S002", "Badminton", 120, 90,"Active", bob, "10:00 - 12:00", "Tue, 24 May", "Court 2");
+            Schedule schedule3 = new Schedule("S003", "Basketball", 120, 90,"Active",caitlin, "12:00 - 14:00", "Wed, 25 May", "Court 3");
+            Schedule schedule4 = new Schedule("S004", "Gymnastics", 120, 70,"Active",demetrice, "14:00 - 16:00", "Thu, 26 May", "Court 4");
+            Schedule schedule5 = new Schedule("S005", "Hockey", 120, 125,"Active",evenlyn, "16:00 - 18:00", "Fri, 27 May", "Court 5");
             
             arraySchedule.add(schedule1);
             arraySchedule.add(schedule2);
@@ -268,11 +268,11 @@ public class FileIO {
             Coach demetrice = new Coach("C004", "Demetrice", "Female", "0123456789", "demetrice@gmail.com", "Street 4", 4.3, 30);
             Coach evenlyn = new Coach("C005", "Evenlyn", "Female", "0123456789", "evenlyn@gmail.com", "Street 5", 5.0, 50);
             
-            Sport sport1 = new Sport("S001", "Archery", 120, 130, alex);
-            Sport sport2 = new Sport("S002", "Badminton", 120, 90, bob);
-            Sport sport3 = new Sport("S003", "Basketball", 120, 90, caitlin);
-            Sport sport4 = new Sport("S004", "Gymnastics", 120, 70, demetrice);
-            Sport sport5 = new Sport("S005", "Hockey", 120, 125, evenlyn);
+            Sport sport1 = new Sport("S001", "Archery", 120, 130,"Status", alex);
+            Sport sport2 = new Sport("S002", "Badminton", 120, 90,"Status", bob);
+            Sport sport3 = new Sport("S003", "Basketball", 120, 90,"Status", caitlin);
+            Sport sport4 = new Sport("S004", "Gymnastics", 120, 70,"Status", demetrice);
+            Sport sport5 = new Sport("S005", "Hockey", 120, 125,"Status", evenlyn);
             
             ArrayList<String> lastFiveFeedbackID = new ArrayList<>();
             lastFiveFeedbackID.add("F001");

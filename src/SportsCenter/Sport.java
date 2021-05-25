@@ -11,15 +11,17 @@ public class Sport implements Serializable{
     private int duration;
     private int fee;
     private Coach coach;
+    private String status;
     private String coachID;
     
     public Sport(){}
     
-    public Sport(String sportID, String sportName, int duration, int fee, Coach coach){  // Constructor overloading
+    public Sport(String sportID, String sportName, int duration, int fee,String status, Coach coach){  // Constructor overloading
         this.sportID = sportID;
         this.sportName = sportName;
         this.duration = duration;
         this.fee = fee;
+        this.status = status;
         this.coach = coach;
         coachID = coach.getUserID();
     }
@@ -54,6 +56,14 @@ public class Sport implements Serializable{
     
     public void setFee(int fee){
         this.fee = fee;
+    }
+    
+    public String getStatus(){
+        return status;
+    }
+    
+    public void setStatus(String status){
+        this.status = status;
     }
     
     public Coach getCoachObject(){
