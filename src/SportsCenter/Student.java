@@ -68,7 +68,7 @@ public class Student extends User implements Serializable{
 
         int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
         
-        if(sport != null && sport_index <= 4) // If student has an enrolled sport
+        if(sport != null && sport_index >= 0 && sport_index <= 4) // If student has an enrolled sport
         {
             ArrayList<Button> btn_inner_list = new ArrayList<>(btn_list.get(0)); // the outer layer is an ArrayList of many Button ArrayList
             for(Button btn : btn_inner_list) // extract the Button ArrayList
@@ -125,7 +125,7 @@ public class Student extends User implements Serializable{
         
         int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
         
-        if(sport != null && sport_index <= 4) // If student has an enrolled sport
+        if(sport != null && sport_index >= 0 && sport_index <= 4) // If student has an enrolled sport
         {
             int index2 = 0; 
             for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)

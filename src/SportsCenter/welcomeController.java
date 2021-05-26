@@ -33,8 +33,7 @@ public class welcomeController {
     
     private Guest guest = new Guest();
     
-    public Admin admin;
-    public int index;
+    public int index = -1;
     
     private ArrayList<Sport> arraySports;
     private ArrayList<Student> arrayStudent;
@@ -75,7 +74,6 @@ public class welcomeController {
                 case 'A':
                     resource ="admin.fxml";
                     title = "Admin Dashboard";
-                    admin = validLogin.getAdmin();
                     break;
                 case 'S':
                     resource ="student.fxml";
@@ -87,6 +85,11 @@ public class welcomeController {
                         if(sdt.getUserID().equals(validLogin.getStudent().getUserID()))
                         {
                             index = arrayStudent.indexOf(sdt);
+                            
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
+                            Parent root = loader.load();
+                            studentController con = loader.getController();
+                            con.pushIndex(index);
                             break;
                         }
                     }
@@ -101,13 +104,19 @@ public class welcomeController {
                         if(ch.getUserID().equals(validLogin.getCoach().getUserID()))
                         {
                             index = arrayCoach.indexOf(ch);
+                            
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
+                            Parent root = loader.load();
+                            coachController con = loader.getController();
+                            con.pushIndex(index);
                             break;
                         }
                     }
                     break;
                 }
                 
-                Parent root = FXMLLoader.load(getClass().getResource(resource));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
+                Parent root = loader.load();
                 Stage window = (Stage) btnLogin.getScene().getWindow(); 
                 window.setScene(new Scene(root, 800, 480));
                 window.setTitle(title);
@@ -144,9 +153,5 @@ public class welcomeController {
         }else{
             registerstatus.setText("Please enter all details!");
         }
-    }
-    
-    public Admin returnAdmin(){
-        return admin;
     }
 }

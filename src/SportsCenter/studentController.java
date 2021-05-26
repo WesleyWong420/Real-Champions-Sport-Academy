@@ -79,12 +79,8 @@ public class studentController {
     ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
     Student student;
     
-    public void initialize() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
-        Parent root = loader.load();
-        welcomeController con = loader.getController();
-        student = arrayStudent.get(con.index);
-        System.out.println(con.index);
+    public void initialize(){
+        student = arrayStudent.get(3);
         
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
@@ -605,4 +601,7 @@ public class studentController {
         
         return empty;
    }
+    
+    public void pushIndex(int index){
+    }
 }

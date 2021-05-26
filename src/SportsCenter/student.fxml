@@ -78,13 +78,13 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblGender" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Gender" />
-                                                <TextField id="profile-text-field" fx:id="txtGender" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Gender" text="Female" />
+                                                <TextField id="profile-text-field" fx:id="txtGender" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Gender" />
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblUsername" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Username" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtUsername" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Username" text="Abigail" />
+                                                <TextField id="profile-text-field" fx:id="txtUsername" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Username" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -93,7 +93,7 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblUserID" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="User ID" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtUserID" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="User ID" text="S001" />
+                                                <TextField id="profile-text-field" fx:id="txtUserID" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="User ID" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -109,13 +109,13 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblAddress" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Address" />
-                                                <TextField id="profile-text-field" fx:id="txtAddress" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Address" text="Street 10" />
+                                                <TextField id="profile-text-field" fx:id="txtAddress" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Address" />
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblMobileNo" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Mobile Number" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtMobileNo" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Mobile Number" text="0123456789" />
+                                                <TextField id="profile-text-field" fx:id="txtMobileNo" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Mobile Number" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -124,7 +124,7 @@
                                           <VBox prefHeight="45.0" prefWidth="180.0" HBox.hgrow="ALWAYS">
                                              <children>
                                                 <Label id="white13" fx:id="lblEmail" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="26.0" prefWidth="228.0" text="Email" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtEmail" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Email" text="abc@gmail.com" />
+                                                <TextField id="profile-text-field" fx:id="txtEmail" alignment="CENTER_RIGHT" disable="true" onMouseClicked="#getFocus" onMouseExited="#loseFocus" prefHeight="45.0" prefWidth="180.0" promptText="Email" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
@@ -140,7 +140,7 @@
                                           <VBox prefHeight="46.0" prefWidth="206.0">
                                              <children>
                                                 <Label id="white13" fx:id="lblSport" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="19.0" prefWidth="658.0" text="Sport" VBox.vgrow="ALWAYS" />
-                                                <TextField id="profile-text-field" fx:id="txtSport" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#selectSport" prefHeight="26.0" prefWidth="180.0" promptText="No Sport" text="Badminton" VBox.vgrow="ALWAYS" />
+                                                <TextField id="profile-text-field" fx:id="txtSport" alignment="CENTER_RIGHT" disable="true" editable="false" onMouseClicked="#selectSport" prefHeight="26.0" prefWidth="180.0" promptText="No Sport" VBox.vgrow="ALWAYS" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="20.0" />
