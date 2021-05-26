@@ -28,7 +28,7 @@ public class coachController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
         Parent root = loader.load();
         welcomeController con = loader.getController();
-        coach = con.returnCoach();
+        coach = arrayCoach.get(con.index);
         
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");

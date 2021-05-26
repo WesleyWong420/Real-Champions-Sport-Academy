@@ -83,10 +83,10 @@ public class Coach extends User implements Serializable{
                     txt.setText(gender);
                     break;
                 case 3:
-                    txt.setText(email);
+                    txt.setText(contact);
                     break;
                 case 4:
-                    txt.setText(contact);
+                    txt.setText(email);
                     break;
                 case 5:
                     txt.setText(address);
@@ -95,7 +95,7 @@ public class Coach extends User implements Serializable{
                     txt.setText(Double.toString(coachRating) + "/5.0");
                     break;
                 case 7:
-                    txt.setText("$" + Integer.toString(hourlyRate));
+                    txt.setText("MYR" + Integer.toString(hourlyRate));
                     break;
             }
             index++;

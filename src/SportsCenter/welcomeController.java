@@ -33,11 +33,12 @@ public class welcomeController {
     
     private Guest guest = new Guest();
     
-    Admin admin;
-    Student student;
-    Coach coach;
+    public Admin admin;
+    public int index;
     
-    private  ArrayList<Sport> arraySports ;
+    private ArrayList<Sport> arraySports;
+    private ArrayList<Student> arrayStudent;
+    private ArrayList<Coach> arrayCoach;
 
     public void initialize() {
     //FileIO temp = new FileIO(); //initiating admin login for first use 
@@ -79,12 +80,30 @@ public class welcomeController {
                 case 'S':
                     resource ="student.fxml";
                     title = "Student Dashboard";
-                    student = validLogin.getStudent();
+                    
+                    arrayStudent = FileIO.readStudentFile("student.txt");
+                    for(Student sdt : arrayStudent)
+                    {
+                        if(sdt.getUserID().equals(validLogin.getStudent().getUserID()))
+                        {
+                            index = arrayStudent.indexOf(sdt);
+                            break;
+                        }
+                    }
                     break;
                 case 'C':
                     resource ="coach.fxml";
                     title = "Coach Dashboard";
-                    coach = validLogin.getCoach();
+                    
+                    arrayCoach = FileIO.readCoachFile("coach.txt");
+                    for(Coach ch : arrayCoach)
+                    {
+                        if(ch.getUserID().equals(validLogin.getCoach().getUserID()))
+                        {
+                            index = arrayCoach.indexOf(ch);
+                            break;
+                        }
+                    }
                     break;
                 }
                 
@@ -129,13 +148,5 @@ public class welcomeController {
     
     public Admin returnAdmin(){
         return admin;
-    }
-    
-    public Student returnStudent(){
-        return student;
-    }
-    
-    public Coach returnCoach(){
-        return coach;
     }
 }

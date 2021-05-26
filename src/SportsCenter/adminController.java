@@ -54,7 +54,7 @@ public class adminController {
     @FXML
     private TextField sportIDSCTxt, dateSCTxt, timeSCTxt, locationSCTxt;
     
-    private Admin admin;
+    private Admin admin = new Admin();
     
     private ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
     private ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
@@ -62,11 +62,6 @@ public class adminController {
     private ArrayList<Schedule> arraySchedule = FileIO.readScheduleFile("schedule.txt");
     
     public void initialize() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
-        Parent root = loader.load();
-        welcomeController con = loader.getController();
-        admin = con.returnAdmin();
-        
         //Adding student data to table
         ObservableList<Student> data = FXCollections.observableArrayList(arrayStudent);
         studentIDCol.setCellValueFactory(new PropertyValueFactory("userID"));

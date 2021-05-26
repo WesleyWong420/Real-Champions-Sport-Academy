@@ -62,14 +62,14 @@ public class Student extends User implements Serializable{
         ArrayList<String> sportID_list = new ArrayList<>();
         for (Sport sport : arraySports)
         {
-            sportID_list.add(sport.getSportID()); // Add all 5 SportID into a new ArrayList
+            sportID_list.add(sport.getSportID()); // Add all SportID into a new ArrayList
             index++;
         }
 
-        if(sport != null) // If student has an enrolled sport
+        int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
+        
+        if(sport != null && sport_index <= 4) // If student has an enrolled sport
         {
-            int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
-            
             ArrayList<Button> btn_inner_list = new ArrayList<>(btn_list.get(0)); // the outer layer is an ArrayList of many Button ArrayList
             for(Button btn : btn_inner_list) // extract the Button ArrayList
             {
@@ -119,14 +119,14 @@ public class Student extends User implements Serializable{
         ArrayList<String> sportID_list = new ArrayList<>();
         for (Schedule schedule : arraySchedule)
         {
-            sportID_list.add(schedule.getSportID());  // Add all 5 SportID into a new ArrayList
+            sportID_list.add(schedule.getSportID());  // Add all SportID into a new ArrayList
             index++;
         }
         
-        if(sport != null) // If student has an enrolled sport
+        int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
+        
+        if(sport != null && sport_index <= 4) // If student has an enrolled sport
         {
-            int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
-            
             int index2 = 0; 
             for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)
             {

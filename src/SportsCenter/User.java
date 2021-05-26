@@ -120,7 +120,7 @@ public abstract class User implements Serializable{
                     img.setImage(image); // Set Sports Logo
                 }
                 catch (FileNotFoundException e){
-                    System.out.println("File not found!");
+                    System.out.println("Image not found!");
                 }
                 index4++;
             }

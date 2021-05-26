@@ -83,7 +83,8 @@ public class studentController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
         Parent root = loader.load();
         welcomeController con = loader.getController();
-        student = con.returnStudent();
+        student = arrayStudent.get(con.index);
+        System.out.println(con.index);
         
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
@@ -508,7 +509,7 @@ public class studentController {
         lblSport.setVisible(true); // Float the label
         
         ArrayList<String> selection = new ArrayList<>();
-        for(int index = 0; index < arraySports.size(); index++)
+        for(int index = 0; index < 5; index++)
         {
             selection.add(arraySports.get(index).getSportName()); // Add choices into the ComboBox inside the pop-up dialog
         }
