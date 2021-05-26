@@ -65,17 +65,17 @@ public class login implements Serializable{
         this.password = password;
     }
     
-    public Boolean validate(String userID ,String password) {
-        Boolean success = false;
+    public login validate(String userID ,String password) {
+        login validLogin = null;
         ArrayList<login> arrayLogin = FileIO.readLoginFile("login.txt");
         for (login tempLogin : arrayLogin){
             if (tempLogin.getUserID().equals(userID) && tempLogin.getPassword().equals(password) ){
-                success = true;
+                validLogin = tempLogin;
                 break;
             }
         }
         
-        return success;
+        return validLogin;
     }
     
     //Identify user type by first character "S" -Student "A" - Admin

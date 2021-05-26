@@ -62,28 +62,28 @@ public class welcomeController {
     private void pressLogin(javafx.event.ActionEvent event) throws Exception {
         String resource = "welcome.fxml", title = "Welcome";
         login tempLogin;
+        login validLogin = null;
         
         if ((userTxt.getText() != null)&& (passTxt.getText()!= null)){
             tempLogin = new login(userTxt.getText(),passTxt.getText());
-            Boolean success = tempLogin.validate(userTxt.getText(), passTxt.getText());
-            if (success){
-               System.out.println(success);
-                
+            validLogin = tempLogin.validate(userTxt.getText(), passTxt.getText());
+            if (validLogin != null){
+ 
                switch(tempLogin.getAccess()){
                 case 'A':
                     resource ="admin.fxml";
                     title = "Admin Dashboard";
-                    admin = tempLogin.getAdmin();
+                    admin = validLogin.getAdmin();
                     break;
                 case 'S':
                     resource ="student.fxml";
                     title = "Student Dashboard";
-                    student = tempLogin.getStudent();
+                    student = validLogin.getStudent();
                     break;
                 case 'C':
                     resource ="coach.fxml";
                     title = "Coach Dashboard";
-                    coach = tempLogin.getCoach();
+                    coach = validLogin.getCoach();
                     break;
                 }
                 
