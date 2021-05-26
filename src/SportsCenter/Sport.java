@@ -2,6 +2,7 @@ package SportsCenter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Sport implements Serializable{
     
@@ -81,11 +82,17 @@ public class Sport implements Serializable{
     
     public String generateSportID(){
         ArrayList<Sport> arraySport = FileIO.readSportsFile("sport.txt");
+        ArrayList<String> arraySportID =new ArrayList<String>();
         String newID = "SP001";
         //Checking for last Student UserID
         if (arraySport.size() > 0){
-            Sport lastSport = arraySport.get(arraySport.size() - 1);
-            String lastSportID = lastSport.getSportID();
+            for (Sport tempSport : arraySport){
+                arraySportID.add(tempSport.getSportID());
+            }
+            Collections.sort(arraySportID);
+            System.out.println(arraySportID);
+//            Sport lastSport = arraySport.get(arraySport.size() - 1);
+            String lastSportID = arraySportID.get(arraySport.size() - 1);
             int temp = Integer.parseInt(lastSportID.substring(2));
             newID = "SP" + String.format("%03d", temp+1);
         }
