@@ -47,7 +47,11 @@ public class Student extends User implements Serializable{
     
     //TO POPULATE TABLE COL
     public String getSportName(){
-        return sport.getSportName();
+        String sportName = "";
+        if (sport != null){
+         sportName = sport.getSportName();
+        }
+        return sportName;
     }
     
     @Override // Override User getSport() Method - Dynamic Polymorphism

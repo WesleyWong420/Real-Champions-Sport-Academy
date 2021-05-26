@@ -117,8 +117,17 @@ public class Admin extends User implements Serializable {
         FileIO.writeSport(arraySport, "Sport.txt");
     }
     
-    public void deleteSport(ObservableList<Sport> data){
-        ArrayList<Sport> arraySport = new ArrayList<Sport>(data);  
+    public void deleteSport(ObservableList<Sport> data,String sportID){
+        ArrayList<Sport> arraySport = new ArrayList<Sport>(data);
+        ArrayList<Schedule> arraySchedule = FileIO.readScheduleFile("schedule.txt");
+        for (Schedule tempSchedule : arraySchedule){
+        
+            if (tempSchedule.getSportID().equals(sportID)){
+                arraySchedule.remove(tempSchedule);
+            }
+        
+        }
+        FileIO.writeSchedule(arraySchedule,"Schedule.txt");
         FileIO.writeSport(arraySport, "Sport.txt");
     }
     

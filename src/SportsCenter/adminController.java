@@ -399,7 +399,7 @@ public class adminController {
         if (selected != null){
             sport_table.getItems().remove(selected);
             ObservableList<Sport> sportData = sport_table.getItems();
-            admin.deleteSport(sportData);
+            admin.deleteSport(sportData,selected.getSportID());
             
             // clear text boxes
             sport_table.getSelectionModel().clearSelection();
