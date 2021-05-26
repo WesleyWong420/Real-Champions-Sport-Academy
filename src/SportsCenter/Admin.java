@@ -10,7 +10,6 @@ public class Admin extends User implements Serializable {
     private String joinedYear;  
     
     public Admin(){
-        
     }
     
     public Admin(String userID, String username, String gender, String contact, String email, String address , String joinedYear){
@@ -20,7 +19,6 @@ public class Admin extends User implements Serializable {
     
     @Override // Override User getSchedule() Method - Dynamic Polymorphism
     public void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list){
-        
     }
     
     //Write, Edit Delete update to Txt file
@@ -45,7 +43,7 @@ public class Admin extends User implements Serializable {
         FileIO.writeLogin(arrayLogin, "login.txt");
     }
     
-        //search student
+    //search student
     public ArrayList<Student> searchStudent(String studentID){
         ArrayList<Student> searchedStudent = new ArrayList<Student>();
         ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
@@ -57,12 +55,9 @@ public class Admin extends User implements Serializable {
         }
         
         return searchedStudent;
-//        FileIO.writeStudent(arrayStudent, "student.txt");
-//        FileIO.writeLogin(arrayLogin, "login.txt");
+        //FileIO.writeStudent(arrayStudent, "student.txt");
+        //FileIO.writeLogin(arrayLogin, "login.txt");
     }
-    
-    
-
     
     public void addCoach(ObservableList<Coach> data){
         ArrayList<Coach> arrayCoach = new ArrayList<Coach>(data);  
@@ -80,7 +75,7 @@ public class Admin extends User implements Serializable {
         FileIO.writeCoach(arrayCoach, "coach.txt");
     }
     
-        //delete coach
+    //delete coach
     public void deleteCoach(ObservableList<Coach> data,String coachID){
         ArrayList<Coach> arrayCoach = new ArrayList<Coach>(data);
         // delete Coach login from login txt
@@ -173,8 +168,7 @@ public class Admin extends User implements Serializable {
         }
         
         return searchedSchedule;
-//        FileIO.writeStudent(arrayStudent, "student.txt");
-//        FileIO.writeLogin(arrayLogin, "login.txt");
-    }
-     
+        //FileIO.writeStudent(arrayStudent, "student.txt");
+        //FileIO.writeLogin(arrayLogin, "login.txt");
+    }    
 }

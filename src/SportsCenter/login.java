@@ -53,7 +53,14 @@ public class login implements Serializable{
         return newStudent;
     }
     
-        
+    public Admin getAdmin() {
+        return newAdmin;
+    }
+    
+    public Coach getCoach() {
+        return newCoach;
+    }
+    
     public void setPassword(String password) {
         this.password = password;
     }
@@ -76,7 +83,6 @@ public class login implements Serializable{
         char accessCode = userID.charAt(0);
         System.out.println(accessCode);
         return accessCode;
-    
     }
     
     // creating and writing login to file
@@ -85,6 +91,5 @@ public class login implements Serializable{
         ArrayList<login> arrayLogin = FileIO.readLoginFile("login.txt");
         arrayLogin.add(newlogin);
         FileIO.writeLogin(arrayLogin, "login.txt");
-        
     }
 }

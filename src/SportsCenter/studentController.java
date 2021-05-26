@@ -77,9 +77,14 @@ public class studentController {
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
-    Student student = arrayStudent.get(1);
+    Student student;
     
-    public void initialize() {
+    public void initialize() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
+        Parent root = loader.load();
+        welcomeController con = loader.getController();
+        student = con.returnStudent();
+        
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
         

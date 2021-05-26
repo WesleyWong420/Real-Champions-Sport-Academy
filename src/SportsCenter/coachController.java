@@ -1,5 +1,6 @@
 package SportsCenter;
 
+import java.io.IOException;
 import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
@@ -21,9 +22,14 @@ public class coachController {
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
-    Coach coach = arrayCoach.get(0);
+    Coach coach;
     
-    public void initialize() {
+    public void initialize() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
+        Parent root = loader.load();
+        welcomeController con = loader.getController();
+        coach = con.returnCoach();
+        
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
         

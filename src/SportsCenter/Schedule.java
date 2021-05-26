@@ -40,5 +40,4 @@ public class Schedule extends Sport implements Serializable{
     public void setLocation(String location){
         this.location = location;
     }
-    
 }

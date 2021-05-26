@@ -16,14 +16,14 @@ import javafx.scene.control.TextField;
 public class welcomeController {
     
     @FXML
-    private Button btnGuest, btnLogin,submitBtn;
+    private Button btnGuest, btnLogin, submitBtn;
     @FXML
-    private Label loginstatus,registerstatus;
+    private Label loginstatus, registerstatus;
     @FXML
-    private TextField userTxt, studentIDRTxt,SportRCBox,nameRTxt,emailRTxt,contactRTxt,genderRTxt;
+    private TextField userTxt, studentIDRTxt, SportRCBox, nameRTxt, emailRTxt, contactRTxt, genderRTxt;
     
     @FXML
-    private PasswordField passTxt,passRTxt;
+    private PasswordField passTxt, passRTxt;
     
     @FXML
     private TextArea addressRTxt;
@@ -33,18 +33,21 @@ public class welcomeController {
     
     private Guest guest = new Guest();
     
+    Admin admin;
+    Student student;
+    Coach coach;
+    
     private  ArrayList<Sport> arraySports ;
 
     public void initialize() {
-//       FileIO temp = new FileIO(); //initiating admin login for first use 
-//       temp.addlogin("login.txt");
+    //FileIO temp = new FileIO(); //initiating admin login for first use 
+    //temp.addlogin("login.txt");
        studentIDRTxt.setText(guest.generateUserID());
        arraySports = FileIO.readSportsFile("sport.txt");
        //adding sports to choicebox 
        for (Sport tempSport : arraySports){
            sportRCBox.getItems().add(tempSport.getSportID()+" "+tempSport.getSportName());
        }
-
     }
     
     @FXML
@@ -58,29 +61,32 @@ public class welcomeController {
     @FXML
     private void pressLogin(javafx.event.ActionEvent event) throws Exception {
         String resource = "welcome.fxml", title = "Welcome";
+        login tempLogin;
         
         if ((userTxt.getText() != null)&& (passTxt.getText()!= null)){
-            login tempLogin = new login(userTxt.getText(),passTxt.getText());
+            tempLogin = new login(userTxt.getText(),passTxt.getText());
             Boolean success = tempLogin.validate(userTxt.getText(), passTxt.getText());
             if (success){
-                System.out.println(success);
+               System.out.println(success);
                 
                switch(tempLogin.getAccess()){
                 case 'A':
                     resource ="admin.fxml";
                     title = "Admin Dashboard";
+                    admin = tempLogin.getAdmin();
                     break;
                 case 'S':
                     resource ="student.fxml";
                     title = "Student Dashboard";
+                    student = tempLogin.getStudent();
                     break;
-                    
                 case 'C':
                     resource ="coach.fxml";
                     title = "Coach Dashboard";
+                    coach = tempLogin.getCoach();
                     break;
                 }
-               
+                
                 Parent root = FXMLLoader.load(getClass().getResource(resource));
                 Stage window = (Stage) btnLogin.getScene().getWindow(); 
                 window.setScene(new Scene(root, 800, 480));
@@ -118,5 +124,17 @@ public class welcomeController {
         }else{
             registerstatus.setText("Please enter all details!");
         }
+    }
+    
+    public Admin returnAdmin(){
+        return admin;
+    }
+    
+    public Student returnStudent(){
+        return student;
+    }
+    
+    public Coach returnCoach(){
+        return coach;
     }
 }

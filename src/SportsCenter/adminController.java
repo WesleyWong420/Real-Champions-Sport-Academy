@@ -1,38 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SportsCenter;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-/**
- * FXML Controller class
- *
- * @author Hamdhan
- */
 public class adminController {
 
     @FXML 
@@ -52,8 +33,7 @@ public class adminController {
     private TableColumn sportIDCol,nameSPCol,durationSPCol,feeSPCol,contactSPCol,coachIDSPCol;
     @FXML 
     private TableColumn sportIDSCCol,sportNameSCCol,timeSCCol,dateSCCol,locationSCCol,statusSPCol;
-
-        
+    
     @FXML
     private Button deleteSBtn, clearSBtn, searchSBtn,editSBtn;
     @FXML
@@ -74,14 +54,18 @@ public class adminController {
     @FXML
     private TextField sportIDSCTxt, dateSCTxt, timeSCTxt, locationSCTxt;
     
-    private Admin admin = new Admin();
+    private Admin admin;
     
     private ArrayList<Student> arrayStudent = FileIO.readStudentFile("student.txt");
     private ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
     private ArrayList<Sport> arraySport = FileIO.readSportsFile("sport.txt");
     private ArrayList<Schedule> arraySchedule = FileIO.readScheduleFile("schedule.txt");
     
-    public void initialize() {
+    public void initialize() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
+        Parent root = loader.load();
+        welcomeController con = loader.getController();
+        admin = con.returnAdmin();
         
         //Adding student data to table
         ObservableList<Student> data = FXCollections.observableArrayList(arrayStudent);
@@ -207,9 +191,7 @@ public class adminController {
         
         editSBtn.setDisable(false); 
         deleteSBtn.setDisable(false);
-        
     }
-    
     
     @FXML
     private void searchStudent(ActionEvent event) throws Exception {
@@ -228,7 +210,6 @@ public class adminController {
         emailSTxt.clear();
         contactSTxt.clear();
         addressSTxt.clear();
-        
     }
     
     //Coach Tab
@@ -346,10 +327,7 @@ public class adminController {
         addCBtn.setDisable(false);
         editCBtn.setDisable(false); 
         deleteCBtn.setDisable(false);
-        
-        
     }
-    
     
     @FXML
     private void searchCoach(ActionEvent event) throws Exception {
@@ -375,9 +353,7 @@ public class adminController {
         addressCTxt.clear();
         ratingCTxt.clear();
         hourlyCTxt.clear();
-        
     }
-    
     
     //Sports Tab
     
@@ -474,7 +450,6 @@ public class adminController {
                     coachIDSPTxt.setText("Enter Correct ID!");
                 }
             }
-            
         }
     }
     
@@ -497,11 +472,9 @@ public class adminController {
         addSCBtn.setDisable(false);
         editSCBtn.setDisable(false); 
         deleteSPBtn.setDisable(false);
-        
     }
     
-    
-   @FXML
+    @FXML
     private void searchSport(ActionEvent event) throws Exception {
         System.out.println("Serrrchhhhhh");
         if (!"".equals(sportIDTxt.getText())){
@@ -517,7 +490,6 @@ public class adminController {
         durationSPTxt.clear();
         feeSPTxt.clear();
         coachIDSPTxt.clear();
-        
     }
     
     //Schedule Tab
@@ -592,8 +564,7 @@ public class adminController {
         deleteSCBtn.setDisable(false); 
     }
     
-    
-   @FXML
+    @FXML
     private void searchSchedule(ActionEvent event) throws Exception {
         System.out.println("Serrrchhhhhh");
         if (!"".equals(sportIDSCTxt.getText())){
@@ -607,7 +578,6 @@ public class adminController {
         dateSCTxt.clear();
         feeSPTxt.clear();
         locationSCTxt.clear();
-        
     }
     
     @FXML

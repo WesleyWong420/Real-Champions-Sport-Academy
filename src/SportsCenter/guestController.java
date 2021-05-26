@@ -51,13 +51,6 @@ public class guestController {
         
         groupSport(guest);
         groupSchedule(guest);
-        
-        //FileIO temp = new FileIO();
-        //temp.addSport("sport.txt");
-        //temp.addSchedule("schedule.txt");
-        //temp.addFeedback("feedback.txt");
-        //temp.addStudent("student.txt");
-        //temp.addCoach("coach.txt");
     }
     
     private void groupSport(Guest guest){

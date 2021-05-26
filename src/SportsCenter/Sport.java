@@ -16,7 +16,7 @@ public class Sport implements Serializable{
     
     public Sport(){}
     
-    public Sport(String sportID, String sportName, int duration, int fee,String status, Coach coach){  // Constructor overloading
+    public Sport(String sportID, String sportName, int duration, int fee, String status, Coach coach){  // Constructor overloading
         this.sportID = sportID;
         this.sportName = sportName;
         this.duration = duration;
@@ -89,6 +89,7 @@ public class Sport implements Serializable{
             int temp = Integer.parseInt(lastSportID.substring(2));
             newID = "SP" + String.format("%03d", temp+1);
         }
+        
         return newID;
     }
     
@@ -101,7 +102,7 @@ public class Sport implements Serializable{
                 break;
             }
         }
+        
         return valid;
     }
-    
 }
