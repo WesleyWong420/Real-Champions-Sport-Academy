@@ -33,7 +33,7 @@ public class welcomeController {
     
     private Guest guest = new Guest();
     
-    public int index = -1;
+    public static int index = -1;
     
     private ArrayList<Sport> arraySports;
     private ArrayList<Student> arrayStudent;
@@ -85,11 +85,6 @@ public class welcomeController {
                         if(sdt.getUserID().equals(validLogin.getStudent().getUserID()))
                         {
                             index = arrayStudent.indexOf(sdt);
-                            
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
-                            Parent root = loader.load();
-                            studentController con = loader.getController();
-                            con.pushIndex(index);
                             break;
                         }
                     }
@@ -104,11 +99,6 @@ public class welcomeController {
                         if(ch.getUserID().equals(validLogin.getCoach().getUserID()))
                         {
                             index = arrayCoach.indexOf(ch);
-                            
-                            FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
-                            Parent root = loader.load();
-                            coachController con = loader.getController();
-                            con.pushIndex(index);
                             break;
                         }
                     }

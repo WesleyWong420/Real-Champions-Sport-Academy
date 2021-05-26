@@ -80,7 +80,7 @@ public class studentController {
     Student student;
     
     public void initialize(){
-        student = arrayStudent.get(3);
+        student = arrayStudent.get(welcomeController.index);
         
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
@@ -601,7 +601,4 @@ public class studentController {
         
         return empty;
    }
-    
-    public void pushIndex(int index){
-    }
 }

@@ -25,10 +25,7 @@ public class coachController {
     Coach coach;
     
     public void initialize() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("welcome.fxml"));
-        Parent root = loader.load();
-        welcomeController con = loader.getController();
-        coach = arrayCoach.get(con.index);
+        coach = arrayCoach.get(welcomeController.index);
         
         arraySports = FileIO.readSportsFile("sport.txt");
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
@@ -276,7 +273,4 @@ public class coachController {
         
         return empty;
    }
-    
-    public void pushIndex(int index){
-    }
 }
