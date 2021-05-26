@@ -65,10 +65,18 @@ public class Student extends User implements Serializable{
             sportID_list.add(sport.getSportID()); // Add all SportID into a new ArrayList
             index++;
         }
-
-        int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
         
-        if(sport != null && sport_index >= 0 && sport_index <= 4) // If student has an enrolled sport
+        int sport_index;
+        if(sport != null) // Student has an enrolled sport
+        {
+            sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
+        }
+        else
+        {
+            sport_index = -1; // Student does not have an enrolled sport
+        }
+        
+        if(sport_index >= 0 && sport_index <= 4) // Student's enrolled sport is in the active sport list
         {
             ArrayList<Button> btn_inner_list = new ArrayList<>(btn_list.get(0)); // the outer layer is an ArrayList of many Button ArrayList
             for(Button btn : btn_inner_list) // extract the Button ArrayList
@@ -76,7 +84,7 @@ public class Student extends User implements Serializable{
                 btn.setText("ENROLL"); // All the remaining Buttons that hold the sports that are not enrolled by student
             }
             btn_inner_list.get(sport_index).setText("ENROLLED"); // The respective Button that hold the student's enrolled sport
-            
+
             ArrayList<VBox> vbox_inner_list = new ArrayList<>(vbox_list.get(0)); // the outer layer is an ArrayList of many VBox ArrayList
             for(VBox vbox : vbox_inner_list) // extract the VBox ArrayList
             {
@@ -84,14 +92,14 @@ public class Student extends User implements Serializable{
             }
             vbox_inner_list.get(sport_index).setOpacity(0.5); // The respective VBoxes that hold the student's enrolled sport
         } 
-        else // Student does not has an enrolled sport
+        else if(sport_index <= -1 || sport_index >= 5)// Student does not has an enrolled sport or active sport
         {
             ArrayList<Button> btn_inner_list = new ArrayList<>(btn_list.get(0)); // the outer layer is an ArrayList of many Button ArrayList
             for(Button btn : btn_inner_list) // extract the Button ArrayList
             {
                 btn.setText("ENROLL"); // Set all Buttons text because student is not enrolled in any Sport
             }
-            
+
             ArrayList<VBox> vbox_inner_list = new ArrayList<>(vbox_list.get(0)); // the outer layer is an ArrayList of many VBox ArrayList
             for(VBox vbox : vbox_inner_list) // extract the VBox ArrayList
             {
@@ -123,9 +131,17 @@ public class Student extends User implements Serializable{
             index++;
         }
         
-        int sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
+        int sport_index;
+        if(sport != null) // Student has an enrolled sport
+        {
+            sport_index = sportID_list.indexOf(sport.getSportID()); // Get the index of the student's current sportID from the ArrayList
+        }
+        else
+        {
+            sport_index = -1; // Student does not have an enrolled sport
+        }
         
-        if(sport != null && sport_index >= 0 && sport_index <= 4) // If student has an enrolled sport
+        if(sport_index >= 0 && sport_index <= 4) // Student's enrolled sport is in the active sport list
         {
             int index2 = 0; 
             for (ArrayList<Label> controls : lbl_list) // Accessing outer ArrayList (ArrayList of different labels)
@@ -157,19 +173,19 @@ public class Student extends User implements Serializable{
                 }  
                 index2++;
             }
-            
+
             ArrayList<HBox> hbox_inner_list = new ArrayList<>(hbox_list.get(0)); // the outer layer is an ArrayList of many Hbox ArrayList
             for(HBox hbox : hbox_inner_list) // extract the HBox ArrayList
             {
                 hbox.setOpacity(0.5); // All the remaining HBoxes that hold the sports that are not enrolled by student
             }
             hbox_inner_list.get(sport_index).setOpacity(1); // The respective HBoxes that hold the student's enrolled sport
-            
+
             ArrayList<Tooltip> tooltip_inner_list = new ArrayList<>(tooltip_list.get(0)); // the outer layer is an ArrayList of many Tooltip ArrayList
             double rating = arraySchedule.get(sport_index).getCoachObject().getCoachRating();
             getCoach(tooltip_inner_list, sport_index, rating);
         }
-        else // Student does not has an enrolled sport
+        else if(sport_index <= -1 || sport_index >= 5)// Student does not has an enrolled sport or active sport
         {
             ArrayList<HBox> hbox_inner_list = new ArrayList<>(hbox_list.get(0)); // the outer layer is an ArrayList of many Hbox ArrayList
             for(HBox hbox : hbox_inner_list) // extract the HBox ArrayList
