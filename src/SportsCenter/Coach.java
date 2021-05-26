@@ -116,6 +116,7 @@ public class Coach extends User implements Serializable{
     }
     
     public Coach validate(String coachID){
+        //check if coach exist
         ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
         Coach valid = null;
         for (Coach tempCoach : arrayCoach){

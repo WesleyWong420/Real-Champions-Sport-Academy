@@ -105,12 +105,14 @@ public class adminController {
         schedule_table.setItems(scheduleData);
     }
     
-    //get selecteed student from table
+    
     @FXML
     private void getStudent(MouseEvent event) throws Exception {
+        
+        //get selected student from table
+        
         ObservableList<Student> data = student_table.getItems();
         Student selected = student_table.getSelectionModel().getSelectedItem();
-        System.out.println(selected);
         if (selected != null){
             studentIDTxt.setText(selected.getUserID());
             nameSTxt.setText(selected.getUsername());
@@ -127,6 +129,8 @@ public class adminController {
         if (selected != null){
             student_table.getItems().remove(selected);
             ObservableList<Student> data = student_table.getItems();
+            
+            //use admin class to update student
             admin.deleteStudent(data,selected.getUserID());
             
             // clear text boxes
@@ -153,6 +157,8 @@ public class adminController {
                 selected.setAddress(addressSTxt.getText());
                 int index = student_table.getSelectionModel().getSelectedIndex();
                 data.set(index,selected);
+                
+                // use admin class to update student
                 admin.editStudent(data);
 
                 // clear text boxes
@@ -164,7 +170,6 @@ public class adminController {
                 contactSTxt.clear();
                 addressSTxt.clear();
 
-                System.out.println(selected.getUserID()+selected.getUsername());
             }
         }
     }
@@ -190,7 +195,9 @@ public class adminController {
     
     @FXML
     private void searchStudent(ActionEvent event) throws Exception {
-        System.out.println("Serrrchhhhhh");
+        
+        //add searched student to table
+        
         if (!"".equals(studentIDTxt.getText())){
             ArrayList searchStudent = admin.searchStudent( studentIDTxt.getText());
             ObservableList<Student> data = FXCollections.observableArrayList(searchStudent);
@@ -208,11 +215,14 @@ public class adminController {
     }
     
     //Coach Tab
+    
     @FXML
     private void getCoach(MouseEvent event) throws Exception {
+        
+        //Get selected coach from table
+        
         ObservableList<Coach> coachData = coach_table.getItems();
         Coach selected = coach_table.getSelectionModel().getSelectedItem();
-        System.out.println(selected);
         if (selected != null){
             coachIDTxt.setText(selected.getUserID());
             nameCTxt.setText(selected.getUsername());
@@ -231,6 +241,8 @@ public class adminController {
         if((!"".equals(nameCTxt.getText()))&& (!"".equals(genderCTxt.getText())) && (!"".equals(emailCTxt.getText())) && (!"".equals(contactCTxt.getText())) && (!"".equals(addressCTxt.getText())) && (!"".equals(hourlyCTxt.getText()))  ){
             if(coachData != null){
                 Coach newCoachID = new Coach();
+                
+                //Generate Coach ID and add Coach
                 coachData.add(new Coach(newCoachID.generateUserID(), nameCTxt.getText(), genderCTxt.getText(), emailCTxt.getText(),contactCTxt.getText(), addressCTxt.getText(),0.0,Integer.valueOf(hourlyCTxt.getText())));
                 ArrayList<Coach> arrayCoach = new ArrayList<Coach>(coachData);
                 FileIO.writeCoach(arrayCoach, "coach.txt");
@@ -254,6 +266,8 @@ public class adminController {
         if (selected != null){
             coach_table.getItems().remove(selected);
             ObservableList<Coach> coachData = coach_table.getItems();
+            
+            //update coach using addmin class
             admin.deleteCoach(coachData,selected.getUserID());
             
             // clear text boxes
@@ -283,6 +297,8 @@ public class adminController {
                 selected.setHourlyRate(Integer.parseInt(hourlyCTxt.getText()));
                 int index = coach_table.getSelectionModel().getSelectedIndex();
                 coachData.set(index,selected);
+                
+                //use admin class to update coach
                 admin.editCoach(coachData);
 
                 // clear text boxes
@@ -296,7 +312,6 @@ public class adminController {
                 ratingCTxt.clear();
                 hourlyCTxt.clear();
 
-                System.out.println(selected.getUserID()+selected.getUsername());
             }
         }
     }
@@ -326,7 +341,8 @@ public class adminController {
     
     @FXML
     private void searchCoach(ActionEvent event) throws Exception {
-        System.out.println("Serrrchhhhhh");
+        
+        //add searched coach to table
         if (!"".equals(coachIDTxt.getText())){
             ArrayList searchCoach = admin.searchCoach(coachIDTxt.getText(),"coachID");
             ObservableList<Coach> coachData = FXCollections.observableArrayList(searchCoach);
@@ -336,7 +352,8 @@ public class adminController {
             ObservableList<Coach> coachData = FXCollections.observableArrayList(searchCoach);
             coach_table.setItems(coachData);
         }
-
+        
+        //disable buttons and clear text fields
         addCBtn.setDisable(true);
         editCBtn.setDisable(true);
         deleteCBtn.setDisable(true);
@@ -354,9 +371,11 @@ public class adminController {
     
     @FXML
     private void getSport(MouseEvent event) throws Exception {
+        
+        // Get Selected sport from table
         ObservableList<Sport> sportData = sport_table.getItems();
         Sport selected = sport_table.getSelectionModel().getSelectedItem();
-        System.out.println(selected);
+ 
         if (selected != null){
             sportIDTxt.setText(selected.getSportID());
             nameSPTxt.setText(selected.getSportName());
@@ -373,6 +392,9 @@ public class adminController {
         ObservableList<Sport> sportData = sport_table.getItems();
         if((!"".equals(nameSPTxt.getText()))&& (!"".equals(durationSPTxt.getText())) && (!"".equals(feeSPTxt.getText())) && (!"".equals(coachIDSPTxt.getText())) && (!"".equals(statusSPTxt.getText()))  ){
             if(sportData != null){
+                
+                //validate if coach exist,for adding to add sport.
+                
                 Sport newSportID = new Sport();
                 Coach setCoach = new Coach();
                 setCoach = setCoach.validate(coachIDSPTxt.getText());
@@ -399,6 +421,8 @@ public class adminController {
         if (selected != null){
             sport_table.getItems().remove(selected);
             ObservableList<Sport> sportData = sport_table.getItems();
+            
+            //Use admin class to delete sport
             admin.deleteSport(sportData,selected.getSportID());
             
             // clear text boxes
@@ -418,9 +442,13 @@ public class adminController {
         Sport selected = sport_table.getSelectionModel().getSelectedItem();
         if (selected != null){
             if((!"".equals(nameSPTxt.getText()))&& (!"".equals(durationSPTxt.getText())) && (!"".equals(feeSPTxt.getText())) && (!"".equals(coachIDSPTxt.getText())) && (!"".equals(statusSPTxt.getText())) ){
+                
+                //validate if coach exist,for adding to add sport.
+                
                 Sport newSportID = new Sport();
                 Coach setCoach = new Coach();
                 setCoach = setCoach.validate(coachIDSPTxt.getText());
+                
                 if (setCoach != null){
                     selected.setSportName(nameSPTxt.getText());
                     selected.setDuration(Integer.parseInt(durationSPTxt.getText()));
@@ -430,6 +458,8 @@ public class adminController {
                     
                     int index = sport_table.getSelectionModel().getSelectedIndex();
                     sportData.set(index,selected);
+                    
+                    // use admin class to update sport
                     admin.editSport(sportData);
 
                     // clear text boxes
@@ -471,12 +501,14 @@ public class adminController {
     
     @FXML
     private void searchSport(ActionEvent event) throws Exception {
-        System.out.println("Serrrchhhhhh");
+        // get searched sport and add to table
         if (!"".equals(sportIDTxt.getText())){
             ArrayList searchSport = admin.searchSport( sportIDTxt.getText());
             ObservableList<Sport> sportdata = FXCollections.observableArrayList(searchSport);
             sport_table.setItems(sportdata);
         }
+        
+        //disable button and clear text boxes
         addSPBtn.setDisable(true);
         editSPBtn.setDisable(true);
         deleteSPBtn.setDisable(true);
@@ -491,9 +523,11 @@ public class adminController {
     
     @FXML
     private void getSchedule(MouseEvent event) throws Exception {
+        
+        //Get selected schedule from table
+        
         ObservableList<Schedule> scheduleData = schedule_table.getItems();
         Schedule selected = schedule_table.getSelectionModel().getSelectedItem();
-        System.out.println(selected);
         if (selected != null){
             sportIDSCTxt.setText(selected.getSportID());
             dateSCTxt.setText(selected.getDate());
@@ -511,6 +545,8 @@ public class adminController {
                 setSportID = setSportID.validate(sportIDSCTxt.getText());
                 if (setSportID != null){
                     scheduleData.add(new Schedule(setSportID.getSportID(), setSportID.getSportName(), setSportID.getDuration(), setSportID.getFee(),setSportID.getStatus(),setSportID.getCoachObject(),timeSCTxt.getText(),dateSCTxt.getText(),locationSCTxt.getText()));
+                    
+                    //use admin class to update schedule
                     admin.addSchedule(scheduleData);
 
                     sportIDSCTxt.clear();
@@ -554,19 +590,22 @@ public class adminController {
         arraySchedule = FileIO.readScheduleFile("schedule.txt");
         ObservableList<Schedule> scheduleData = FXCollections.observableArrayList(arraySchedule);
         schedule_table.setItems(scheduleData);
-        
+         
+        //enable the buttons that got disable during search
         addSCBtn.setDisable(false);
         deleteSCBtn.setDisable(false); 
     }
     
     @FXML
     private void searchSchedule(ActionEvent event) throws Exception {
-        System.out.println("Serrrchhhhhh");
+        
+        // Get searched Schedule and add to table
         if (!"".equals(sportIDSCTxt.getText())){
             ArrayList searchSchedule = admin.searchSchedule( sportIDSCTxt.getText());
             ObservableList<Schedule> scheduleData = FXCollections.observableArrayList(searchSchedule);
             schedule_table.setItems(scheduleData);
         }
+        //clear text fields and disable buttons
         addSCBtn.setDisable(true);
         deleteSCBtn.setDisable(true);
         sportIDTxt.clear();

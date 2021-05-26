@@ -42,9 +42,12 @@ public class welcomeController {
     public void initialize() {
     //FileIO temp = new FileIO(); //initiating admin login for first use 
     //temp.addlogin("login.txt");
+    
+    //Generating UserID for Registration Tab
        studentIDRTxt.setText(guest.generateUserID());
+       
+    //Adding sports to choicebox 
        arraySports = FileIO.readSportsFile("sport.txt");
-       //adding sports to choicebox 
        for (Sport tempSport : arraySports){
            sportRCBox.getItems().add(tempSport.getSportID()+" "+tempSport.getSportName());
        }
@@ -64,10 +67,11 @@ public class welcomeController {
         login tempLogin;
         login validLogin = null;
         
+        //Checking if login details are valid
+        
         if ((userTxt.getText() != null)&& (passTxt.getText()!= null)){
             tempLogin = new login(userTxt.getText(),passTxt.getText());
             validLogin = tempLogin.validate(userTxt.getText(), passTxt.getText());
-            System.out.println(validLogin);
             if (validLogin != null){
  
                switch(tempLogin.getAccess()){
@@ -130,9 +134,9 @@ public class welcomeController {
         }
 
         if ((studentIDRTxt.getText()!= null) && (passRTxt.getText() != null)&& (nameRTxt.getText() != null) && (emailRTxt.getText() != null) && (contactRTxt.getText() != null) && (selectedSportID != null)){
-            System.out.println("LOOOP IN");
-            System.out.println(selectedSportID);
+
             //making guest user a student
+            
             Guest newGuest = new Guest(studentIDRTxt.getText(),nameRTxt.getText(),genderRTxt.getText(),contactRTxt.getText(),emailRTxt.getText(),addressRTxt.getText());
             newGuest.register(selectedSportID,passRTxt.getText());
             

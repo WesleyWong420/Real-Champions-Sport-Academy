@@ -13,7 +13,7 @@ public class Sport implements Serializable{
     private int fee;
     private Coach coach;
     private String status;
-    private String coachID;
+    private String coachID; //need to populate data for table
     
     public Sport(){}
     
@@ -24,7 +24,7 @@ public class Sport implements Serializable{
         this.fee = fee;
         this.status = status;
         this.coach = coach;
-        coachID = coach.getUserID();
+        coachID = coach.getUserID(); //need to populate data for table
     }
     
     public String getSportID() {
@@ -89,9 +89,7 @@ public class Sport implements Serializable{
             for (Sport tempSport : arraySport){
                 arraySportID.add(tempSport.getSportID());
             }
-            Collections.sort(arraySportID);
-            System.out.println(arraySportID);
-//            Sport lastSport = arraySport.get(arraySport.size() - 1);
+            Collections.sort(arraySportID); // sort to get last ID
             String lastSportID = arraySportID.get(arraySport.size() - 1);
             int temp = Integer.parseInt(lastSportID.substring(2));
             newID = "SP" + String.format("%03d", temp+1);
@@ -101,6 +99,7 @@ public class Sport implements Serializable{
     }
     
     public Sport validate(String sportID){
+        // Validate if sport is in text file
         ArrayList<Sport> arraySport = FileIO.readSportsFile("sport.txt");
         Sport valid = null;
         for (Sport tempSport : arraySport){

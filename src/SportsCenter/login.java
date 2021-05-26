@@ -67,6 +67,7 @@ public class login implements Serializable{
         this.password = password;
     }
     
+    //Check if login is valid, If Pass Login Object
     public login validate(String userID ,String password) {
         login validLogin = null;
         ArrayList<login> arrayLogin = FileIO.readLoginFile("login.txt");
@@ -83,7 +84,6 @@ public class login implements Serializable{
     //Identify user type by first character "S" -Student "A" - Admin
     public char getAccess(){
         char accessCode = userID.charAt(0);
-        System.out.println(accessCode);
         return accessCode;
     }
     

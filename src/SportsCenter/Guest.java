@@ -78,7 +78,6 @@ public class Guest extends User{
                 System.out.println("Sports found in register");
                 Sport enroll =  tempSport;
                 login tempLogin = new login(userID,password ,username, gender, contact, email, address,lastFiveFeedbackID , enroll);
-                System.out.println(tempLogin.getPassword()+ tempLogin.getUserID());
                 Student newStudent = tempLogin.getStudent();
                 arrayStudent.add(newStudent);
                 tempLogin.createLogin(tempLogin);
