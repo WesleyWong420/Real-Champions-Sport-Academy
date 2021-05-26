@@ -4,12 +4,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class login implements Serializable{
-
+    
+    private static final long serialVersionUID = -6778737263813827715L;
     private String userID;
     private String password;
     private Student newStudent;
     private Admin newAdmin;
     private Coach newCoach;
+    
     
     //Login creation for student
     //Composition Association

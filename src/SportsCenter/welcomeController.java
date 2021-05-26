@@ -67,6 +67,7 @@ public class welcomeController {
         if ((userTxt.getText() != null)&& (passTxt.getText()!= null)){
             tempLogin = new login(userTxt.getText(),passTxt.getText());
             validLogin = tempLogin.validate(userTxt.getText(), passTxt.getText());
+            System.out.println(validLogin);
             if (validLogin != null){
  
                switch(tempLogin.getAccess()){
