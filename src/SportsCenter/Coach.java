@@ -9,6 +9,8 @@ public class Coach extends User implements Serializable{
     private static final long serialVersionUID = 1069953104396136378L;
     private double coachRating;
     private int hourlyRate;
+    private String sportCenterID;
+    private String sportCenterName;
     
     public Coach(){} // for calling id gen
     
@@ -17,10 +19,12 @@ public class Coach extends User implements Serializable{
         this.username = username;
     }
     
-    public Coach(String userID, String username, String gender, String contact, String email, String address, double coachRating, int hourlyRate){
+    public Coach(String userID, String username, String gender, String contact, String email, String address, double coachRating, int hourlyRate, String sportCenterID, String sportCenterName){
         super(userID, username, gender, contact, email, address);
         this.coachRating = coachRating;
         this.hourlyRate = hourlyRate;
+        this.sportCenterID = sportCenterID;
+        this.sportCenterName = sportCenterName;
     }
     
     public double getCoachRating() {
@@ -39,6 +43,22 @@ public class Coach extends User implements Serializable{
         this.hourlyRate = hourlyRate;
     }
     
+    public String getSportCenterID() {
+        return sportCenterID;
+    }
+    
+    public void setSportCenterID(String sportCenterID){
+        this.sportCenterID = sportCenterID;
+    }
+    
+    public String getSportCenterName() {
+        return sportCenterName;
+    }
+    
+    public void setSportCenterName(String sportCenterName){
+        this.sportCenterName = sportCenterName;
+    }
+    
     @Override // Override User getSport() Method - Dynamic Polymorphism
     public void getSport(ArrayList<Sport> arraySports, ArrayList<ArrayList> control_list){
         
@@ -48,7 +68,7 @@ public class Coach extends User implements Serializable{
         {
             if(sport.getCoachObject().getUserID().equals(userID)) // Sport HAS-A Coach Relationship (Aggregation)
             {                                                     // Make sure that the coachID of the Coach object stored inside Sport object
-                txt.setText(sport.getSportName());                // equals to the coachID of the current Coach object.
+                txt.setText(sport.getSportID() + ": " + sport.getSportName()); // equals to the coachID of the current Coach object.
             }
         }
     }
@@ -97,6 +117,8 @@ public class Coach extends User implements Serializable{
                 case 7:
                     txt.setText("MYR" + Integer.toString(hourlyRate));
                     break;
+                case 8:
+                    txt.setText(sportCenterID + ": " + sportCenterName);
             }
             index++;
         }
