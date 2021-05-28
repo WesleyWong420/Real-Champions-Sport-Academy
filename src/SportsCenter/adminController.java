@@ -308,9 +308,29 @@ public class adminController {
                 selected.setSportCenterName(spcNameTxt.getText());
                 int index = coach_table.getSelectionModel().getSelectedIndex();
                 coachData.set(index,selected);
-                
+                arraySport = FileIO.readSportsFile("sport.txt");
+                arraySchedule = FileIO.readScheduleFile("schedule.txt");
                 //use admin class to update coach
                 admin.editCoach(coachData);
+                for (Sport sprt : arraySport) // overwrite the Coach object in Sport 
+                    {
+                        if(selected.getUserID().equals(sprt.getCoachObject().getUserID()))
+                        {
+                            sprt.setCoachObject(selected);
+                            break;
+                        }
+                    }
+                    FileIO.writeSport(arraySport, "sport.txt"); // then write to file
+                    
+                    for (Schedule classes : arraySchedule) // overwrite the Coach object in Schedule
+                    {
+                        if(selected.getUserID().equals(classes.getCoachObject().getUserID()))
+                        {
+                            classes.setCoachObject(selected);
+                            break;
+                        }
+                    }
+                    FileIO.writeSchedule(arraySchedule, "schedule.txt"); // then write to file
 
                 // clear text boxes
                 coach_table.getSelectionModel().clearSelection();
@@ -511,8 +531,8 @@ public class adminController {
         ObservableList<Sport> sportData = FXCollections.observableArrayList(arraySport);
         sport_table.setItems(sportData);
         
-        addSCBtn.setDisable(false);
-        editSCBtn.setDisable(false); 
+        addSPBtn.setDisable(false);
+        editSPBtn.setDisable(false); 
         deleteSPBtn.setDisable(false);
     }
     
