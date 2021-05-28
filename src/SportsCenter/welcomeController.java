@@ -49,7 +49,7 @@ public class welcomeController {
     //Adding sports to choicebox 
        arraySports = FileIO.readSportsFile("sport.txt");
        for (Sport tempSport : arraySports){
-           sportRCBox.getItems().add(tempSport.getSportID()+" "+tempSport.getSportName());
+           sportRCBox.getItems().add(tempSport.getSportID() + ": " + tempSport.getSportName());
        }
     }
     
