@@ -149,7 +149,6 @@ public class Admin extends User implements Serializable {
         
         return searchedSport;
     }
-
     
     public void addSchedule(ObservableList<Schedule> data){
         ArrayList<Schedule> arraySchedule = new ArrayList<Schedule>(data);  

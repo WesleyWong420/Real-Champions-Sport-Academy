@@ -31,7 +31,6 @@ public class Schedule extends Sport implements Serializable{
     public void setDate(String date){
         this.date = date;
     }
-
     
     public String getLocation(){
         return location;
