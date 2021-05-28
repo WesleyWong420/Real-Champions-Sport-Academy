@@ -382,7 +382,8 @@ public class studentController {
                     
                     for(Sport sport : arraySports)
                     {
-                        if(sport.getSportName().equals(txtSport.getText())) // Search and found
+                        String sportID_Name = sport.getSportID() + ": " + sport.getSportName();
+                        if(sportID_Name.equals(txtSport.getText())) // Search and found
                         {
                             student.setSportObject(sport);
                             break;
