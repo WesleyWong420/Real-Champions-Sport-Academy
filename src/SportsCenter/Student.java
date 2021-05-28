@@ -112,7 +112,7 @@ public class Student extends User implements Serializable{
         }
     }
     
-    @Override // Override User getSchedule() Method - Dynamic Polymorphism
+    @Override // Implementation of the Abstract Method getSchedule() from parent clsss User - Same Parameter
     public void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list){
         
         ArrayList<ArrayList> lbl_list = new ArrayList<>(control_list.subList(0,5)); // Extract the subset of all Labels ArrayList

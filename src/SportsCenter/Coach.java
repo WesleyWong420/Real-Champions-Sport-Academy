@@ -73,7 +73,7 @@ public class Coach extends User implements Serializable{
         }
     }
     
-    @Override // Override User getSchedule() Method - Dynamic Polymorphism
+    @Override // Implementation of the Abstract Method getSchedule() from parent clsss User - Same Parameter
     public void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list){
         
         TextField txt = (TextField) control_list.get(0).get(0); // Extract out from inner and outer ArrayList and cast as TextField
