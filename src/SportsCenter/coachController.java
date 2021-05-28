@@ -15,9 +15,9 @@ public class coachController {
     @FXML
     public Button btnLogout, btnSave, btnEdit;
     @FXML
-    public TextField txtCoachID, txtUsername, txtGender, txtEmail, txtMobileNo, txtAddress, txtSport, txtNextClass, txtRating, txthourlyRate;
+    public TextField txtCoachID, txtUsername, txtGender, txtEmail, txtMobileNo, txtAddress, txtSport, txtNextClass, txtRating, txthourlyRate, txtSportCenter;
     @FXML
-    public Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating, lblhourlyRate;
+    public Label lblCoachID, lblUsername, lblGender, lblEmail, lblMobileNo, lblAddress, lblSport, lblNextClass, lblRating, lblhourlyRate, lblSportCenter;
     
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
@@ -66,6 +66,7 @@ public class coachController {
         txt_list.add(txtAddress);
         txt_list.add(txtRating);
         txt_list.add(txthourlyRate);
+        txt_list.add(txtSportCenter);
         
         coach.getSelfRecord(txt_list);
     }
@@ -99,6 +100,7 @@ public class coachController {
                     txtNextClass.setDisable(true); // Just for visual, next class session cannot be modified
                     txtRating.setDisable(true); // Just for visual, Coach's Rating cannot be modified
                     txthourlyRate.setDisable(true); // Just for visual, Coach's Rating cannot be modified
+                    txtSportCenter.setDisable(true); // Just for visual, Coach's Sport Center cannot be modified
         
                     coach.setUsername(txtUsername.getText());
                     coach.setEmail(txtEmail.getText());
@@ -179,6 +181,7 @@ public class coachController {
         txtNextClass.setDisable(false); // Just for visual, next class session cannot be modified
         txtRating.setDisable(false); // Just for visual, Coach's Rating cannot be modified
         txthourlyRate.setDisable(false); // Just for visual, Coach's Rating cannot be modified
+        txtSportCenter.setDisable(false); // Just for visual, Coach's Sport Center cannot be modified
     }
     
     @FXML
@@ -194,6 +197,7 @@ public class coachController {
         txt_list.add(txtNextClass);
         txt_list.add(txtRating);
         txt_list.add(txthourlyRate);
+        txt_list.add(txtSportCenter);
         ArrayList<Label> lbl_list = new ArrayList<>();
         lbl_list.add(lblCoachID);
         lbl_list.add(lblUsername);
@@ -205,6 +209,7 @@ public class coachController {
         lbl_list.add(lblNextClass);
         lbl_list.add(lblRating);
         lbl_list.add(lblhourlyRate);
+        lbl_list.add(lblSportCenter);
         
         TextField txt = (TextField) event.getSource(); // Type Casting
         int index = txt_list.indexOf(txt); // Search for the TextField's index 
@@ -224,6 +229,7 @@ public class coachController {
         txt_list.add(txtNextClass);
         txt_list.add(txtRating);
         txt_list.add(txthourlyRate);
+        txt_list.add(txtSportCenter);
         ArrayList<Label> lbl_list = new ArrayList<>();
         lbl_list.add(lblCoachID);
         lbl_list.add(lblUsername);
@@ -235,6 +241,7 @@ public class coachController {
         lbl_list.add(lblNextClass);
         lbl_list.add(lblRating);
         lbl_list.add(lblhourlyRate);
+        lbl_list.add(lblSportCenter);
         
         TextField txt = (TextField) event.getSource();  // Type Casting
         int index = txt_list.indexOf(txt); // Search for the TextField's index 

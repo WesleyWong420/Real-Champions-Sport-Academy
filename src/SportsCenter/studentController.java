@@ -507,7 +507,7 @@ public class studentController {
         ArrayList<String> selection = new ArrayList<>();
         for(int index = 0; index < 5; index++)
         {
-            selection.add(arraySports.get(index).getSportName()); // Add choices into the ComboBox inside the pop-up dialog
+            selection.add(arraySports.get(index).getSportID() + ": " + arraySports.get(index).getSportName()); // Add choices into the ComboBox inside the pop-up dialog
         }
         
         if(!txtSport.getText().isEmpty())

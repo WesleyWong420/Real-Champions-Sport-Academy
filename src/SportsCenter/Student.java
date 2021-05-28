@@ -186,8 +186,9 @@ public class Student extends User implements Serializable{
             hbox_inner_list.get(sport_index).setOpacity(1); // The respective HBoxes that hold the student's enrolled sport
 
             ArrayList<Tooltip> tooltip_inner_list = new ArrayList<>(tooltip_list.get(0)); // the outer layer is an ArrayList of many Tooltip ArrayList
+            String coach_id = arraySchedule.get(sport_index).getCoachObject().getUserID();
             double rating = arraySchedule.get(sport_index).getCoachObject().getCoachRating();
-            getCoach(tooltip_inner_list, sport_index, rating);
+            getCoach(tooltip_inner_list, sport_index, coach_id, rating);
         }
         else if(sport_index <= -1 || sport_index >= 5)// Student does not has an enrolled sport or active sport
         {
@@ -226,7 +227,7 @@ public class Student extends User implements Serializable{
                 case 6:
                     if(sport != null)
                     {
-                        txt.setText(sport.getSportName());
+                        txt.setText(sport.getSportID() + ": " + sport.getSportName());
                     }
                     else
                     {
@@ -282,16 +283,17 @@ public class Student extends User implements Serializable{
         int index = 0;
         for(Tooltip tooltip : tooltip_list)
         {
+            String coach_id = arraySports.get(index).getCoachObject().getUserID();
             double rating = arraySports.get(index).getCoachObject().getCoachRating();
-            String txt = "Rating: " + rating + "/5.0";
+            String txt = "Coach ID: " + coach_id + "\n" + "Rating: " + rating + "/5.0";
             tooltip.setText(txt);
             index++;
         }
     }
     
-    public void getCoach(ArrayList<Tooltip> tooltip_list, int sport_index, double rating){ // Method overloading - Static Polymorphism
+    public void getCoach(ArrayList<Tooltip> tooltip_list, int sport_index, String coach_id, double rating){ // Method overloading - Static Polymorphism
         // Get Coach Rating for tooltip under Schedule Tab - We only pass the Sport index of which the student is enrolled in
-        String txt = "Rating: " + rating + "/5.0";
+        String txt = "Coach ID: " + coach_id + "\n" + "Rating: " + rating + "/5.0";
         tooltip_list.get(sport_index).setText(txt); // We use the Sport index to populate only one Coach's rating 
     }                                               // who is teaching the Sport of the student currently enrolled in
     
@@ -300,8 +302,9 @@ public class Student extends User implements Serializable{
         int index = 0;
         for(Tooltip tooltip : tooltip_list)
         {
+            String coach_id = arraySchedule.get(index).getCoachObject().getUserID();
             double rating = arraySchedule.get(index).getCoachObject().getCoachRating();
-            String txt = "Rating: " + rating + "/5.0";
+            String txt = "Coach ID: " + coach_id + "\n" + "Rating: " + rating + "/5.0";
             tooltip.setText(txt);
             index++;
         }

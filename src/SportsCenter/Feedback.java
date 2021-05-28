@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public class Feedback extends Coach implements Serializable{
     
-    protected String feedbackID;
+    private String feedbackID;
     private String comment;
     private int classRating;
     

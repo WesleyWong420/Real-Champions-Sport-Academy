@@ -128,7 +128,6 @@ public abstract class User implements Serializable{
         }
     }
     
-    
     protected abstract void getSchedule(ArrayList<Schedule> arraySchedule, ArrayList<ArrayList> control_list);
     // Will be implemented separately for Guest, Student & Coach
 }
