@@ -86,7 +86,7 @@ public class welcomeController {
                     arrayStudent = FileIO.readStudentFile("student.txt");
                     for(Student sdt : arrayStudent)
                     {
-                        if(sdt.getUserID().equals(validLogin.getStudent().getUserID()))
+                        if(sdt.getUserID().equals(validLogin.getStudentObject().getUserID()))
                         {
                             index = arrayStudent.indexOf(sdt);
                             break;
@@ -100,7 +100,7 @@ public class welcomeController {
                     arrayCoach = FileIO.readCoachFile("coach.txt");
                     for(Coach ch : arrayCoach)
                     {
-                        if(ch.getUserID().equals(validLogin.getCoach().getUserID()))
+                        if(ch.getUserID().equals(validLogin.getCoachObject().getUserID()))
                         {
                             index = arrayCoach.indexOf(ch);
                             break;

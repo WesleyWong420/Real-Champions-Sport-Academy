@@ -78,7 +78,7 @@ public class Guest extends User{
                 System.out.println("Sports found in register");
                 Sport enroll =  tempSport;
                 login tempLogin = new login(userID,password ,username, gender, contact, email, address,lastFiveFeedbackID , enroll);
-                Student newStudent = tempLogin.getStudent();
+                Student newStudent = tempLogin.getStudentObject();
                 arrayStudent.add(newStudent);
                 tempLogin.createLogin(tempLogin);
                 FileIO.writeStudent(arrayStudent,"student.txt");

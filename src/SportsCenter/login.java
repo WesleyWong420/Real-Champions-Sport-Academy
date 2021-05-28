@@ -12,7 +12,6 @@ public class login implements Serializable{
     private Admin newAdmin;
     private Coach newCoach;
     
-    
     //Login creation for student
     //Composition Association
     public login(String userID, String password, String username, String gender, String contact, String email, String address, ArrayList<String> lastFiveFeedbackID, Sport sport) {
@@ -51,20 +50,32 @@ public class login implements Serializable{
         return password;
     }
     
-    public Student getStudent() {
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    public Student getStudentObject() {
         return newStudent;
     }
     
-    public Admin getAdmin() {
+    public void setStudentObject(Student newStudent){
+        this.newStudent = newStudent;
+    }
+    
+    public Admin getAdminObject() {
         return newAdmin;
     }
     
-    public Coach getCoach() {
+    public void setAdminObject(Admin newAdmin){
+        this.newAdmin = newAdmin;
+    }
+    
+    public Coach getCoachObject() {
         return newCoach;
     }
     
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCoachObject(Coach newCoach){
+        this.newCoach = newCoach;
     }
     
     //Check if login is valid, If Pass Login Object
