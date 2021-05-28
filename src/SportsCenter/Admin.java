@@ -63,7 +63,7 @@ public class Admin extends User implements Serializable {
         ArrayList<Coach> arrayCoach = new ArrayList<Coach>(data);  
         ArrayList<login> arrayLogin = FileIO.readLoginFile("login.txt");
         Coach newCoach = arrayCoach.get(arrayCoach.size() - 1);
-        login tempLogin2 = new login(newCoach.getUserID(),"ctest", newCoach.getUsername(), newCoach.getGender(), newCoach.getContact(), newCoach.getEmail(), newCoach.getAddress(), newCoach.getCoachRating(), newCoach.getHourlyRate());
+        login tempLogin2 = new login(newCoach.getUserID(),"ctest", newCoach.getUsername(), newCoach.getGender(), newCoach.getContact(), newCoach.getEmail(), newCoach.getAddress(), newCoach.getCoachRating(), newCoach.getHourlyRate(),newCoach.getSportCenterID(),newCoach.getSportCenterName());
         arrayLogin.add(tempLogin2);
         FileIO.writeCoach(arrayCoach, "coach.txt");
         FileIO.writeLogin(arrayLogin, "login.txt");

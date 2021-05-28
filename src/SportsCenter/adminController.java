@@ -28,7 +28,7 @@ public class adminController {
     @FXML 
     private TableColumn studentIDCol,nameSCol,genderSCol,emailSCol,contactSCol,addressSCol,currentSportCol;
     @FXML 
-    private TableColumn coachIDCol,nameCCol,genderCCol,emailCCol,contactCCol,addressCCol,ratingCol,hourlyRateCol;
+    private TableColumn coachIDCol,nameCCol,genderCCol,emailCCol,contactCCol,addressCCol,ratingCol,hourlyRateCol,spcIDCol,spcNameCol;
     @FXML 
     private TableColumn sportIDCol,nameSPCol,durationSPCol,feeSPCol,contactSPCol,coachIDSPCol;
     @FXML 
@@ -48,7 +48,7 @@ public class adminController {
     @FXML
     private TextField studentIDTxt, nameSTxt, genderSTxt, emailSTxt, contactSTxt, addressSTxt;
     @FXML
-    private TextField coachIDTxt, nameCTxt, genderCTxt, emailCTxt, contactCTxt, addressCTxt, ratingCTxt,hourlyCTxt;
+    private TextField coachIDTxt, nameCTxt, genderCTxt, emailCTxt, contactCTxt, addressCTxt, ratingCTxt,hourlyCTxt,spcIDTxt,spcNameTxt;
     @FXML
     private TextField sportIDTxt, nameSPTxt, durationSPTxt, feeSPTxt, coachIDSPTxt, statusSPTxt;
     @FXML
@@ -83,6 +83,8 @@ public class adminController {
         addressCCol.setCellValueFactory(new PropertyValueFactory("address"));
         ratingCol.setCellValueFactory(new PropertyValueFactory("coachRating"));
         hourlyRateCol.setCellValueFactory(new PropertyValueFactory("hourlyRate"));
+        spcIDCol.setCellValueFactory(new PropertyValueFactory("sportCenterID"));
+        spcNameCol.setCellValueFactory(new PropertyValueFactory("sportCenterName"));
         coach_table.setItems(coachData);
         
         //Adding sport to table
@@ -232,18 +234,20 @@ public class adminController {
             addressCTxt.setText(selected.getAddress());
             ratingCTxt.setText(String.valueOf(selected.getCoachRating()));
             hourlyCTxt.setText(String.valueOf(selected.getHourlyRate()));
+            spcIDTxt.setText(selected.getSportCenterID());
+            spcNameTxt.setText(selected.getSportCenterName());
         }
     }
     
     @FXML
     private void addCoach(ActionEvent event) throws Exception {
         ObservableList<Coach> coachData = coach_table.getItems();
-        if((!"".equals(nameCTxt.getText()))&& (!"".equals(genderCTxt.getText())) && (!"".equals(emailCTxt.getText())) && (!"".equals(contactCTxt.getText())) && (!"".equals(addressCTxt.getText())) && (!"".equals(hourlyCTxt.getText()))  ){
+        if((!"".equals(nameCTxt.getText()))&& (!"".equals(genderCTxt.getText())) && (!"".equals(emailCTxt.getText())) && (!"".equals(contactCTxt.getText())) && (!"".equals(addressCTxt.getText())) && (!"".equals(hourlyCTxt.getText())) && (!"".equals(spcIDTxt.getText()))  && (!"".equals(spcNameTxt.getText()))  ){
             if(coachData != null){
                 Coach newCoachID = new Coach();
                 
                 //Generate Coach ID and add Coach
-                coachData.add(new Coach(newCoachID.generateUserID(), nameCTxt.getText(), genderCTxt.getText(), emailCTxt.getText(),contactCTxt.getText(), addressCTxt.getText(),0.0,Integer.valueOf(hourlyCTxt.getText())));
+                coachData.add(new Coach(newCoachID.generateUserID(), nameCTxt.getText(), genderCTxt.getText(),contactCTxt.getText(), emailCTxt.getText(), addressCTxt.getText(),0.0,Integer.valueOf(hourlyCTxt.getText()),spcIDTxt.getText(),spcNameTxt.getText()));
                 ArrayList<Coach> arrayCoach = new ArrayList<Coach>(coachData);
                 FileIO.writeCoach(arrayCoach, "coach.txt");
                 admin.addCoach(coachData);
@@ -256,6 +260,8 @@ public class adminController {
                 addressCTxt.clear();
                 ratingCTxt.clear();
                 hourlyCTxt.clear();
+                spcIDTxt.clear();
+                spcNameTxt.clear();
             }
         }
     }
@@ -280,6 +286,9 @@ public class adminController {
             addressCTxt.clear();
             ratingCTxt.clear();
             hourlyCTxt.clear();
+            spcIDTxt.clear();
+            spcNameTxt.clear();
+            
         }
     }
     
@@ -288,13 +297,15 @@ public class adminController {
         ObservableList<Coach> coachData = coach_table.getItems();
         Coach selected = coach_table.getSelectionModel().getSelectedItem();
         if (selected != null){
-            if((!"".equals(nameCTxt.getText()))&& (!"".equals(genderCTxt.getText())) && (!"".equals(emailCTxt.getText())) && (!"".equals(contactCTxt.getText())) && (!"".equals(addressCTxt.getText())) && (!"".equals(hourlyCTxt.getText()))){
+            if((!"".equals(nameCTxt.getText()))&& (!"".equals(genderCTxt.getText())) && (!"".equals(emailCTxt.getText())) && (!"".equals(contactCTxt.getText())) && (!"".equals(addressCTxt.getText())) && (!"".equals(hourlyCTxt.getText())) && (!"".equals(spcIDTxt.getText()))  && (!"".equals(spcNameTxt.getText())) ){
                 selected.setUsername(nameCTxt.getText());
                 selected.setGender(genderCTxt.getText());
                 selected.setEmail(emailCTxt.getText());
                 selected.setContact(contactCTxt.getText());
                 selected.setAddress(addressCTxt.getText());
                 selected.setHourlyRate(Integer.parseInt(hourlyCTxt.getText()));
+                selected.setSportCenterID(spcIDTxt.getText());
+                selected.setSportCenterName(spcNameTxt.getText());
                 int index = coach_table.getSelectionModel().getSelectedIndex();
                 coachData.set(index,selected);
                 
@@ -311,6 +322,8 @@ public class adminController {
                 addressCTxt.clear();
                 ratingCTxt.clear();
                 hourlyCTxt.clear();
+                spcIDTxt.clear();
+                spcNameTxt.clear();
 
             }
         }
@@ -328,6 +341,8 @@ public class adminController {
         addressCTxt.clear();
         ratingCTxt.clear();
         hourlyCTxt.clear();
+        spcIDTxt.clear();
+        spcNameTxt.clear();
         
         //updating table after search
         arrayCoach = FileIO.readCoachFile("coach.txt");
@@ -365,6 +380,8 @@ public class adminController {
         addressCTxt.clear();
         ratingCTxt.clear();
         hourlyCTxt.clear();
+        spcIDTxt.clear();
+        spcNameTxt.clear();
     }
     
     //Sports Tab

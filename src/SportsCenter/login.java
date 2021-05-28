@@ -31,10 +31,10 @@ public class login implements Serializable{
     
     //Login creation for Coach
     //Composition Association
-    public login(String userID, String password, String username, String gender, String contact, String email, String address, double coachRating, int hourlyRate) {
+    public login(String userID, String password, String username, String gender, String contact, String email, String address, double coachRating, int hourlyRate,String sportCenterID, String sportCenterName) {
         this.userID = userID;
         this.password = password;
-        newCoach = new Coach(userID,username, gender, contact, email, address, coachRating, hourlyRate);
+        newCoach = new Coach(userID,username, gender, contact, email, address, coachRating, hourlyRate,sportCenterID,sportCenterName);
     }
     
     //without user for login access only

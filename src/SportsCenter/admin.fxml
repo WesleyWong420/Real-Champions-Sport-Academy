@@ -126,14 +126,16 @@
                                  <children>
                                     <TableView fx:id="coach_table" editable="true" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#getCoach" prefHeight="322.0" prefWidth="650.0">
                                        <columns>
-                                          <TableColumn fx:id="coachIDCol" prefWidth="75.0" text="Coach ID" />
-                                          <TableColumn fx:id="nameCCol" prefWidth="110.0" text="Name" />
-                                          <TableColumn fx:id="genderCCol" prefWidth="78.0" text="Gender" />
-                                          <TableColumn fx:id="emailCCol" prefWidth="94.0" text="Email" />
-                                          <TableColumn fx:id="contactCCol" prefWidth="97.0" text="Contact No" />
-                                          <TableColumn fx:id="addressCCol" prefWidth="136.0" text="Address" />
-                                          <TableColumn fx:id="ratingCol" prefWidth="92.0" text="Rating" />
-                                          <TableColumn fx:id="hourlyRateCol" prefWidth="293.0" text="Hourly Rate" />
+                                          <TableColumn fx:id="coachIDCol" prefWidth="100.0" text="Coach ID" />
+                                          <TableColumn fx:id="nameCCol" prefWidth="150.0" text="Name" />
+                                          <TableColumn fx:id="genderCCol" prefWidth="100.0" text="Gender" />
+                                          <TableColumn fx:id="emailCCol" prefWidth="150.0" text="Email" />
+                                          <TableColumn fx:id="contactCCol" prefWidth="110.0" text="Contact No" />
+                                          <TableColumn fx:id="addressCCol" prefWidth="150.0" text="Address" />
+                                          <TableColumn fx:id="hourlyRateCol" prefWidth="100.0" text="Hourly Rate" />
+                                          <TableColumn fx:id="ratingCol" minWidth="0.0" prefWidth="100.0" text="Rating" />
+                                          <TableColumn fx:id="spcIDCol" prefWidth="100.0" text="Sport Center ID" />
+                                          <TableColumn fx:id="spcNameCol" prefWidth="200.0" text="Sport Center Name" />
                                        </columns>
                                     </TableView>
                                     <HBox alignment="CENTER_LEFT" prefHeight="132.0" prefWidth="650.0" spacing="10.0">
@@ -164,6 +166,7 @@
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                              </columnConstraints>
                                              <rowConstraints>
                                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -172,7 +175,7 @@
                                              </rowConstraints>
                                              <children>
                                                 <TextField fx:id="coachIDTxt" promptText="Coach ID" />
-                                                <TextField fx:id="emailCTxt" promptText="Email" GridPane.rowIndex="1">
+                                                <TextField fx:id="emailCTxt" promptText="Email" GridPane.columnSpan="2" GridPane.rowIndex="1">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -186,18 +189,20 @@
                                                    </GridPane.margin>
                                                 </TextField>
                                                 <TextField fx:id="hourlyCTxt" promptText="Hourly Rate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                                <TextField fx:id="contactCTxt" promptText="Conatct No" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="contactCTxt" promptText="Conatct No" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                                 <TextField fx:id="genderCTxt" promptText="Gender" GridPane.columnIndex="2" />
                                                 <TextField fx:id="addressCTxt" prefHeight="26.0" prefWidth="99.0" promptText="Address" GridPane.columnSpan="2" GridPane.rowIndex="2">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
                                                 </TextField>
-                                                <TextField fx:id="ratingCTxt" layoutX="178.0" layoutY="59.0" promptText="Rating" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                <TextField fx:id="ratingCTxt" layoutX="178.0" layoutY="59.0" promptText="Rating" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
                                                 </TextField>
+                                                <TextField fx:id="spcIDTxt" promptText="Sport Center ID" GridPane.columnIndex="3" />
+                                                <TextField fx:id="spcNameTxt" promptText="SP Center Name" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                                              </children>
                                           </GridPane>
                                        </children>
