@@ -56,7 +56,8 @@ public class feedbackController {
             Feedback feedback = new Feedback(coach.getUserID(), coach.getUsername(), historyID, txtFeedback.getText(), (int)rating.getRating());
             arrayFeedback.add(feedback); // append to arraylist
             FileIO.writeFeedback(arrayFeedback, "feedback.txt"); // then write to file
-
+            coach = feedback.calculateRating(coach);
+            
             ArrayList <String> feedback_id_list = student.getLastFiveFeedbackID();
             feedback_id_list.set(history_index, historyID);
             student.setLastFiveFeedbackID(feedback_id_list);
@@ -73,6 +74,40 @@ public class feedbackController {
             }
             arrayStudent.set(index, student); // overwrite the student
             FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
+            
+            ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
+            int coach_index = 0;
+            for (Coach ch: arrayCoach) 
+            {
+                if(coach.getUserID().equals(ch.getUserID()))
+                {
+                    coach_index = arrayCoach.indexOf(ch);
+                    break;
+                }
+            }
+            arrayCoach.set(coach_index, coach); // overwrite the Coach
+            FileIO.writeCoach(arrayCoach, "coach.txt"); // then write to file
+            
+            for (Sport sprt : arraySports) // overwrite the Coach object in Sport 
+            {
+                if(coach.getUserID().equals(sprt.getCoachObject().getUserID()))
+                {
+                    sprt.setCoachObject(coach);
+                    break;
+                }
+            }
+            FileIO.writeSport(arraySports, "sport.txt"); // then write to file
+            
+            ArrayList<Schedule> arraySchedule = FileIO.readScheduleFile("schedule.txt");
+            for (Schedule classes : arraySchedule) // overwrite the Coach object in Schedule
+            {
+                if(coach.getUserID().equals(classes.getCoachObject().getUserID()))
+                {
+                    classes.setCoachObject(coach);
+                    break;
+                }
+            }
+            FileIO.writeSchedule(arraySchedule, "schedule.txt"); // then write to file
         }
         else
         {

@@ -22,6 +22,7 @@ public class coachController {
     ArrayList<Sport> arraySports = new ArrayList<>();
     ArrayList<Schedule> arraySchedule = new ArrayList<>();
     ArrayList<Coach> arrayCoach = FileIO.readCoachFile("coach.txt");
+    ArrayList<Feedback> arrayFeedback = FileIO.readFeedbackFile("feedback.txt");
     Coach coach;
     
     public void initialize() throws IOException {

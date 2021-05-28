@@ -2,6 +2,7 @@
 package SportsCenter;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Feedback extends Coach implements Serializable{
     
@@ -38,5 +39,41 @@ public class Feedback extends Coach implements Serializable{
     
     public void setClassRating(int classRating){
         this.classRating = classRating;
+    }
+    
+    public Coach calculateRating(Coach coach){
+        
+        ArrayList<Feedback> arrayFeedback = FileIO.readFeedbackFile("feedback.txt");
+        double count = 0;
+        double rate = 0;
+        for(Feedback fdb : arrayFeedback)
+        {
+            if(fdb.getUsername().equals(coach.getUsername()))
+            {
+                rate = rate + fdb.getClassRating();
+                count++;
+            }
+        }
+        
+        if(count == 0)
+        {
+            coach.setCoachRating(0);
+        }
+        else
+        {
+            double tempRating = rate / count;
+            coach.setCoachRating(round(tempRating, 2));
+        }
+        
+        return coach;
+    }
+    
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
     }
 }
