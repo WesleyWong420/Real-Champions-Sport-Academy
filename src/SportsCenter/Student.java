@@ -1,5 +1,6 @@
 package SportsCenter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
@@ -239,11 +240,11 @@ public class Student extends User implements Serializable{
         }
     }
     
-    public void enrollSport(Sport sport_to_enroll){
+    public void enrollSport(Sport sport_to_enroll) throws FileNotFoundException{
         
         if(sport != null) // Has existing sport enrolled
         {
-            if(sport.equals(sport_to_enroll)) // Choosing same sport as current one
+            if(sport.getSportID().equals(sport_to_enroll.getSportID())) // Choosing same sport as current one
             {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
@@ -265,6 +266,7 @@ public class Student extends User implements Serializable{
                 if (result.get() == ButtonType.OK) // OK option is selected
                 {
                     sport = sport_to_enroll;
+                    FileIO.pushNotification("Successful!", "You have been enrolled in a sport.");
                 } 
                 else  // CANCEL is selected or the dialog is closed
                 { 

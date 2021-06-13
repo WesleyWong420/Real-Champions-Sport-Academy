@@ -306,7 +306,6 @@ public class studentController {
             }
         }
         FileIO.writeStudent(arrayStudent, "student.txt"); // then write to file
-        FileIO.pushNotification("Successful!", "You have been enrolled in a sport.");
     }
     
     @FXML
