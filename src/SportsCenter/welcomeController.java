@@ -49,7 +49,7 @@ public class welcomeController {
     //Adding sports to choicebox 
        arraySports = FileIO.readSportsFile("sport.txt");
        for (Sport tempSport : arraySports){
-           sportRCBox.getItems().add(tempSport.getSportID() + ": " + tempSport.getSportName());
+           sportRCBox.getItems().add(tempSport.getSportID() + " : " + tempSport.getSportName());
        }
     }
     
@@ -132,7 +132,7 @@ public class welcomeController {
             selectedSportID = selectedSportText[0];
         }
 
-        if ((!studentIDRTxt.getText().isEmpty()) && (!passRTxt.getText().isEmpty())&& (!nameRTxt.getText().isEmpty()) && (!genderRTxt.getText().isEmpty()) && (!emailRTxt.getText().isEmpty()) && (!contactRTxt.getText().isEmpty()) && (!addressRTxt.getText().isEmpty()) && (!selectedSportID.isEmpty()) && (selectedSportID != null)){
+        if ((!studentIDRTxt.getText().isEmpty()) && (!passRTxt.getText().isEmpty())&& (!nameRTxt.getText().isEmpty()) && (!genderRTxt.getText().isEmpty()) && (!emailRTxt.getText().isEmpty()) && (!contactRTxt.getText().isEmpty()) && (!addressRTxt.getText().isEmpty()) && (selectedSportID != null)){
 
             //making guest user a student
             
