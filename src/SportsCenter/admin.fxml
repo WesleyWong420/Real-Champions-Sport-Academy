@@ -120,7 +120,7 @@
                                  </padding>
                               </VBox>
                            </content></Tab>
-                        <Tab text="Coachs">
+                        <Tab text="Coaches">
                            <content>
                               <VBox alignment="TOP_CENTER">
                                  <children>
@@ -296,7 +296,7 @@
                               </VBox>
                            </content>
                         </Tab>
-                        <Tab id="lasttab" text="Schedule">
+                        <Tab id="lasttab" text="Schedules">
                            <content>
                               <VBox alignment="TOP_CENTER">
                                  <children>

@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 public class welcomeController {
     
     @FXML
-    private Button btnGuest, btnLogin, submitBtn;
+    private Button btnGuest, btnLogin, submitBtn, btnCancel;
     @FXML
     private Label loginstatus, registerstatus;
     @FXML
@@ -116,7 +116,6 @@ public class welcomeController {
                 window.setTitle(title);
             }else{
                 loginstatus.setText("*Incorrect Login Details!");
-                userTxt.clear();
                 passTxt.clear();
             }
         }else{
@@ -133,7 +132,7 @@ public class welcomeController {
             selectedSportID = selectedSportText[0];
         }
 
-        if ((studentIDRTxt.getText()!= null) && (passRTxt.getText() != null)&& (nameRTxt.getText() != null) && (emailRTxt.getText() != null) && (contactRTxt.getText() != null) && (selectedSportID != null)){
+        if ((!studentIDRTxt.getText().isEmpty()) && (!passRTxt.getText().isEmpty())&& (!nameRTxt.getText().isEmpty()) && (!genderRTxt.getText().isEmpty()) && (!emailRTxt.getText().isEmpty()) && (!contactRTxt.getText().isEmpty()) && (!addressRTxt.getText().isEmpty()) && (!selectedSportID.isEmpty()) && (selectedSportID != null)){
 
             //making guest user a student
             
@@ -147,5 +146,16 @@ public class welcomeController {
         }else{
             registerstatus.setText("Please enter all details!");
         }
+    }
+    
+    @FXML
+    private void pressCancel(javafx.event.ActionEvent event) throws Exception {
+        passRTxt.clear();
+        nameRTxt.clear();
+        genderRTxt.clear();
+        emailRTxt.clear();
+        contactRTxt.clear();
+        addressRTxt.clear();
+        sportRCBox.getSelectionModel().clearSelection();
     }
 }

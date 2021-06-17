@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -66,7 +67,10 @@
                                  <children>
                                     <HBox alignment="CENTER">
                                        <children>
-                                          <Label id="reglabel" alignment="TOP_LEFT" text="Student Registration" />
+                                          <Label id="reglabel" alignment="TOP_LEFT" text="Student Registration">
+                                             <HBox.margin>
+                                                <Insets right="50.0" />
+                                             </HBox.margin></Label>
                                        </children>
                                     </HBox>
                                     <GridPane alignment="CENTER" hgap="10.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="322.0" prefWidth="338.0" vgap="5.0">
@@ -105,7 +109,7 @@
                                     </GridPane>
                                     <HBox spacing="10.0">
                                        <children>
-                                          <Button mnemonicParsing="false" text="Cancel" />
+                                          <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#pressCancel" text="Cancel" />
                                           <Button fx:id="submitBtn" mnemonicParsing="false" onAction="#pressSubmit" text="Submit" />
                                           <Label fx:id="registerstatus" prefHeight="18.0" prefWidth="146.0" />
                                        </children>
