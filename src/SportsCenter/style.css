@@ -142,6 +142,10 @@ and open the template in the editor.
     -fx-text-fill: red;
 }
 
+#registerstatus{
+    -fx-text-fill: red;
+}
+
 #white13{
     -fx-text-fill: #e8e8e8;
     -fx-font-weight: bold;

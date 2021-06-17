@@ -143,6 +143,7 @@ public class welcomeController {
             Stage window = (Stage) submitBtn.getScene().getWindow(); 
             window.setScene(new Scene(root, 800, 480));
             window.setTitle("Welcome");
+            FileIO.pushNotification("Successful!", "Student Account Creation Completed!");
         }else{
             registerstatus.setText("Please enter all details!");
         }
@@ -156,6 +157,7 @@ public class welcomeController {
         emailRTxt.clear();
         contactRTxt.clear();
         addressRTxt.clear();
+        registerstatus.setText("");
         sportRCBox.getSelectionModel().clearSelection();
     }
 }
